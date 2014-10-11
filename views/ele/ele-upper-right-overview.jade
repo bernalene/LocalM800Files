@@ -1,0 +1,36 @@
+.page-title-div.col-xs-12
+	.page-title-left.pull-left.margin-left-15.col-xs-4.reset-padding
+		h1= t('overviewVolume.overvolumetitle')
+	.usage-view-right.pull-right.col-xs-6.col-xs-offset-2.reset-padding.reset-margin
+		= t('overviewVolume.usageview')
+		span.glyphicon.glyphicon-question-sign
+		div(class="btn-group", data-toggle="buttons")
+			label.btn.btn-default.displayMode.active
+				input(type="radio", name="dailyBtn", id="dailyOpt", value="day", checked)
+				= t('overviewVolume.dailyBtn')
+			label.btn.btn-default.displayMode
+				input(type="radio", name="monthlyBtn", id="monthlyOpt",value="month")
+				= t('overviewVolume.monthlyBtn')
+		a(class="btn btn-default hidden", role="button", id="downloadbtn")
+			span.glyphicon.glyphicon-download-alt
+			=t('overviewVolume.downloadBtn')
+.vol-dist-rec-div.col-xs-12.padding-left-30.padding-right-30
+	- var volumeSec = [["overview", "volume", 'overviewVolume.volumeLabel'], ["", "pipe", 'overviewVolume.pipeSymbol'], ["overview/distribution", "", 'overviewVolume.distributionLabel'], ["", "pipe", 'overviewVolume.pipeSymbol'], ["overview/record", "", 'overviewVolume.recordLabel']]
+	ul.list-unstyled
+		each item in volumeSec
+			li
+				a(href="/" + item[0],class=item[1])=t(item[2])
+		
+.dropdowns-div.pull-left.col-xs-12
+	select(class="contactPicker show-tick")
+		each val in ['dropdowns.allContact', 'dropdowns.user1', 'dropdowns.user2', 'dropdowns.user3', 'dropdowns.user4']
+			option= t(val)
+	select(class="lastXdaysPicker show-tick")
+		each val in ['dropdowns.last7days', 'dropdowns.last14days', 'dropdowns.last30days']
+			option= t(val)
+	include ele-calendar-from-to.jade
+	//- script(src="/js/custom-m800-js/m800-calendar.js")
+	script(src="/js/custom-m800-js/contact-lastdays-picker.js")
+	
+	
+	

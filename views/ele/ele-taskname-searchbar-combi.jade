@@ -1,0 +1,8 @@
+select(class="taskPicker show-tick pull-left")
+	each val in ['allSMS.taskname', 'allSMS.recipientno']
+		option= t(val)
+.input-group.searchbar
+	input(type="text", class="form-control")
+	span.input-group-btn
+		button(class="btn btn-default", type="button")
+			span.glyphicon.glyphicon-search

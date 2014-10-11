@@ -1,0 +1,38 @@
+extends layout
+
+block content
+	include ele/ele-header.jade
+	.container.mainContent-container
+		.row
+			include ele/ele-left-menu-links.jade
+			.right-content.col-xs-9
+				.overview-content.newSMS
+					include ele/ele-newSMS-upper-right.jade
+					.dropdowns-div.pull-left.padding-left-30.padding-right-30
+						.textLeft.pull-left
+							h4= t('newSMS.enterTaskName')
+							span.optionalGrey= t('newSMS.optional')
+							span(class="glyphicon glyphicon-question-sign", id="question-mark", data-container="body", data-toggle="popover")
+						.recipientTextArea.input-group
+							input(type="text", class="form-control", placeholder="Recipient Number")
+					.graph-div.pull-left
+						#newSMS-content.padding-left-30.padding-right-30
+							h4= t('newSMS.choose')
+							- var smsArr = [['/new/simple','newSMS.simpleTitle','sms-simple-icon', 'newSMS.contentSimple'], ['/new/excel','newSMS.excelTitle','sms-excel-icon', 'newSMS.contentExcel'], ['/new/merger','newSMS.mergerTitle','sms-merger-icon', 'newSMS.contentMerger']]
+							.row
+								each smsVal in smsArr
+									.smsboxwrapper.col-xs-4
+										.smsbox.clearfix
+											a(href=smsVal[0])
+												h5= t(smsVal[1])
+												img(src="/img/" + smsVal[2] + ".png")
+												p= t(smsVal[3])
+										if smsVal[0] === '/new/excel'
+											a(href="#")= t('newSMS.downloadTemplate')
+										if smsVal[0] === '/new/merger'
+											a(href="#")= t('newSMS.downloadTemplate')
+				.white-top-left-border
+				.white-top-right-border
+				.white-bottom-left-border
+				.white-bottom-right-border
+	include ele/ele-footer.jade

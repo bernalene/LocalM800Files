@@ -1,0 +1,16 @@
+form.form-horizontal#upload-excel-form(enctype="multipart/form-data")
+	.form-group.sr-only
+		.col-xs-12
+			button#submitExcelFile(type="submit", name="submitExcelFile", value="submitExcelFile")
+	.form-group
+		.col-xs-7.padding-right-remove.uploaded-excel.hidden
+			input.form-control.padding-right-25(readonly)
+			span.glyphicon.glyphicon-remove-sign.input-close-icon(onclick="showRedUpload(this);")
+		.col-xs-5
+			label.btn.btn-pale-red
+				span.glyphicon.glyphicon-open.margin-right-15
+				span.upload-label= t('modals.uploadexcelfile')
+				span.hidden.reupload-label= t('modals.reupload')
+				input.sr-only#uploadexcelFile(type="file", name="uploadexcelFile")
+			#uploadFileReq.hidden
+				span.glyphicon.glyphicon-exclamation-sign(data-toggle="popover", data-trigger="hover", data-content='<div class="exclamation-error"><p>Please Upload a file</p></div>', data-placement="right", data-html="true", data-template='<div class="popover redPopover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>')

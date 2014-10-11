@@ -1,0 +1,43 @@
+// start of content for sms simple page
+#newSMS-content.pull-left
+	.dropdowns-div.pull-left.padding-left-30.padding-right-30
+		.textLeft.pull-left
+			h4= t('simpleSMS.recipients')
+			.btn-group
+				button(type="button", class="btn btn-default dropdown-toggle", data-toggle="dropdown")
+					span.glyphicon.glyphicon-plus
+					= t('simpleSMS.addFrom')
+				ul.dropdown-menu(role="menu")
+					li
+						a(href="#", data-toggle="modal", data-target="#fromContacts")= t('dropdowns.contacts')
+					li
+						a(href="#", data-toggle="modal", data-target="#import-excel")= t('dropdowns.importExcel')
+		// for the recipient numbers
+		.recipientTextArea
+			form(id="select2form", method="post", class="form-horizontal pull-left")
+				.form-group
+					.recipientNos-div
+						input.form-control(name="recipientNos", multiple data-placeholder=t('simpleSMS.pleaseUse'), id="recipients", data-bv-min="4")
+			.checkDupRow
+				label.cotrol-label.check-group
+					.custom-checkbox
+					input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check")
+					span.pull-right.checkDupLabel= t('simpleSMS.checkDuplicate')
+				span.count.pull-right=t('simpleSMS.0/100000')
+		// for the schedule dropdown
+		.schedule-div
+			include ele-schedule-dropdown.jade
+		//if the file is already imported
+		#reUploadMainPage.hidden
+			div
+				span= "recipients.xls"
+					span.glyphicon.glyphicon-remove-sign
+				a(href="#", class="btn btn-default", id="reuploadBtn")= t('modals.reupload')
+						span.glyphicon.glyphicon-open.margin-right-15.pull-left
+		span#rowsCount.hidden= t("modals.5000")
+	// start of content-preview area
+	include ele-content-preview.jade
+	// back, save as draft, reset and next buttons
+	.buttons-div
+		each val in [['simpleSMS.back','#'], ['simpleSMS.saveDraft', '#'], ['simpleSMS.reset', '#'], ['simpleSMS.next','/new/confirm']]		
+			a(href=val[1], class="btn btn-default", id=t(val[0]))= t(val[0])		

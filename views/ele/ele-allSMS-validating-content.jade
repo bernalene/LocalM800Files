@@ -1,0 +1,70 @@
+// start of all SMS validating content
+.allSMS-content.pull-left
+	.dropdowns-div.pull-left.padding-left-30.padding-right-30
+		include ele-taskname-searchbar-combi.jade
+	.recordsTable
+		.row.recordsTableHeader.padding-left-15.padding-right-15
+			.col-xs-3.task-name
+				= t('allSMS.taskname')
+			.col-xs-2.smstype
+				= t('allSMS.type') + "*"
+			.col-xs-1
+				= t('recordTexts.schedule')
+			.col-xs-2.filepart
+				= t('allSMS.filename')
+			.col-xs-2
+				= t('recordTexts.createTime')
+			.col-xs-2
+				= t('recordTexts.status')
+		- var validatingContent = [['When creating a moment from a string, we first check if the string matches known', 'Simple SMS', 'ok', 'abc_5000.xls', 'June 6th 2014 5:53:04 pm', 'validating'], ['When creating a moment from a string, we first check if the string matches known', 'Excel SMS', 'not', 'abc_5000.xls', 'June 6th 2014 5:53:04 pm', 'validating'], ['When creating a moment from a string, we first check if the string matches known', 'Merger SMS', 'not', '', 'June 6th 2014 5:53:04 pm', 'success'], ['When creating a moment from a string, we first check if the string matches known', 'Simple SMS', 'not', 'abc_5000.xls', 'June 6th 2014 5:53:04 pm', 'success'], ['When creating a moment from a string, we first check if the string matches known', 'Excel SMS', 'ok', 'abc_5000.xls', 'June 6th 2014 5:53:04 pm', 'success'],['When creating a moment from a string, we first check if the string matches known', 'Merger SMS', 'ok', '', 'June 6th 2014 5:53:04 pm', 'success'], ['When creating a moment from a string, we first check if the string matches known', 'Simple SMS', 'not', 'abc_5000.xls', 'June 6th 2014 5:53:04 pm', 'success'], ['When creating a moment from a string, we first check if the string matches known', 'Excel SMS', 'ok', 'abc_5000.xls', 'June 6th 2014 5:53:04 pm', 'partial'], ['When creating a moment from a string, we first check if the string matches known', 'Merger SMS', 'not', 'abc_5000.xls', 'June 6th 2014 5:53:04 pm', 'partial'], ['When creating a moment from a string, we first check if the string matches known', 'Simple SMS', 'ok', 'abc_5000.xls', 'June 6th 2014 5:53:04 pm', 'invalid']];
+		each val in validatingContent
+			.row.detail-row
+				.col-xs-3.task-name.detail-item
+					= val[0].substr(0,22) + "..."
+				.col-xs-2.smstype.detail-item
+					= val[1]
+				.col-xs-1
+					if val[2] == 'ok'
+						span(class="glyphicon glyphicon-ok-sign")
+					else if val[2] == 'not'
+						span(class="glyphicon glyphicon-remove-sign")
+				.col-xs-2.filepart
+					if val[3] == ''
+						= '-'
+					else
+						.input-group
+							input(class="form-control", type="text", placeholder=val[3], disabled="true")
+							span(class="glyphicon glyphicon-save")
+				.col-xs-2.detail-item
+					= val[4]
+				.col-xs-2
+					case val[5]
+						when 'invalid'
+							.btn-group
+								button(type="button", class="btn btn-default dropdown-warning dropdown-toggle", data-toggle="dropdown")=t('dropdowns.invalid')
+									span.glyphicon.glyphicon-chevron-down.pull-right
+									span.glyphicon.glyphicon-remove.pull-left
+								ul.dropdown-menu(role="menu")
+									each link in [['#','dropdowns.errorresult'],['#','dropdowns.delete']]
+										li
+											a(href=link[0])= t(link[1])
+						when 'success'
+							.btn-group
+								button(type="button", class="btn btn-default dropdown-success dropdown-toggle", data-toggle="dropdown")=t('dropdowns.success')
+									span.glyphicon.glyphicon-chevron-down.pull-right
+									span.glyphicon.glyphicon-open.pull-left
+								ul.dropdown-menu(role="menu")
+									each link in [['#','dropdowns.confirmtosend'],['#','dropdowns.successresult'],['#','dropdowns.delete']]
+										li
+											a(href=link[0])= t(link[1])
+						when 'partial'
+							.btn-group
+								button(type="button", class="btn btn-default dropdown-success partial-success dropdown-toggle", data-toggle="dropdown")=t('dropdowns.partialsuccess')
+									span.glyphicon.glyphicon-chevron-down.pull-right
+									span.glyphicon.glyphicon-open.pull-left
+								ul.dropdown-menu(role="menu")
+									each link in [['#','dropdowns.confirmtosend'],['#','dropdowns.successresult'],['#','dropdowns.errorresult'],['#','dropdowns.delete']]
+										li
+											a(href=link[0])= t(link[1])
+						default
+							img(src="/img/validating-img.png", alt="validating", title="validating", class="img-responsive")

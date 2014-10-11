@@ -1,0 +1,56 @@
+//start of Merger Content page
+#sms-merger.pull-left
+	.dropdowns-div.pull-left.padding-left-30.padding-right-30
+		.textLeft.pull-left
+			h4= t('excel.upload')
+		.upload-div
+			form.form-horizontal#uploadForm(enctype="multipart/form-data")
+				.form-group
+					span.uploadFileContainer
+						label#uploadExcel(for="uploadexcelFile")
+							a(href="#", class="btn btn-default", id="uploadFile")= t('modals.uploadexcelfile')
+								span.glyphicon.glyphicon-open.margin-right-15
+						input.form-control#uploadexcelFile(type="file", name="uploadexcelFile")
+						a(href="#", class="pull-right", id="downloadTempLink")=t('newSMS.downloadTemplate')
+						#reupload-div.hidden.margin-left-15
+							.row
+								input.form-control.col-xs-8#disabledInput(disabled="disabled")
+								span.glyphicon.glyphicon-remove-sign(onclick="showRedUpload();")
+								label.hidden.col-xs-4(for="disabledInput")
+									a(href="#", class="btn btn-default", id="reuploadBtn", onclick="")= t('modals.reupload')
+										span.glyphicon.glyphicon-open.margin-right-15.pull-left
+						span#rowsCount= t("excel.maxno")
+						span.glyphicon.glyphicon-exclamation-sign#uploadFileReq
+		.schedule-div.hidden
+			include ele-schedule-dropdown.jade
+			include ele-date-time-combi.jade
+	// start of content-preview area
+	include ele-content-preview.jade
+	// start of the merger SMS Preview
+	#mergerSmsPreview.hidden
+		.textLeft.clearfix
+			h4= t('merger.mergerPreview')
+		.mergerSMS-table
+			.row
+				.col-xs-2.mergerTableHeader.padding-left-30
+					span= t('recordTexts.recipient')
+				.col-xs-7.mergerTableHeader
+					span= t('recordTexts.content')
+				.col-xs-3.mergerTableHeader
+					span= t('recordTexts.noSMS')
+			- var mergerContentTable = [['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco', '2'],['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco', '2'],['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco', '4'],['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco', '2'],['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco', '4']]
+			each val in mergerContentTable
+				.row
+					.col-xs-2.mergerTableContent.padding-left-30
+						span= val[0]
+					.col-xs-7.mergerTableContent
+						span= val[1].substr(0, 75) + '...'
+					.col-xs-3.mergerTableContent.padding-right-30
+						span= val[2]
+	//pagination-div
+	.pagination-div.hidden
+		include ele-pagination-LO.jade
+	// back, save as draft, reset and next buttons
+	.buttons-div
+		each val in [['simpleSMS.back','#'], ['simpleSMS.next','/new/confirm']]		
+			a(href=val[1], class="btn btn-default", id=t(val[0]))= t(val[0])	

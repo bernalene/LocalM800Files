@@ -1,0 +1,44 @@
+.pull-left.footer-div
+	.container
+		.row
+			.col-xs-8.left-footer-div
+				.sitemap-div.row
+					ul#m800.pull-left.col-xs-3.list-unstyled
+						li.listLabel= t('footerTexts.m800Label')
+						each val in ['footerTexts.aboutUs', 'footerTexts.press', 'footerTexts.blog', 'footerTexts.career']
+							li
+								a(href="#")
+									=t(val)
+					ul#services.pull-left.col-xs-3.list-unstyled
+						li.listLabel= t('footerTexts.servicesLabel')
+						each val in ['footerTexts.tollFree', 'footerTexts.sdk', 'footerTexts.sms']
+							li
+								a(href="#")
+									=t(val)
+					ul#support.pull-left.col-xs-3.list-unstyled
+						li.listLabel= t('footerTexts.supportLabel')
+						each val in ['footerTexts.faq', 'footerTexts.whitePaper', 'footerTexts.userGuide', 'footerTexts.livechat', 'footerTexts.contactus']
+							li
+								a(href="#")
+									=t(val)
+					ul#legal.pull-left.col-xs-3.list-unstyled
+						li.listLabel= t('footerTexts.legalLabel')
+						each val in ['footerTexts.privacyPolicy', 'footerTexts.termsCond']
+							li
+								a(href="#")
+									=t(val)
+				.copyright-div
+					span
+						&#169; 
+						=t('footerTexts.copyright')
+			.col-xs-4.social-media-div
+				- var imageObj = [["fb-icon.png", "Facebook Icon", "Facebook Icon"], ["twitter-icon.png", "Twitter Icon", "Twitter Icon"], ["google-plus-icon.png", "Google Plus Icon", "Google Plus Icon"], ["in-icon.png", "Linked-in Icon", "Linked-in Icon"]];
+				ul.list-unstyled
+					each image in imageObj
+						li
+							a(href="#")
+								img(src='/img/'+ image[0], alt=image[1], title=image[2])
+					
+				.chat-now-div
+					p=t('footerTexts.chatNow')
+					img(src="/img/window-chat-now.png", alt="Chat Now", title="Chat Now")

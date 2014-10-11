@@ -1,0 +1,40 @@
+//modal for edit template
+<script src="/js/custom-m800-js/new-template.js"></script>
+.modal.fade#edit-template(tabindex="-1", role="dialog", aria-labelledby="editTemplate", aria-hidden="true")
+	.form-group.errormsg-up
+		#messages
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button(type="button", class="close", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title#editTemplate= t('modals.editTemplate')
+			.modal-body
+				.body-content-wrapper.container(style="width:100% !important;")
+					form.form-horizontal
+						.row.margin-top-30
+							.col-xs-7.padding-left-30.margin-bottom-15
+								input.form-control#template-name(name="template-name" placeholder= t('modals.templatename') value="Template 1")
+							.col-xs-12.padding-left-30.padding-right-30.margin-bottom-15
+								textarea.form-control#template-content(name="template-content" maxlength="800" rows="8" placeholder= t('modals.content')) Dear Customer, Your account Account has an overdue balance of Amount. Please kindly settle the outstanding by Deadline to avoid suspensio. Thank you
+						.row
+							.col-xs-12.padding-left-30.validate-msg
+								strong International
+								span= ' (160 characters / sms): Total '
+								span.characters= '0'
+								span= ' characters in '
+								span.sms-count= '0'
+								span= ' SMS'
+								br 
+								strong China
+								span= ' (80 characters / sms): Total '
+								span.characters= '0'
+								span= ' characters in '
+								span.sms-count.china-sms-ctr= '0'
+								span= ' SMS'
+								br
+								br
+			.modal-footer
+				.btns-div
+					a(href="#", class="btn btn-default", data-dismiss="modal", id=t('modals.cancel'))= t('modals.cancel')
+					a(href="#", class="btn btn-default", id=t('modals.create'))= t('modals.save')

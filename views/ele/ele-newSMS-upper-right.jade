@@ -1,0 +1,15 @@
+.page-title-div
+	.page-title-left.pull-left.margin-left-30.margin-right-30
+		h1= t('newSMS.newSMStitle')
+		h5.subTitle= title
+.progress-div.margin-left-30.margin-right-30
+	- var stepsN = ['circle-step1-grey', '', 'circle-step2-lightGrey', 'circle-step2-grey', '', 'circle-step3-lightGrey', 'circle-step3-grey', '', 'circle-stepCheck-lightGrey', 'circle-stepCheck-grey']
+	- var ctr = 1
+	ul.stepsN.unstyled
+		each val in stepsN
+			li(id=val)
+				if val
+					img(src="/img/" + val + ".png")
+				else
+					span(id="dots-"+ ctr++, class="dots")= '...'
+script(src="/js/custom-m800-js/new-sms.js")

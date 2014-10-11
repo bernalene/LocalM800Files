@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	include ele/ele-header.jade
+	.container.overview-container
+		.row
+			include ele/ele-left-menu-links.jade
+			.right-content.col-md-9.contact
+				.overview-content
+					h1= title
+				.modal-wrapper
+					a.btn.btn-default(href="", data-toggle="modal", data-target="#modal-assign-to-group") Assign to group
+					a.btn.btn-default(href="", data-toggle="modal", data-target="#modal-import") Import Excel
+	.form-group.errormsg-up
+		#messages
+	include ele/ele-modal-contacts-assign-to-group.jade
+	include ele/ele-modal-contacts-import.jade
+	include ele/ele-footer.jade
+	
+	
+	

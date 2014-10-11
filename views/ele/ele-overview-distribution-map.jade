@@ -1,0 +1,6 @@
+.graph-div.pull-left
+	#distribution-map
+		//- get the generated map
+		script(type='text/javascript').
+			var markers =!{JSON.stringify(markers)};
+		script(src="/js/custom-m800-js/generate-distribution-map.js")

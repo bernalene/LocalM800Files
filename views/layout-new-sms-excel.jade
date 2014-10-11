@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	include ele/ele-header.jade
+	.container.mainContent-container
+		.row
+			include ele/ele-left-menu-links.jade
+			.right-content.col-xs-9
+				.overview-content.newSMS#excel-page
+					include ele/ele-newSMS-upper-right.jade
+					.graph-div.pull-left
+						include ele/ele-newSMS-excel-content-1.jade
+				.white-top-left-border
+				.white-top-right-border
+				.white-bottom-left-border
+				.white-bottom-right-border
+		script(src="/js/custom-m800-js/excel-page.js")
+	.form-group.errormsg-up
+		#messages
+	include ele/ele-footer.jade

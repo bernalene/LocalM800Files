@@ -1,0 +1,48 @@
+//modal for managing contacts
+.modal.fade#manage-contacts(tabindex="-1", role="dialog", aria-labelledby="manageContacts", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button(type="button", class="close", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title#manage-contacts= t('modals.manageGroups')
+			.modal-body
+				.body-content-wrapper
+					.row.reset-margin.list-header
+						.col-xs-6
+							span= t('modals.groupName')
+						.col-xs-4
+							span= t('modals.noOfContacts')
+						.col-xs-2(align='center')
+							span= t('modals.action')
+					.row.reset-margin.contact-list
+						.col-xs-12
+							//edit contact
+							.row.contact
+								.col-xs-6
+									input.form-control.input-group-name(name="group-name" value= t('modals.group1'))
+									a(href='#', class='margin-left-5 btn btn-default btn-custom')
+										span.glyphicon.glyphicon-ok.confirm
+								.col-xs-4.total-contacts
+									span= t('modals.25')
+								.col-xs-2.action(align='center')
+									a(href='#')
+										img(src='img/trash-can.png', alt='delete')
+							//other contacts
+							each val in [['modals.group1', 'modals.25'], ['modals.group1', 'modals.25'], ['modals.group1', 'modals.25'], ['modals.group1', 'modals.25']]
+								.row.contact
+									.col-xs-6
+										span.group-name= t(val[0])
+										a(href='#', class='margin-left-5 btn btn-default btn-custom')
+											span.glyphicon.glyphicon-pencil.edit
+									.col-xs-4.total-contacts
+										span= t(val[1])
+									.col-xs-2.action(align='center')
+										a(href='#')
+											img(src='img/trash-can.png', alt='delete')
+					.pagination-div
+						include ele-pagination-LO.jade
+			.modal-footer
+				.btns-div
+					each val in [['modals.cancel','#'],['modals.create', '#']]
+						a(href=val[1], class="btn btn-default", id=t(val[0]))= t(val[0])

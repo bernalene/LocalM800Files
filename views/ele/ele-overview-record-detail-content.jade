@@ -1,0 +1,20 @@
+.graph-div.pull-left#record-detail-div
+	.row.detail-row
+		.col-xs-1.detail-header
+			= t('recordTexts.schedule')
+		.col-xs-1.senderCol.detail-header
+			= t('recordTexts.sender')
+		.col-xs-1.detail-header
+			= t('recordTexts.recipient')
+		.col-xs-2.noSMScol.detail-header
+			= t('recordTexts.noSMS')
+		.col-xs-3.detail-header
+			= t('recordTexts.content')
+		.col-xs-2.createTimecol.detail-header
+			= t('recordTexts.createTime')
+		.col-xs-1.statusCol.detail-header
+			= t('recordTexts.status')
+	script(src="/js/custom-m800-js/generate-overview-record-detail-table.js")
+	//- script(src="/js/custom-m800-js/generate-record-table.js")
+	.pagination-div
+		include ele-pagination-LO.jade

@@ -1,0 +1,2701 @@
+/* line 9, ../sass/m800/_base.scss */
+body {
+  font-size: 100%;
+}
+
+/* line 12, ../sass/m800/_base.scss */
+.container {
+  width: 1200px;
+}
+
+/* line 16, ../sass/m800/_base.scss */
+.popover .popover-content {
+  font-size: 140%;
+  padding: 10px 15px;
+}
+/* line 19, ../sass/m800/_base.scss */
+.popover .popover-content span,
+.popover .popover-content p {
+  margin: 0;
+}
+
+/* line 1, ../sass/m800/_common.scss */
+body {
+  background: #e1e1e1;
+  color: #333;
+}
+
+/* line 5, ../sass/m800/_common.scss */
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+/* line 8, ../sass/m800/_common.scss */
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+/* line 11, ../sass/m800/_common.scss */
+.margin-left-30 {
+  margin-left: 30px;
+}
+
+/* line 14, ../sass/m800/_common.scss */
+.margin-right-30 {
+  margin-right: 30px;
+}
+
+/* line 17, ../sass/m800/_common.scss */
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+/* line 20, ../sass/m800/_common.scss */
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+
+/* line 23, ../sass/m800/_common.scss */
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+/* line 26, ../sass/m800/_common.scss */
+.margin-right-15 {
+  margin-right: 15px;
+}
+
+/* line 29, ../sass/m800/_common.scss */
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+/* line 32, ../sass/m800/_common.scss */
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+
+/* line 35, ../sass/m800/_common.scss */
+.padding-left-30 {
+  padding-left: 30px;
+}
+
+/* line 38, ../sass/m800/_common.scss */
+.padding-right-30 {
+  padding-right: 30px;
+}
+
+/* line 41, ../sass/m800/_common.scss */
+.padding-right-25 {
+  padding-right: 25px;
+}
+
+/* line 44, ../sass/m800/_common.scss */
+.padding-left-15 {
+  padding-left: 15px;
+}
+
+/* line 47, ../sass/m800/_common.scss */
+.padding-right-15 {
+  padding-right: 15px;
+}
+
+/* line 50, ../sass/m800/_common.scss */
+.padding-right-remove {
+  padding-right: 0;
+}
+
+/* line 53, ../sass/m800/_common.scss */
+.padding-left-remove {
+  padding-left: 0;
+}
+
+/* line 56, ../sass/m800/_common.scss */
+padding-top:remove {
+  padding-top: 0;
+}
+
+/* line 59, ../sass/m800/_common.scss */
+padding-bottom-remove {
+  padding-bottom: 0;
+}
+
+/* line 62, ../sass/m800/_common.scss */
+.reset-margin {
+  margin: 0;
+}
+
+/* line 65, ../sass/m800/_common.scss */
+.reset-padding, #scheduled-page .recordsTable .detail-item {
+  padding: 0;
+}
+
+/* line 69, ../sass/m800/_common.scss */
+.grey-top-left-border,
+.grey-top-right-border,
+.grey-bottom-left-border,
+.grey-bottom-right-border {
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  background: url(/img/rounded-borders-grey.png) no-repeat;
+  position: absolute;
+}
+
+/* line 79, ../sass/m800/_common.scss */
+.grey-top-left-border {
+  top: 0;
+  left: 15px;
+  background-position: 0 0;
+}
+
+/* line 84, ../sass/m800/_common.scss */
+.grey-top-right-border {
+  top: 0;
+  right: 28px;
+  background-position: -50px 0;
+}
+
+/* line 89, ../sass/m800/_common.scss */
+.grey-bottom-left-border {
+  bottom: -2px;
+  left: 15px;
+  background-position: 0px -51px;
+}
+
+/* line 94, ../sass/m800/_common.scss */
+.grey-bottom-right-border {
+  bottom: -2px;
+  right: 28px;
+  background-position: -50px -50px;
+}
+
+/* line 99, ../sass/m800/_common.scss */
+.white-top-left-border,
+.white-top-right-border,
+.white-bottom-left-border,
+.white-bottom-right-border {
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  background: url(/img/rounded-borders-white.png) no-repeat;
+  position: absolute;
+}
+
+/* line 109, ../sass/m800/_common.scss */
+.white-top-left-border {
+  top: -2px;
+  left: -2px;
+  background-position: 0 0;
+}
+
+/* line 114, ../sass/m800/_common.scss */
+.white-top-right-border {
+  top: -2px;
+  right: -4px;
+  background-position: -50px 0;
+}
+
+/* line 119, ../sass/m800/_common.scss */
+.white-bottom-left-border {
+  bottom: -5px;
+  left: -2px;
+  background-position: 0px -51px;
+}
+
+/* line 124, ../sass/m800/_common.scss */
+.white-bottom-right-border {
+  bottom: -3px;
+  right: -4px;
+  background-position: -50px -50px;
+}
+
+/* line 129, ../sass/m800/_common.scss */
+.inner-white-top-left,
+.inner-white-top-right,
+.inner-white-bot-left,
+.inner-white-bot-right {
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  background: url(/img/rounded-borders-inner-white.png) no-repeat;
+  position: absolute;
+}
+
+/* line 139, ../sass/m800/_common.scss */
+.inner-white-top-left {
+  top: -2px;
+  left: -2px;
+  background-position: 0 0;
+}
+
+/* line 144, ../sass/m800/_common.scss */
+.inner-white-top-right {
+  top: -2px;
+  right: -4px;
+  background-position: -50px 0;
+}
+
+/* line 149, ../sass/m800/_common.scss */
+.inner-white-bot-left {
+  bottom: -5px;
+  left: -2px;
+  background-position: 0px -51px;
+}
+
+/* line 154, ../sass/m800/_common.scss */
+.inner-white-bot-right {
+  bottom: -3px;
+  right: -4px;
+  background-position: -50px -50px;
+}
+
+/* line 159, ../sass/m800/_common.scss */
+.m800-header {
+  background: #e13b4c;
+}
+/* line 161, ../sass/m800/_common.scss */
+.m800-header .navbar-brand {
+  padding: 0;
+}
+/* line 163, ../sass/m800/_common.scss */
+.m800-header .navbar-brand img {
+  margin-left: 15px;
+  margin-top: 6px;
+}
+/* line 169, ../sass/m800/_common.scss */
+.m800-header .container a#logout-link {
+  float: right;
+  color: #fff;
+  text-decoration: none;
+  margin: 15px 0;
+  font-size: 140%;
+}
+
+/* line 178, ../sass/m800/_common.scss */
+.mainContent-container {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+/* line 182, ../sass/m800/_common.scss */
+.active-link, .left-content .menu-links ul li:hover {
+  background: #333;
+}
+/* line 184, ../sass/m800/_common.scss */
+.active-link a, .left-content .menu-links ul li:hover a {
+  color: #fff !important;
+}
+
+/* line 188, ../sass/m800/_common.scss */
+.left-content {
+  overflow: hidden;
+  padding-right: 30px;
+}
+/* line 191, ../sass/m800/_common.scss */
+.left-content .menu-links {
+  width: 100%;
+  background: #555;
+}
+/* line 194, ../sass/m800/_common.scss */
+.left-content .menu-links ul {
+  color: #999;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+/* line 198, ../sass/m800/_common.scss */
+.left-content .menu-links ul li {
+  height: 60px;
+  padding: 20px 25px;
+  border-top: 1px solid #333;
+  cursor: pointer;
+}
+/* line 203, ../sass/m800/_common.scss */
+.left-content .menu-links ul li .new-sms {
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  color: #fff;
+}
+/* line 209, ../sass/m800/_common.scss */
+.left-content .menu-links ul li a {
+  color: #999;
+  text-decoration: none;
+  font-size: 140%;
+}
+/* line 213, ../sass/m800/_common.scss */
+.left-content .menu-links ul li a span {
+  font-size: 140%;
+  margin-right: 13px;
+}
+/* line 217, ../sass/m800/_common.scss */
+.left-content .menu-links ul li a img {
+  width: 20px;
+  height: 17px;
+  margin-right: 12px;
+}
+/* line 223, ../sass/m800/_common.scss */
+.left-content .menu-links ul li:first-child {
+  padding: 10px 25px;
+  border-top: none;
+  background: #555 !important;
+}
+/* line 227, ../sass/m800/_common.scss */
+.left-content .menu-links ul li:first-child p {
+  margin-bottom: 0;
+  font-size: 140%;
+}
+/* line 231, ../sass/m800/_common.scss */
+.left-content .menu-links ul li:first-child .name {
+  color: #fff;
+}
+/* line 234, ../sass/m800/_common.scss */
+.left-content .menu-links ul li:first-child:hover {
+  background: #555;
+}
+
+/* line 245, ../sass/m800/_common.scss */
+.right-content {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding-left: 0;
+  padding-right: 0;
+  float: left;
+}
+/* line 251, ../sass/m800/_common.scss */
+.right-content .detail-row {
+  padding: 10px 15px !important;
+}
+/* line 254, ../sass/m800/_common.scss */
+.right-content .detail-row .detail-header {
+  font-size: 140%;
+  line-height: 38px;
+}
+/* line 258, ../sass/m800/_common.scss */
+.right-content .detail-row .glyphicon {
+  font-size: 240%;
+}
+/* line 261, ../sass/m800/_common.scss */
+.right-content .detail-row .glyphicon-ok-sign {
+  color: #36b100;
+}
+/* line 264, ../sass/m800/_common.scss */
+.right-content .detail-row .glyphicon-remove-sign {
+  color: #ffa229;
+}
+
+/* line 269, ../sass/m800/_common.scss */
+.recordsTable {
+  width: 100%;
+  float: left;
+}
+
+/* line 273, ../sass/m800/_common.scss */
+.dropdowns-div {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+}
+/* line 276, ../sass/m800/_common.scss */
+.dropdowns-div .btn-group {
+  margin-left: 30px;
+}
+/* line 278, ../sass/m800/_common.scss */
+.dropdowns-div .btn-group .btn {
+  width: 160px;
+  margin-left: 15px;
+}
+/* line 281, ../sass/m800/_common.scss */
+.dropdowns-div .btn-group .btn span {
+  color: #e13b4c;
+}
+/* line 286, ../sass/m800/_common.scss */
+.dropdowns-div .btn-group,
+.dropdowns-div .datePickerDiv {
+  margin-top: 30px;
+}
+/* line 290, ../sass/m800/_common.scss */
+.dropdowns-div .datePickerDiv {
+  height: 30px;
+  width: 385px;
+}
+/* line 293, ../sass/m800/_common.scss */
+.dropdowns-div .datePickerDiv input {
+  width: 50%;
+  border: 1px solid #e5e5e5;
+  color: #e13b4c;
+  padding-left: 80px;
+}
+/* line 299, ../sass/m800/_common.scss */
+.dropdowns-div .datePickerDiv span {
+  position: absolute;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 140%;
+}
+/* line 304, ../sass/m800/_common.scss */
+.dropdowns-div .datePickerDiv span .glyphicon-calendar {
+  margin-left: 10px;
+}
+/* line 310, ../sass/m800/_common.scss */
+.dropdowns-div .open .btn {
+  background: #e13b4c;
+}
+/* line 312, ../sass/m800/_common.scss */
+.dropdowns-div .open .btn span {
+  color: #fff;
+}
+/* line 318, ../sass/m800/_common.scss */
+.dropdowns-div .lastXdaysPicker {
+  width: 160px !important;
+}
+/* line 321, ../sass/m800/_common.scss */
+.dropdowns-div .contactPicker,
+.dropdowns-div .lastXdaysPicker {
+  font-size: 140%;
+}
+
+/* line 326, ../sass/m800/_common.scss */
+div.dropdown-menu {
+  width: 160px;
+  min-width: 160px;
+  margin-left: 15px;
+  min-width: 0;
+}
+/* line 331, ../sass/m800/_common.scss */
+div.dropdown-menu li {
+  height: 35px;
+  border-top: 1px solid #bbb;
+}
+/* line 334, ../sass/m800/_common.scss */
+div.dropdown-menu li a {
+  line-height: 28px;
+}
+/* line 336, ../sass/m800/_common.scss */
+div.dropdown-menu li a:focus {
+  outline: 0;
+}
+/* line 339, ../sass/m800/_common.scss */
+div.dropdown-menu li a span.check-mark {
+  color: #36b100;
+}
+/* line 344, ../sass/m800/_common.scss */
+div.dropdown-menu li:first-child {
+  border-top: none;
+}
+
+/* line 349, ../sass/m800/_common.scss */
+.learn-more-div {
+  float: left;
+  width: 100%;
+  padding: 30px;
+  border-top: 1px solid #ddd;
+}
+/* line 354, ../sass/m800/_common.scss */
+.learn-more-div span {
+  color: #e13b4c;
+  font-size: 140%;
+}
+/* line 357, ../sass/m800/_common.scss */
+.learn-more-div span.glyphicon-play {
+  margin-left: 15px;
+  padding: 5px;
+  color: #fff;
+  background: #e13b4c;
+  border-radius: 10px;
+  font-size: 100%;
+}
+
+/* line 367, ../sass/m800/_common.scss */
+.pagination-div {
+  width: 100%;
+  border-top: 1px solid #eee;
+  float: left;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+/* line 373, ../sass/m800/_common.scss */
+.pagination-div .pagination {
+  margin: 13px 0;
+}
+/* line 377, ../sass/m800/_common.scss */
+.pagination-div li a {
+  color: #999;
+}
+/* line 379, ../sass/m800/_common.scss */
+.pagination-div li a.current-pg {
+  color: #e13b4c;
+}
+/* line 384, ../sass/m800/_common.scss */
+.pagination-div .go-to-div {
+  margin: 12px 35px;
+  width: 150px;
+}
+/* line 387, ../sass/m800/_common.scss */
+.pagination-div .go-to-div span {
+  font-size: 120%;
+  width: 60px;
+  color: #999;
+}
+/* line 392, ../sass/m800/_common.scss */
+.pagination-div .go-to-div input {
+  height: 30px;
+  width: 50px;
+}
+/* line 396, ../sass/m800/_common.scss */
+.pagination-div .go-to-div .btn {
+  height: 30px;
+  background: #e13b4c;
+  color: #fff;
+}
+/* line 401, ../sass/m800/_common.scss */
+.pagination-div .go-to-div .col-xs-6 {
+  height: 30px;
+  padding-right: 0;
+  line-height: 28px;
+}
+/* line 406, ../sass/m800/_common.scss */
+.pagination-div .go-to-div .col-xs-6.inputGoto {
+  padding-left: 0;
+}
+/* line 410, ../sass/m800/_common.scss */
+.pagination-div .pagination-text {
+  margin-top: 12px;
+}
+/* line 413, ../sass/m800/_common.scss */
+.pagination-div .pagination-text p {
+  font-size: 120%;
+  line-height: 28px;
+  color: #999;
+}
+
+/* line 423, ../sass/m800/_common.scss */
+.textLeft h4 {
+  float: left;
+}
+
+/* line 428, ../sass/m800/_common.scss */
+a#uploadFile {
+  background: #e13b4c;
+  color: #fff;
+  border: none;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+}
+/* line 438, ../sass/m800/_common.scss */
+a#uploadFile .glyphicon-open {
+  float: left;
+}
+
+/* line 442, ../sass/m800/_common.scss */
+.uploadFileContainer {
+  float: left;
+  width: 100%;
+}
+/* line 445, ../sass/m800/_common.scss */
+.uploadFileContainer label {
+  float: left;
+}
+/* line 448, ../sass/m800/_common.scss */
+.uploadFileContainer #uploadFile {
+  position: relative;
+  left: 15px;
+}
+/* line 452, ../sass/m800/_common.scss */
+.uploadFileContainer #uploadexcelFile {
+  padding-left: 85px;
+  border: 0;
+  box-shadow: none;
+  opacity: 0;
+  width: 180px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+/* line 460, ../sass/m800/_common.scss */
+.uploadFileContainer #reupload-div {
+  width: 100%;
+  margin: 0 0 15px 15px;
+}
+/* line 463, ../sass/m800/_common.scss */
+.uploadFileContainer #reupload-div #reuploadBtn {
+  background: #6c8ca4;
+  color: #fff;
+}
+/* line 467, ../sass/m800/_common.scss */
+.uploadFileContainer #reupload-div #disabledInput {
+  max-width: 325px;
+  margin-left: 15px;
+  background: #fff;
+}
+/* line 472, ../sass/m800/_common.scss */
+.uploadFileContainer #reupload-div .glyphicon-remove-sign {
+  position: relative;
+  top: 25px;
+  font-size: 160%;
+  margin-left: -20px;
+  margin-top: -15px;
+  color: #6c8ca4;
+  cursor: pointer;
+  float: left;
+}
+/* line 483, ../sass/m800/_common.scss */
+.uploadFileContainer .glyphicon-exclamation-sign {
+  display: none;
+  margin-top: -28px;
+  margin-left: 192px;
+  font-size: 180%;
+  width: 25px;
+  color: #986066;
+}
+/* line 491, ../sass/m800/_common.scss */
+.uploadFileContainer #rowsCount {
+  float: left;
+  width: 100%;
+  padding-left: 15px;
+  font-size: 140%;
+  margin-top: -10px;
+  float: left;
+}
+/* line 499, ../sass/m800/_common.scss */
+.uploadFileContainer #downloadTempLink {
+  float: right;
+  font-size: 140%;
+  line-height: 15px;
+  text-decoration: none;
+  color: #6c8ca4;
+  position: relative;
+  right: 15px;
+  top: -25px;
+}
+
+/* line 512, ../sass/m800/_common.scss */
+.buttons-div {
+  padding: 30px 0 30px 20px;
+  border-top: 1px solid #ddd;
+  float: left;
+  width: 100%;
+}
+/* line 517, ../sass/m800/_common.scss */
+.buttons-div .btn {
+  width: 130px;
+  margin: 0 5px;
+  background: #6c8ca4;
+  color: #fff;
+}
+/* line 522, ../sass/m800/_common.scss */
+.buttons-div .btn#Next {
+  background: #e13b4c;
+}
+
+/* line 528, ../sass/m800/_common.scss */
+.searchbar {
+  float: left;
+  width: 330px;
+  margin-left: 22px;
+}
+/* line 534, ../sass/m800/_common.scss */
+.searchbar span.input-group-btn button {
+  background: #e13b4c;
+  color: #fff;
+}
+
+/* line 541, ../sass/m800/_common.scss */
+.footer-div {
+  width: 100%;
+  height: 260px;
+  margin: 0;
+  background: #f5f5f5;
+}
+/* line 546, ../sass/m800/_common.scss */
+.footer-div .left-footer-div {
+  padding-left: 0;
+  padding-right: 0;
+  border-right: 1px solid #ddd;
+}
+/* line 550, ../sass/m800/_common.scss */
+.footer-div .left-footer-div .sitemap-div {
+  margin: 38px 0 10px 0;
+}
+/* line 553, ../sass/m800/_common.scss */
+.footer-div .left-footer-div .sitemap-div ul li {
+  line-height: 27px;
+}
+/* line 555, ../sass/m800/_common.scss */
+.footer-div .left-footer-div .sitemap-div ul li a {
+  font-size: 120%;
+  text-decoration: none;
+  color: #6c8ca4;
+}
+/* line 560, ../sass/m800/_common.scss */
+.footer-div .left-footer-div .sitemap-div ul li.listLabel {
+  font-size: 140%;
+  color: #000;
+}
+/* line 567, ../sass/m800/_common.scss */
+.footer-div .left-footer-div .copyright-div {
+  height: 40px;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  float: left;
+  width: 100%;
+  color: #6c8ca4;
+}
+/* line 574, ../sass/m800/_common.scss */
+.footer-div .left-footer-div .copyright-div span {
+  margin-left: 15px;
+  font-size: 120%;
+}
+/* line 580, ../sass/m800/_common.scss */
+.footer-div .social-media-div {
+  margin-top: 38px;
+}
+/* line 582, ../sass/m800/_common.scss */
+.footer-div .social-media-div ul {
+  padding-left: 30px;
+}
+/* line 584, ../sass/m800/_common.scss */
+.footer-div .social-media-div ul li {
+  display: inline;
+  margin-right: 20px;
+}
+/* line 587, ../sass/m800/_common.scss */
+.footer-div .social-media-div ul li img {
+  width: 45px;
+  height: 45px;
+}
+/* line 593, ../sass/m800/_common.scss */
+.footer-div .social-media-div .chat-now-div {
+  width: 241px;
+  position: absolute;
+  margin-left: 30px;
+  bottom: -165px;
+  background: #6c8ca4;
+  color: #fff;
+}
+/* line 601, ../sass/m800/_common.scss */
+.footer-div .social-media-div .chat-now-div p {
+  float: left;
+  margin: 5px 10px;
+  font-size: 140%;
+}
+/* line 606, ../sass/m800/_common.scss */
+.footer-div .social-media-div .chat-now-div img {
+  float: right;
+  margin: 3px 5px;
+}
+
+/* line 613, ../sass/m800/_common.scss */
+.select2-drop {
+  font-size: 140%;
+  min-height: 25px;
+}
+
+/* line 618, ../sass/m800/_common.scss */
+#select2form .form-control-feedback {
+  z-index: 100;
+}
+
+/* line 623, ../sass/m800/_common.scss */
+.popover.CSCSV {
+  background: #ecfaff;
+  width: 245px;
+  border: 1px solid #aecedd;
+}
+/* line 627, ../sass/m800/_common.scss */
+.popover.CSCSV .arrow:after {
+  border-right-color: #ecfaff;
+}
+/* line 630, ../sass/m800/_common.scss */
+.popover.CSCSV .popover-content {
+  color: #00539a;
+}
+/* line 634, ../sass/m800/_common.scss */
+.popover.redPopover {
+  background: #ffd9de;
+  border: 1px solid #f5b3ba;
+  width: 230px;
+}
+/* line 638, ../sass/m800/_common.scss */
+.popover.redPopover .arrow:after {
+  border-left-color: #ffd9de;
+  border-right-color: #ffd9de;
+}
+/* line 642, ../sass/m800/_common.scss */
+.popover.redPopover .popover-content {
+  color: #986066;
+}
+
+/* line 647, ../sass/m800/_common.scss */
+.select2-container-multi {
+  height: auto;
+}
+/* line 649, ../sass/m800/_common.scss */
+.select2-container-multi ul.select2-choices {
+  border: none !important;
+  box-shadow: none !important;
+  background: #fff;
+}
+/* line 654, ../sass/m800/_common.scss */
+.select2-container-multi ul.select2-choices .select2-search-choice {
+  padding: 5px 22px 5px 5px;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+/* line 658, ../sass/m800/_common.scss */
+.select2-container-multi ul.select2-choices .select2-search-choice div {
+  float: left;
+}
+/* line 661, ../sass/m800/_common.scss */
+.select2-container-multi ul.select2-choices .select2-search-choice a {
+  float: right;
+  left: initial;
+  top: 4px;
+  right: 4px;
+  position: absolute;
+  text-decoration: none;
+  color: #6c8ca4;
+}
+
+/* line 673, ../sass/m800/_common.scss */
+.help-block {
+  display: none;
+}
+/* line 676, ../sass/m800/_common.scss */
+.help-block .glyphicon-exclamation-sign {
+  font-size: 240%;
+  right: 33px;
+  position: absolute;
+  top: 24%;
+  color: #986066;
+}
+
+/* line 686, ../sass/m800/_common.scss */
+.schedule-div {
+  width: 100%;
+  float: left;
+}
+/* line 689, ../sass/m800/_common.scss */
+.schedule-div h4 {
+  width: 100%;
+  float: left;
+}
+/* line 693, ../sass/m800/_common.scss */
+.schedule-div div.schedulePicker {
+  width: 250px;
+  margin: 0;
+  float: left;
+  font-size: 120%;
+}
+/* line 698, ../sass/m800/_common.scss */
+.schedule-div div.schedulePicker .btn {
+  width: 100%;
+  height: 35px;
+  margin-left: 0;
+}
+/* line 702, ../sass/m800/_common.scss */
+.schedule-div div.schedulePicker .btn span {
+  font-size: 100%;
+  margin: 0;
+  width: auto;
+}
+/* line 706, ../sass/m800/_common.scss */
+.schedule-div div.schedulePicker .btn span.glyphicon-chevron-down {
+  float: right;
+  margin-top: -20px;
+}
+/* line 712, ../sass/m800/_common.scss */
+.schedule-div div.schedulePicker .open {
+  margin-left: 0;
+  width: 100%;
+}
+/* line 716, ../sass/m800/_common.scss */
+.schedule-div div.schedulePicker .open li a {
+  padding: 0 20px;
+}
+/* line 722, ../sass/m800/_common.scss */
+.schedule-div span {
+  float: left;
+  font-size: 100%;
+}
+/* line 726, ../sass/m800/_common.scss */
+.schedule-div span.optionalGrey {
+  color: #999;
+  padding: 0 10px;
+}
+/* line 730, ../sass/m800/_common.scss */
+.schedule-div span.glyphicon-question-sign {
+  color: #6c8ca4;
+}
+/* line 733, ../sass/m800/_common.scss */
+.schedule-div span.schedText {
+  font-size: 120%;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* line 743, ../sass/m800/_common.scss */
+.newSMS .datePickerDiv {
+  margin-top: 0;
+  margin-left: 15px;
+}
+/* line 747, ../sass/m800/_common.scss */
+.newSMS btn.group {
+  width: 100%;
+  float: left;
+  margin: 0;
+}
+/* line 752, ../sass/m800/_common.scss */
+.newSMS btn.group #dateInput,
+.newSMS btn.group #timeInput {
+  margin-left: 0;
+}
+/* line 756, ../sass/m800/_common.scss */
+.newSMS btn.group input#dateInput {
+  margin-left: 0;
+  padding-left: 25px;
+  width: 45%;
+}
+/* line 761, ../sass/m800/_common.scss */
+.newSMS btn.group input#timeInput {
+  margin-left: 0;
+  padding-left: 30px;
+  width: 30%;
+}
+/* line 768, ../sass/m800/_common.scss */
+.newSMS .glyphicon-calendar,
+.newSMS .glyphicon-time {
+  position: absolute;
+  font-size: 180%;
+  top: 8px;
+}
+/* line 774, ../sass/m800/_common.scss */
+.newSMS .glyphicon-time {
+  left: 180px;
+  z-index: 5;
+}
+/* line 778, ../sass/m800/_common.scss */
+.newSMS .glyphicon-calendar {
+  left: 18px;
+  z-index: 5;
+}
+/* line 782, ../sass/m800/_common.scss */
+.newSMS .schedText {
+  display: none;
+}
+/* line 787, ../sass/m800/_common.scss */
+.newSMS .textLeft button,
+.newSMS .smsContent button {
+  width: 135px;
+  background: #6c8ca4;
+  color: #fff;
+}
+/* line 791, ../sass/m800/_common.scss */
+.newSMS .textLeft button span.glyphicon-plus,
+.newSMS .smsContent button span.glyphicon-plus {
+  font-size: 100%;
+  margin: 0;
+  float: left;
+  margin-left: 15px;
+}
+/* line 800, ../sass/m800/_common.scss */
+.newSMS .smsContent {
+  width: 100%;
+}
+/* line 802, ../sass/m800/_common.scss */
+.newSMS .smsContent h4 {
+  width: 100%;
+}
+/* line 805, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 {
+  max-width: 550px;
+}
+/* line 807, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 .btn {
+  height: 33px;
+  width: 150px;
+  padding: 5px;
+}
+/* line 811, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 .btn span.glyphicon-list-alt,
+.newSMS .smsContent .col-xs-8 .btn .glyphicon-floppy-disk {
+  font-size: 120%;
+  margin-right: 15px;
+}
+/* line 816, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 .btn#saveAsTemplate {
+  width: 170px;
+  margin-left: 20px;
+}
+/* line 820, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 .btn#insertVariable {
+  margin-left: 20px;
+  width: 160px;
+}
+/* line 825, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 .glyphicon-question-sign {
+  position: absolute;
+  float: right;
+  top: 50px;
+  font-size: 180%;
+  right: -15px;
+  color: #6c8ca4;
+}
+/* line 833, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 .dropdown-menu {
+  position: absolute;
+  left: 375px;
+  top: 72px;
+  width: 140px;
+  padding: 0;
+}
+/* line 839, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 .dropdown-menu li {
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* line 842, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8 .dropdown-menu li:last-child {
+  border-bottom: none;
+}
+/* line 848, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-8.open #insertVariable {
+  background: #6c8ca4;
+  color: #fff;
+}
+/* line 854, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-4 {
+  margin-left: 25px;
+}
+/* line 858, ../sass/m800/_common.scss */
+.newSMS .smsContent #smsMessage {
+  margin-top: 15px;
+  /*.glyphicon-exclamation-sign {
+  	display: none;
+  	right: -20px;
+  	top: 40%;
+  }*/
+}
+/* line 860, ../sass/m800/_common.scss */
+.newSMS .smsContent #smsMessage .form-control {
+  height: 390px;
+}
+/* line 868, ../sass/m800/_common.scss */
+.newSMS .smsContent #smsMessage textarea {
+  resize: none;
+}
+/* line 872, ../sass/m800/_common.scss */
+.newSMS .smsContent .validation-msg {
+  font-size: 120%;
+  float: left;
+  margin-bottom: 15px;
+}
+/* line 878, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-4 div.previewPicker {
+  width: 260px;
+  margin: 0;
+  float: left;
+  font-size: 120%;
+}
+/* line 883, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-4 div.previewPicker.open {
+  margin-left: 0;
+  width: 100%;
+}
+/* line 886, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-4 div.previewPicker.open .btn {
+  background: #e13b4c;
+  color: #fff;
+}
+/* line 891, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-4 div.previewPicker .btn {
+  width: 100%;
+  height: 35px;
+  margin-left: 0;
+  background: #fff;
+  color: #e13b4c;
+}
+/* line 897, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-4 div.previewPicker .btn span {
+  font-size: 120%;
+  margin: 0;
+  width: auto;
+}
+/* line 901, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-4 div.previewPicker .btn span.glyphicon-chevron-down {
+  float: right;
+}
+/* line 906, ../sass/m800/_common.scss */
+.newSMS .smsContent .col-xs-4 div.previewPicker .dropdown-menu.open {
+  margin-left: 0;
+}
+
+/* line 913, ../sass/m800/_common.scss */
+.previewMsg {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  float: left;
+  width: 90%;
+  height: 390px;
+  background: #e1e1e1;
+  margin-top: 50px;
+  right: 14px;
+}
+/* line 924, ../sass/m800/_common.scss */
+.previewMsg .msgItem .msgTitle {
+  float: left;
+  margin: 30px 15px 0;
+  font-size: 140%;
+}
+/* line 929, ../sass/m800/_common.scss */
+.previewMsg .msgItem .mainMsg {
+  position: absolute;
+  line-height: 18px;
+  padding: 12px 20px;
+  font-size: 120%;
+  margin-top: -138px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+/* line 938, ../sass/m800/_common.scss */
+.previewMsg .msgItem img {
+  width: 90%;
+  margin: 20px auto;
+}
+
+/* line 945, ../sass/m800/_common.scss */
+.week-view {
+  max-width: 500px;
+}
+/* line 947, ../sass/m800/_common.scss */
+.week-view .arrow:after {
+  border-bottom-color: #555 !important;
+}
+/* line 950, ../sass/m800/_common.scss */
+.week-view .popover-title {
+  text-align: center;
+  background: #555;
+  color: #fff;
+}
+/* line 955, ../sass/m800/_common.scss */
+.week-view .popover-content {
+  padding: 25px 5px;
+}
+/* line 958, ../sass/m800/_common.scss */
+.week-view ul {
+  list-style: none;
+  padding-left: 0;
+}
+/* line 961, ../sass/m800/_common.scss */
+.week-view ul li {
+  display: inline;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #e13b4c;
+}
+/* line 966, ../sass/m800/_common.scss */
+.week-view ul li.selected-day {
+  background: #e13b4c;
+  color: #fff;
+}
+
+/* line 974, ../sass/m800/_common.scss */
+.bootstrap-timepicker-widget .glyphicon-chevron-up,
+.bootstrap-timepicker-widget .glyphicon-chevron-down {
+  color: #e13b4c;
+}
+
+/* line 981, ../sass/m800/_common.scss */
+.custom-checkbox {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #e13b4c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* line 989, ../sass/m800/_common.scss */
+.custom-checkbox.checked {
+  background: #e13b4c;
+}
+/* line 992, ../sass/m800/_common.scss */
+.custom-checkbox.checked > span {
+  padding-right: 2px;
+  line-height: 20px;
+  text-align: center;
+  width: 100%;
+  font-size: 150%;
+  color: #fff;
+}
+
+/* line 1005, ../sass/m800/_common.scss */
+.form-control[readonly] {
+  background: #fff;
+}
+
+/* line 1010, ../sass/m800/_common.scss */
+.custom-scrollbar-y {
+  /* Track */
+  /* Handle */
+}
+/* line 1011, ../sass/m800/_common.scss */
+.custom-scrollbar-y::-webkit-scrollbar {
+  width: 12px;
+}
+/* line 1016, ../sass/m800/_common.scss */
+.custom-scrollbar-y::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 6px 0px 30px #5e5e5e;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 1023, ../sass/m800/_common.scss */
+.custom-scrollbar-y::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+/* line 1029, ../sass/m800/_common.scss */
+.custom-scrollbar-y::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+/* line 1035, ../sass/m800/_common.scss */
+.multiple-options-wrapper {
+  height: 110px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #e1e1e1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* line 1043, ../sass/m800/_common.scss */
+.multiple-options-wrapper::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+/* line 1049, ../sass/m800/_common.scss */
+.btn-pale-red {
+  background: #e13b4c;
+  color: #fff;
+}
+/* line 1053, ../sass/m800/_common.scss */
+.btn-pale-red:hover {
+  color: #fff;
+}
+
+/* line 1059, ../sass/m800/_common.scss */
+.btn-pale-blue {
+  background: #6c8ca4;
+  color: #fff;
+}
+/* line 1063, ../sass/m800/_common.scss */
+.btn-pale-blue:hover {
+  color: #fff;
+}
+
+/* line 1069, ../sass/m800/_common.scss */
+#uploadFileReq {
+  color: #ffd9de;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 40px;
+}
+/* line 1076, ../sass/m800/_common.scss */
+#uploadFileReq > span {
+  font-size: 270%;
+}
+/* line 1080, ../sass/m800/_common.scss */
+#uploadFileReq .exclamation-error {
+  font-size: 120%;
+}
+
+/* line 1086, ../sass/m800/_common.scss */
+.width-100-percent {
+  width: 100%;
+}
+
+/* line 1091, ../sass/m800/_common.scss */
+.input-close-icon {
+  position: absolute;
+  right: 10px;
+  line-height: 33px;
+  font-size: 150%;
+  cursor: pointer;
+  color: #6c8ca4;
+}
+
+/* line 1, ../sass/m800/_overview.scss */
+.row-item, .right-content .detail-row, .right-content .overview-content .graph-div#records-div .record-row {
+  border-top: 1px solid #eee;
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* line 8, ../sass/m800/_overview.scss */
+.right-content .overview-content {
+  overflow: hidden;
+}
+/* line 10, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div {
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+/* line 16, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div .page-title-left h1 {
+  font-size: 260%;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+/* line 22, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div .usage-view-right {
+  margin: 15px 0;
+  padding-right: 15px;
+  text-align: right;
+  font-size: 140%;
+}
+/* line 27, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div .usage-view-right span {
+  margin: 0px 10px;
+  color: #6c8ca4;
+  font-size: 140%;
+}
+/* line 32, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div .usage-view-right .btn-group {
+  height: 30px;
+}
+/* line 34, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div .usage-view-right .btn-group .btn {
+  width: 75px;
+  color: #e13b4c;
+}
+/* line 37, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div .usage-view-right .btn-group .btn.active {
+  background: #e13b4c;
+  color: #fff;
+}
+/* line 43, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div .usage-view-right #downloadbtn {
+  padding: 1px 10px;
+  margin-left: 15px;
+  line-height: 30px;
+  background: #e13b4c;
+  color: #fff;
+}
+/* line 49, ../sass/m800/_overview.scss */
+.right-content .overview-content .page-title-div .usage-view-right #downloadbtn span {
+  margin: 4px 15px 0 5px;
+  font-size: 100%;
+  color: #fff;
+}
+/* line 57, ../sass/m800/_overview.scss */
+.right-content .overview-content .dropdowns-div,
+.right-content .overview-content .graph-div {
+  background: #f8f8f8;
+  width: 100%;
+}
+/* line 62, ../sass/m800/_overview.scss */
+.right-content .overview-content .vol-dist-rec-div {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+/* line 65, ../sass/m800/_overview.scss */
+.right-content .overview-content .vol-dist-rec-div ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+/* line 68, ../sass/m800/_overview.scss */
+.right-content .overview-content .vol-dist-rec-div ul li {
+  display: inline;
+  margin-right: 20px;
+}
+/* line 71, ../sass/m800/_overview.scss */
+.right-content .overview-content .vol-dist-rec-div ul li a {
+  font-size: 140%;
+  text-decoration: none;
+  color: #e13b4c;
+}
+/* line 72, ../sass/m800/_overview.scss */
+.right-content .overview-content .vol-dist-rec-div ul li a.active {
+  color: #000;
+  border-bottom: 1px solid #e13b4c;
+  padding-bottom: 8px;
+}
+/* line 80, ../sass/m800/_overview.scss */
+.right-content .overview-content .vol-dist-rec-div ul li a.pipe {
+  color: #e5e5e5;
+}
+/* line 87, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div {
+  height: auto;
+}
+/* line 89, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div h2 {
+  margin-top: 0;
+  font-size: 260%;
+  color: #333;
+}
+/* line 94, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #vol-graph-container {
+  margin: 0 15px 30px;
+  padding: 30px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+/* line 99, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #vol-graph-container #vol-graph {
+  height: 300px;
+  width: 100%;
+  margin-top: 40px;
+  font-size: 140%;
+}
+/* line 104, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #vol-graph-container #vol-graph .legend > div,
+.right-content .overview-content .graph-div #vol-graph-container #vol-graph table {
+  top: -100px !important;
+}
+/* line 109, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #vol-graph-container #vol-graph table .legendColorBox > div {
+  border: 0 !important;
+  margin-right: 10px;
+}
+/* line 115, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #vol-graph-container p {
+  margin-bottom: 0;
+  color: #999;
+  font-size: 140%;
+}
+/* line 120, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #vol-graph-container #yaxis {
+  margin-left: 30px;
+}
+/* line 129, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div#records-div .record-row .record-item {
+  width: 100%;
+  font-size: 120%;
+  color: #333;
+  line-height: 38px;
+}
+/* line 135, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div#records-div .record-row .record-header {
+  font-size: 140%;
+  line-height: 38px;
+}
+/* line 140, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div#records-div .record-row:first-child:hover {
+  box-shadow: none;
+}
+/* line 144, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div#records-div .record-row:hover {
+  box-shadow: 0px 2px 10px #bfbfbf;
+}
+/* line 151, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #distribution-map {
+  height: 480px;
+  width: 93%;
+  margin: 30px;
+}
+/* line 156, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #distribution-map .jvectormap-zoomin,
+.right-content .overview-content .graph-div #distribution-map .jvectormap-zoomout {
+  width: 30px;
+  height: 30px;
+  font-size: 180%;
+  padding: 10px;
+  right: 10px;
+  left: initial;
+}
+/* line 165, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #distribution-map .jvectormap-zoomin {
+  background: #6c8ca4;
+  border-bottom: 1px solid #4d708a;
+  top: 84%;
+}
+/* line 170, ../sass/m800/_overview.scss */
+.right-content .overview-content .graph-div #distribution-map .jvectormap-zoomout {
+  top: 90.2%;
+  background: #6c8ca4;
+}
+/* line 179, ../sass/m800/_overview.scss */
+.right-content .overview-content #record-header p {
+  font-size: 140%;
+  color: #999;
+  margin-bottom: 0;
+}
+/* line 185, ../sass/m800/_overview.scss */
+.right-content .overview-content .back-search-div {
+  width: 100%;
+  padding: 20px 30px;
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+/* line 190, ../sass/m800/_overview.scss */
+.right-content .overview-content .back-search-div #backBtn {
+  float: left;
+  background: #e13b4c;
+  color: #fff;
+}
+/* line 195, ../sass/m800/_overview.scss */
+.right-content .overview-content .back-search-div #backBtn img {
+  margin-right: 14px;
+}
+/* line 203, ../sass/m800/_overview.scss */
+.right-content .overview-content #record-detail-div .detail-row .detail-item {
+  font-size: 120%;
+}
+/* line 206, ../sass/m800/_overview.scss */
+.right-content .overview-content #record-detail-div .detail-row .col-xs-1, .right-content .overview-content #record-detail-div .detail-row .col-xs-2, .right-content .overview-content #record-detail-div .detail-row .col-xs-3 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 210, ../sass/m800/_overview.scss */
+.right-content .overview-content #record-detail-div .detail-row .senderCol {
+  margin-right: 25px;
+}
+/* line 213, ../sass/m800/_overview.scss */
+.right-content .overview-content #record-detail-div .detail-row .noSMScol {
+  margin-left: 30px;
+  width: 110px;
+}
+/* line 217, ../sass/m800/_overview.scss */
+.right-content .overview-content #record-detail-div .detail-row .createTimecol {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 221, ../sass/m800/_overview.scss */
+.right-content .overview-content #record-detail-div .detail-row .statusCol {
+  max-width: 76px;
+}
+@media screen and (min-width: 1200px) {
+  /* line 221, ../sass/m800/_overview.scss */
+  .right-content .overview-content #record-detail-div .detail-row .statusCol {
+    max-width: 120px;
+  }
+}
+/* line 226, ../sass/m800/_overview.scss */
+.right-content .overview-content #record-detail-div .detail-row .statusCol img {
+  height: 100%;
+}
+/* line 235, ../sass/m800/_overview.scss */
+.right-content #usage-overview .dropdowns-div .btn {
+  margin-left: 15px;
+}
+/* line 239, ../sass/m800/_overview.scss */
+.right-content #usage-overview #dateRangePickerfrom,
+.right-content #usage-overview #dateRangePickerto {
+  margin-left: 0;
+}
+/* line 243, ../sass/m800/_overview.scss */
+.right-content #usage-overview .dropdown-menu.open {
+  margin-left: 15px;
+  min-width: 160px;
+}
+
+/* line 249, ../sass/m800/_overview.scss */
+.jvectormap-label {
+  font-size: 140% !important;
+  background: #ecfaff !important;
+  color: #00539a !important;
+  width: 200px;
+  padding: 15px !important;
+}
+/* line 256, ../sass/m800/_overview.scss */
+.jvectormap-label span {
+  width: 100%;
+  float: left;
+}
+/* line 259, ../sass/m800/_overview.scss */
+.jvectormap-label span.regionName {
+  margin-bottom: 15px;
+}
+/* line 262, ../sass/m800/_overview.scss */
+.jvectormap-label span.pull-right {
+  font-weight: bold;
+  width: auto;
+}
+/* line 266, ../sass/m800/_overview.scss */
+.jvectormap-label span.glyphicon-play {
+  right: -8px;
+  top: 41%;
+  float: right;
+  position: absolute;
+  width: auto;
+  color: #ecfaff;
+}
+
+/* line 5, ../sass/m800/_newSMS.scss */
+.newSMS.overview-content .page-title-div .page-title-left h1 {
+  margin-bottom: 20px;
+}
+/* line 8, ../sass/m800/_newSMS.scss */
+.newSMS.overview-content .page-title-div .page-title-left .subTitle {
+  display: none;
+  color: #999;
+  font-size: 160%;
+  margin-top: 5px;
+}
+/* line 17, ../sass/m800/_newSMS.scss */
+.newSMS .progress-div {
+  padding: 15px 0;
+}
+/* line 19, ../sass/m800/_newSMS.scss */
+.newSMS .progress-div .stepsN {
+  padding-left: 0;
+}
+/* line 21, ../sass/m800/_newSMS.scss */
+.newSMS .progress-div .stepsN li {
+  display: inline;
+  color: #fff;
+}
+/* line 25, ../sass/m800/_newSMS.scss */
+.newSMS .progress-div .stepsN li .dots {
+  color: #ddd;
+  letter-spacing: 20px;
+  font-size: 240%;
+}
+/* line 30, ../sass/m800/_newSMS.scss */
+.newSMS .progress-div .stepsN li#circle-step2-grey {
+  display: none;
+}
+/* line 33, ../sass/m800/_newSMS.scss */
+.newSMS .progress-div .stepsN li img {
+  margin-right: 20px;
+}
+/* line 40, ../sass/m800/_newSMS.scss */
+.newSMS .dropdowns-div {
+  padding-top: 15px;
+}
+/* line 42, ../sass/m800/_newSMS.scss */
+.newSMS .dropdowns-div .smsContent,
+.newSMS .dropdowns-div .textLeft {
+  width: 100%;
+}
+/* line 45, ../sass/m800/_newSMS.scss */
+.newSMS .dropdowns-div .smsContent h4,
+.newSMS .dropdowns-div .textLeft h4 {
+  float: left;
+}
+/* line 48, ../sass/m800/_newSMS.scss */
+.newSMS .dropdowns-div .smsContent span,
+.newSMS .dropdowns-div .textLeft span {
+  margin: 10px 0;
+  float: left;
+  font-size: 180%;
+}
+/* line 52, ../sass/m800/_newSMS.scss */
+.newSMS .dropdowns-div .smsContent span.optionalGrey,
+.newSMS .dropdowns-div .textLeft span.optionalGrey {
+  color: #999;
+  padding: 0 10px;
+}
+/* line 56, ../sass/m800/_newSMS.scss */
+.newSMS .dropdowns-div .smsContent span.glyphicon-question-sign,
+.newSMS .dropdowns-div .textLeft span.glyphicon-question-sign {
+  color: #6c8ca4;
+}
+/* line 62, ../sass/m800/_newSMS.scss */
+.newSMS .dropdowns-div .recipientTextArea input {
+  width: 290px;
+}
+/* line 66, ../sass/m800/_newSMS.scss */
+.newSMS .dropdowns-div .recipientTextArea #select2form .form-control {
+  padding: 6px 1px;
+  width: 100%;
+  float: left;
+  margin: 0 15px;
+}
+/* line 76, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .smsboxwrapper {
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+  height: auto;
+}
+/* line 81, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .smsboxwrapper .smsbox {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+}
+/* line 88, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .smsboxwrapper .smsbox a {
+  text-decoration: none;
+  color: #333;
+}
+/* line 91, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .smsboxwrapper .smsbox a img {
+  margin-bottom: 18px;
+}
+/* line 95, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .smsboxwrapper .smsbox:hover {
+  box-shadow: 0px 2px 10px #bfbfbf;
+}
+/* line 99, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .smsboxwrapper a {
+  text-decoration: none;
+  font-size: 120%;
+  float: left;
+  margin: 15px auto;
+  width: 100%;
+  color: #6c8ca4;
+}
+/* line 110, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .dropdowns-div #reUploadMainPage div {
+  float: left;
+}
+/* line 112, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .dropdowns-div #reUploadMainPage div span {
+  font-size: 140%;
+  border: 1px solid #ddd;
+  padding: 7px;
+  border-radius: 5px;
+  float: left;
+}
+/* line 118, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .dropdowns-div #reUploadMainPage div span .glyphicon-remove-sign {
+  color: #6c8ca4;
+  border: none;
+  padding: 0 5px;
+  float: right;
+  font-size: 120%;
+}
+/* line 126, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .dropdowns-div #reUploadMainPage div a {
+  float: left;
+  margin-left: 10px;
+  background: #6c8ca4;
+  color: #fff;
+}
+/* line 131, ../sass/m800/_newSMS.scss */
+.newSMS #newSMS-content .dropdowns-div #reUploadMainPage div a .glyphicon-open {
+  padding: 0;
+  font-size: 120%;
+  border: none;
+}
+/* line 143, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS .dropdown-menu {
+  margin-left: 0;
+  width: 100%;
+  padding: 0;
+}
+/* line 148, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS .dropdown-menu li a {
+  float: left;
+  width: 100%;
+}
+/* line 151, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS .dropdown-menu li a span.text {
+  font-size: 120%;
+  margin: 0;
+  line-height: 30px;
+}
+/* line 158, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS .dropdown-menu .check-mark {
+  font-size: 120%;
+}
+/* line 163, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft {
+  margin-bottom: 15px;
+}
+/* line 165, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft h4 {
+  width: 100%;
+}
+/* line 168, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft .btn-group {
+  margin: 0;
+}
+/* line 170, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft .btn-group .btn {
+  width: 160px;
+  margin-left: 0;
+}
+/* line 173, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft .btn-group .btn span.glyphicon-plus {
+  color: #fff;
+}
+/* line 177, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft .btn-group ul.dropdown-menu {
+  left: initial;
+  width: 135px;
+  padding: 0;
+}
+/* line 181, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft .btn-group ul.dropdown-menu li {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+}
+/* line 186, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft .btn-group ul.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+/* line 192, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .textLeft .btn-group.open .btn {
+  background: #6c8ca4;
+  color: #fff;
+}
+/* line 200, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .recipientTextArea #select2form {
+  width: 100%;
+}
+/* line 202, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .recipientTextArea #select2form .form-control-feedback {
+  z-index: 100;
+}
+/* line 206, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .recipientTextArea input#checkDupBox {
+  width: auto;
+  height: 25px;
+  width: 25px;
+  float: left;
+  margin-top: 0;
+}
+/* line 213, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .recipientTextArea .checkDupRow {
+  margin-top: 10px;
+  padding-right: 30px;
+}
+/* line 216, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .recipientTextArea .checkDupRow .checkDupLabel {
+  font-size: 120%;
+  font-weight: normal;
+  margin: 5px;
+}
+/* line 221, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .recipientTextArea .checkDupRow .count {
+  text-align: right;
+}
+/* line 225, ../sass/m800/_newSMS.scss */
+.newSMS#simpleSMS #newSMS-content .recipientTextArea .recipientNos-div {
+  float: left;
+  width: 810px;
+}
+
+/* line 2, ../sass/m800/_modals.scss */
+.modal-body,
+.modal-header,
+.modal-footer {
+  padding: 0;
+}
+
+/* line 8, ../sass/m800/_modals.scss */
+.modal-header h4 {
+  padding: 15px 30px;
+}
+/* line 11, ../sass/m800/_modals.scss */
+.modal-header .close {
+  opacity: 1.0;
+}
+/* line 13, ../sass/m800/_modals.scss */
+.modal-header .close span {
+  border-radius: 5px;
+  background: #6c8ca4;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 15px 30px;
+  position: absolute;
+  right: 0;
+}
+
+/* line 24, ../sass/m800/_modals.scss */
+.modal-footer {
+  border-top: none;
+}
+
+/* line 27, ../sass/m800/_modals.scss */
+.btns-div {
+  text-align: center;
+  padding: 15px 30px;
+  border-top: 1px solid #e5e5e5;
+  float: left;
+  width: 100%;
+}
+/* line 33, ../sass/m800/_modals.scss */
+.btns-div .btn {
+  width: 140px;
+  color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* line 38, ../sass/m800/_modals.scss */
+.btns-div .btn#Cancel {
+  background: #6c8ca4;
+}
+/* line 41, ../sass/m800/_modals.scss */
+.btns-div .btn#Confirm, .btns-div .btn#Create {
+  background: #e13b4c;
+}
+
+/* line 46, ../sass/m800/_modals.scss */
+.modal-dialog {
+  margin: 10% auto;
+}
+
+/* line 49, ../sass/m800/_modals.scss */
+.placeholderText {
+  font-size: 120%;
+  margin-top: 10px;
+  float: left;
+}
+/* line 53, ../sass/m800/_modals.scss */
+.placeholderText.templateName {
+  margin-top: 7px;
+  font-size: 150%;
+}
+
+/* line 60, ../sass/m800/_modals.scss */
+.btns-div .btn#Import, .btns-div .btn#Save, .btns-div .btn#Use, .btns-div .btn#Continue {
+  background: #e13b4c;
+}
+
+/* line 68, ../sass/m800/_modals.scss */
+.errormsg-up {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  left: 0;
+  background: #ffd9de;
+  color: #986066;
+  text-align: center;
+  font-size: 140%;
+  height: auto;
+}
+
+/* line 82, ../sass/m800/_modals.scss */
+#fromContacts .selectSearch-div {
+  width: 100%;
+  float: left;
+  padding: 15px 30px;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* line 87, ../sass/m800/_modals.scss */
+#fromContacts .selectSearch-div .dropdowns-div {
+  padding-bottom: 0;
+}
+/* line 89, ../sass/m800/_modals.scss */
+#fromContacts .selectSearch-div .dropdowns-div .groupPicker {
+  margin-top: 0;
+  width: 100%;
+}
+/* line 92, ../sass/m800/_modals.scss */
+#fromContacts .selectSearch-div .dropdowns-div .groupPicker .btn {
+  margin-left: 0;
+  width: 100%;
+}
+/* line 96, ../sass/m800/_modals.scss */
+#fromContacts .selectSearch-div .dropdowns-div .groupPicker .dropdown-menu {
+  margin-left: 0;
+}
+/* line 102, ../sass/m800/_modals.scss */
+#fromContacts .selectSearch-div .modal-searchbar .searchbar {
+  margin-left: 0;
+  width: 100%;
+}
+/* line 108, ../sass/m800/_modals.scss */
+#fromContacts .contacts-list {
+  float: left;
+  width: 100%;
+  padding: 15px;
+  padding-bottom: 5px;
+}
+/* line 113, ../sass/m800/_modals.scss */
+#fromContacts .contacts-list .row {
+  font-size: 120%;
+  padding: 12px 15px;
+  height: 40px;
+  border-top: 1px solid #e5e5e5;
+}
+/* line 118, ../sass/m800/_modals.scss */
+#fromContacts .contacts-list .row.contactsHeader {
+  border-top: none;
+}
+/* line 123, ../sass/m800/_modals.scss */
+#fromContacts .pagination-div {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+/* line 126, ../sass/m800/_modals.scss */
+#fromContacts .pagination-div .go-to-div {
+  margin: 12px 15px;
+  width: 130px;
+}
+/* line 133, ../sass/m800/_modals.scss */
+#fromContacts .btns-div .btn#Confirm {
+  background: #e13b4c;
+}
+
+/* line 142, ../sass/m800/_modals.scss */
+#import-excel .body-content-wrapper {
+  padding: 15px 30px;
+  overflow: hidden;
+}
+/* line 146, ../sass/m800/_modals.scss */
+#import-excel .body-content-wrapper ul {
+  padding-left: 15px;
+  margin-bottom: 0;
+}
+/* line 149, ../sass/m800/_modals.scss */
+#import-excel .body-content-wrapper ul li {
+  font-size: 120%;
+  line-height: 20px;
+}
+/* line 152, ../sass/m800/_modals.scss */
+#import-excel .body-content-wrapper ul li a {
+  text-decoration: none;
+  color: #6c8ca4;
+}
+/* line 158, ../sass/m800/_modals.scss */
+#import-excel .body-content-wrapper a#uploadFile {
+  top: 16px;
+}
+
+/* line 166, ../sass/m800/_modals.scss */
+#save-template .body-content-wrapper .form-group {
+  margin: 15px 0;
+}
+
+/* line 173, ../sass/m800/_modals.scss */
+#use-template .addShadow {
+  box-shadow: 0px 2px 10px #bfbfbf;
+}
+/* line 176, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper {
+  margin: 15px 30px;
+  overflow: hidden;
+}
+/* line 179, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper .searchbar {
+  margin-left: 0;
+}
+/* line 182, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper .templates-div {
+  float: left;
+  width: 100%;
+}
+/* line 185, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper .templates-div .templates-row {
+  padding: 15px 15px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+/* line 191, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper .templates-div .templates-row .template-title {
+  font-size: 140%;
+}
+/* line 193, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper .templates-div .templates-row .template-title .glyphicon-ok {
+  float: right;
+  top: 12px;
+  color: #36b100;
+}
+/* line 199, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper .templates-div .templates-row .template-item {
+  font-size: 120%;
+}
+/* line 204, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper .pagination-div {
+  border-top: 0;
+  padding: 0;
+}
+/* line 207, ../sass/m800/_modals.scss */
+#use-template .body-content-wrapper .pagination-div .go-to-div {
+  margin-left: 10px;
+}
+
+/* line 215, ../sass/m800/_modals.scss */
+#clear-recipients .body-content-wrapper {
+  float: left;
+  margin: 10px 30px;
+}
+
+/* line 223, ../sass/m800/_modals.scss */
+#add-template .body-content-wrapper .validate-msg, #edit-template .body-content-wrapper .validate-msg {
+  font-size: 120%;
+}
+/* line 225, ../sass/m800/_modals.scss */
+#add-template .body-content-wrapper .validate-msg .characters, #add-template .body-content-wrapper .validate-msg .sms-count, #edit-template .body-content-wrapper .validate-msg .characters, #edit-template .body-content-wrapper .validate-msg .sms-count {
+  font-weight: bold;
+}
+/* line 230, ../sass/m800/_modals.scss */
+#add-template .btns-div, #edit-template .btns-div {
+  padding: 25px 30px;
+}
+
+/* line 237, ../sass/m800/_modals.scss */
+#manage-contacts .contact-list .contact {
+  border-top: 1px solid #e5e5e5;
+}
+/* line 240, ../sass/m800/_modals.scss */
+#manage-contacts .contact-list .contact .btn-custom {
+  padding: 0;
+  width: 21px;
+  height: 21px;
+  color: #fff;
+  background-color: #6c8ca4;
+}
+/* line 247, ../sass/m800/_modals.scss */
+#manage-contacts .contact-list .contact .btn-custom .edit, #manage-contacts .contact-list .contact .btn-custom .confirm {
+  top: 0;
+  font-size: 70%;
+}
+/* line 251, ../sass/m800/_modals.scss */
+#manage-contacts .list-header {
+  padding: 7px 15px;
+}
+/* line 256, ../sass/m800/_modals.scss */
+#manage-contacts .contact-list .contact {
+  padding: 7px 15px;
+}
+/* line 259, ../sass/m800/_modals.scss */
+#manage-contacts .contact-list .contact .input-group-name {
+  float: left;
+  width: 75%;
+  height: 21px;
+  font-size: 100%;
+}
+/* line 265, ../sass/m800/_modals.scss */
+#manage-contacts .contact-list .contact .group-name {
+  display: inline-block;
+  width: 100px;
+}
+/* line 278, ../sass/m800/_modals.scss */
+#manage-contacts .contact-list .contact .total-contacts {
+  padding-top: 2px;
+  height: 21px;
+}
+/* line 283, ../sass/m800/_modals.scss */
+#manage-contacts .contact-list .contact .action img {
+  width: 21px;
+  height: 21px;
+}
+/* line 292, ../sass/m800/_modals.scss */
+#manage-contacts .pagination-div .go-to-div {
+  display: none;
+}
+
+/* line 2, ../sass/m800/_confirm-page.scss */
+#confirm-content-page {
+  width: 100%;
+  padding: 30px 0;
+}
+/* line 5, ../sass/m800/_confirm-page.scss */
+#confirm-content-page .row {
+  margin: 0;
+  padding: 0 15px;
+  width: 100%;
+}
+/* line 9, ../sass/m800/_confirm-page.scss */
+#confirm-content-page .row #page-icon {
+  margin: 25px auto;
+  text-align: center;
+}
+/* line 13, ../sass/m800/_confirm-page.scss */
+#confirm-content-page .row #page-content {
+  font-size: 140%;
+}
+/* line 15, ../sass/m800/_confirm-page.scss */
+#confirm-content-page .row #page-content p {
+  margin-bottom: 5px;
+}
+/* line 18, ../sass/m800/_confirm-page.scss */
+#confirm-content-page .row #page-content .form-group {
+  margin-top: 20px;
+}
+/* line 23, ../sass/m800/_confirm-page.scss */
+#confirm-content-page .buttons-div {
+  float: left;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding: 30px 30px 0;
+}
+/* line 28, ../sass/m800/_confirm-page.scss */
+#confirm-content-page .buttons-div #confirmBtn {
+  width: 130px;
+  padding: 10px;
+  background: #e13b4c;
+  color: #fff;
+}
+
+/* line 2, ../sass/m800/_excel-page.scss */
+#sms-excel {
+  width: 100%;
+}
+/* line 4, ../sass/m800/_excel-page.scss */
+#sms-excel div.schedulePicker {
+  float: left;
+}
+/* line 7, ../sass/m800/_excel-page.scss */
+#sms-excel .buttons-div {
+  float: left;
+  width: 100%;
+  margin-top: 0;
+}
+/* line 11, ../sass/m800/_excel-page.scss */
+#sms-excel .buttons-div .btn {
+  margin: 0 10px;
+}
+/* line 15, ../sass/m800/_excel-page.scss */
+#sms-excel .excelSMS-table {
+  float: left;
+  width: 100%;
+}
+/* line 18, ../sass/m800/_excel-page.scss */
+#sms-excel .excelSMS-table .row {
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  margin: 0;
+}
+/* line 23, ../sass/m800/_excel-page.scss */
+#sms-excel .excelSMS-table .excelTableHeader {
+  font-size: 140%;
+}
+/* line 26, ../sass/m800/_excel-page.scss */
+#sms-excel .excelSMS-table .excelTableContent {
+  font-size: 120%;
+}
+
+/* line 1, ../sass/m800/_merger-page.scss */
+#sms-merger {
+  width: 100%;
+}
+/* line 3, ../sass/m800/_merger-page.scss */
+#sms-merger div.schedulePicker {
+  float: left;
+}
+/* line 6, ../sass/m800/_merger-page.scss */
+#sms-merger .smsContent {
+  width: 100%;
+}
+/* line 9, ../sass/m800/_merger-page.scss */
+#sms-merger .dropdowns-div {
+  padding-bottom: 0;
+}
+/* line 12, ../sass/m800/_merger-page.scss */
+#sms-merger .dropdowns-div .datePickerDiv .glyphicon-calendar {
+  left: 15px;
+}
+/* line 15, ../sass/m800/_merger-page.scss */
+#sms-merger .dropdowns-div .datePickerDiv #mergerDate {
+  margin-left: 0;
+  padding-left: 25px;
+  width: 45%;
+}
+/* line 20, ../sass/m800/_merger-page.scss */
+#sms-merger .dropdowns-div .datePickerDiv .glyphicon-time {
+  left: 180px;
+}
+/* line 23, ../sass/m800/_merger-page.scss */
+#sms-merger .dropdowns-div .datePickerDiv #mergerTime {
+  margin-left: 0;
+  padding-left: 30px;
+  width: 30%;
+}
+/* line 32, ../sass/m800/_merger-page.scss */
+#sms-merger #mergerSmsPreview .textLeft h4 {
+  width: 100%;
+  padding: 15px 0;
+  margin-left: 30px;
+}
+/* line 39, ../sass/m800/_merger-page.scss */
+#sms-merger #mergerSmsPreview .mergerSMS-table .row {
+  margin: 0;
+  line-height: 24px;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+}
+/* line 45, ../sass/m800/_merger-page.scss */
+#sms-merger #mergerSmsPreview .mergerSMS-table .mergerTableHeader {
+  font-size: 140%;
+}
+/* line 48, ../sass/m800/_merger-page.scss */
+#sms-merger #mergerSmsPreview .mergerSMS-table .mergerTableContent {
+  font-size: 120%;
+}
+
+/* line 1, ../sass/m800/_validating-page.scss */
+.allSMS-page {
+  width: 100%;
+  overflow: visible;
+}
+/* line 4, ../sass/m800/_validating-page.scss */
+.allSMS-page .page-title-div {
+  padding-bottom: 15px;
+}
+/* line 7, ../sass/m800/_validating-page.scss */
+.allSMS-page .dropdowns-div {
+  padding-top: 30px;
+}
+/* line 9, ../sass/m800/_validating-page.scss */
+.allSMS-page .dropdowns-div div.taskPicker {
+  margin-top: 0;
+  width: 185px;
+}
+/* line 12, ../sass/m800/_validating-page.scss */
+.allSMS-page .dropdowns-div div.taskPicker button.selectpicker {
+  margin-left: 0;
+  width: 100%;
+}
+/* line 16, ../sass/m800/_validating-page.scss */
+.allSMS-page .dropdowns-div div.taskPicker .dropdown-menu.open {
+  margin-left: 0;
+}
+/* line 20, ../sass/m800/_validating-page.scss */
+.allSMS-page .dropdowns-div .searchbar {
+  margin-left: 0;
+  width: 240px;
+}
+/* line 25, ../sass/m800/_validating-page.scss */
+.allSMS-page .allSMS-content {
+  width: 100%;
+}
+/* line 29, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row {
+  margin: 0;
+}
+/* line 31, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row.recordsTableHeader {
+  float: left;
+  width: 100%;
+  font-size: 140%;
+  line-height: 40px;
+}
+/* line 37, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row.detail-row {
+  float: left;
+  width: 100%;
+}
+/* line 40, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row.detail-row .detail-item {
+  font-size: 120%;
+}
+/* line 42, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row.detail-row .detail-item.glyphicon-ok-sign, .allSMS-page .recordsTable .row.detail-row .detail-item.glyphicon-remove-sign {
+  font-size: 240%;
+}
+/* line 46, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row.detail-row .detail-item.glyphicon-save {
+  font-size: 140%;
+}
+/* line 50, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row.detail-row a {
+  color: #333;
+}
+/* line 54, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row .task-name,
+.allSMS-page .recordsTable .row .filepart {
+  width: 185px;
+}
+/* line 58, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .row .smstype {
+  width: 90px;
+  padding: 0 5px;
+}
+/* line 64, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .input-group .form-control {
+  width: 75%;
+}
+/* line 67, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .input-group .glyphicon-save {
+  width: 25%;
+  text-align: center;
+  padding: 10px 5px;
+  background: #6c8ca4;
+  color: #fff;
+  margin-top: -1px;
+  font-size: 140%;
+}
+/* line 77, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .filepart {
+  height: 25px;
+}
+/* line 82, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .btn-group .btn span.glyphicon-chevron-down {
+  font-size: 120%;
+  margin: 5px 6px;
+  position: absolute;
+}
+/* line 88, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .btn-group .dropdown-toggle {
+  padding: 5px 25px;
+  font-size: 120%;
+  color: #fff;
+}
+/* line 92, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .btn-group .dropdown-toggle span.glyphicon-open,
+.allSMS-page .recordsTable .btn-group .dropdown-toggle .glyphicon-remove {
+  font-size: 120%;
+  position: absolute;
+  left: 0;
+  margin: 5px;
+}
+/* line 100, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .btn-group .dropdown-menu {
+  padding: 0;
+}
+/* line 102, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .btn-group .dropdown-menu li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+/* line 107, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .btn-group .dropdown-success,
+.allSMS-page .recordsTable .btn-group .partial-success {
+  background: #36b100;
+}
+/* line 111, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .btn-group .dropdown-warning {
+  background: #ffa229;
+}
+/* line 115, ../sass/m800/_validating-page.scss */
+.allSMS-page .recordsTable .btn-group.open .btn {
+  opacity: 0.8;
+}
+/* line 121, ../sass/m800/_validating-page.scss */
+.allSMS-page .pagination-div,
+.allSMS-page .learn-more-div {
+  background: #f8f8f8;
+}
+
+/* line 2, ../sass/m800/_outbox-page.scss */
+#outbox-content .noSMS {
+  width: 110px;
+  padding: 0 18px;
+}
+/* line 6, ../sass/m800/_outbox-page.scss */
+#outbox-content .recipient {
+  width: 100px;
+  padding: 0 30px;
+}
+/* line 12, ../sass/m800/_outbox-page.scss */
+#outbox-content .row:first-child:hover {
+  box-shadow: none;
+}
+/* line 16, ../sass/m800/_outbox-page.scss */
+#outbox-content .row:hover {
+  box-shadow: 0px 2px 10px #bfbfbf;
+}
+/* line 19, ../sass/m800/_outbox-page.scss */
+#outbox-content .row span.detail-item {
+  font-size: 120%;
+}
+
+/* line 25, ../sass/m800/_outbox-page.scss */
+#outbox-content-detail .senderCol {
+  margin-right: 25px;
+}
+/* line 28, ../sass/m800/_outbox-page.scss */
+#outbox-content-detail .noSMScol {
+  margin-left: 30px;
+  width: 110px;
+}
+/* line 32, ../sass/m800/_outbox-page.scss */
+#outbox-content-detail .createTimecol {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 36, ../sass/m800/_outbox-page.scss */
+#outbox-content-detail .statusCol {
+  max-width: 76px;
+}
+@media screen and (min-width: 1200px) {
+  /* line 36, ../sass/m800/_outbox-page.scss */
+  #outbox-content-detail .statusCol {
+    max-width: 120px;
+  }
+}
+/* line 41, ../sass/m800/_outbox-page.scss */
+#outbox-content-detail .statusCol img {
+  height: 100%;
+}
+
+/* line 3, ../sass/m800/_modal-assign-to-group.scss */
+.contact-modal .container {
+  width: 100%;
+}
+/* line 7, ../sass/m800/_modal-assign-to-group.scss */
+.contact-modal .modal-body {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+/* line 13, ../sass/m800/_modal-assign-to-group.scss */
+.contact-modal .modal-body .check-group > span {
+  line-height: 23px;
+  padding-left: 10px;
+  font-size: 110%;
+}
+/* line 22, ../sass/m800/_modal-assign-to-group.scss */
+.contact-modal .modal-body ul.notice {
+  font-size: 140%;
+  margin-top: 10px;
+  line-height: 20px;
+}
+
+/* line 2, ../sass/m800/_sent-page.scss */
+#sent-page #dateRange {
+  float: left !important;
+  margin-top: 0;
+}
+/* line 6, ../sass/m800/_sent-page.scss */
+#sent-page div.taskPicker {
+  width: 160px;
+}
+/* line 9, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable {
+  width: 100%;
+  float: left;
+  padding: 0 30px;
+}
+/* line 14, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable .recordsTableHeader th {
+  font-size: 140%;
+  font-weight: normal;
+}
+/* line 17, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable .recordsTableHeader th.nosmssuccessfail {
+  width: 175px;
+}
+/* line 20, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable .recordsTableHeader th.taskname {
+  width: 185px;
+  padding-left: 30px;
+}
+/* line 26, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable .recordsTableHeader .detail-row .sent-item {
+  font-size: 120%;
+}
+/* line 32, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable .sentMainData .sent-item {
+  font-size: 120%;
+}
+/* line 34, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable .sentMainData .sent-item.task-name {
+  padding-left: 30px;
+}
+/* line 37, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable .sentMainData .sent-item.last-sent {
+  width: 118px;
+}
+/* line 41, ../sass/m800/_sent-page.scss */
+#sent-page #sentTable .sentMainData .detail-row {
+  height: 50px;
+}
+/* line 46, ../sass/m800/_sent-page.scss */
+#sent-page span.arrow {
+  width: 15px;
+  height: 10px;
+  float: right;
+  margin-right: 8px;
+}
+/* line 53, ../sass/m800/_sent-page.scss */
+#sent-page .tablesorter-headerAsc span.arrow {
+  background: url("../css/tablesorter/images/black-asc.gif") right center no-repeat;
+}
+/* line 58, ../sass/m800/_sent-page.scss */
+#sent-page .tablesorter-headerDesc span.arrow {
+  background: url("../css/tablesorter/images/black-desc.gif") right center no-repeat;
+}
+/* line 63, ../sass/m800/_sent-page.scss */
+#sent-page .tablesorter-headerUnSorted span.arrow {
+  background: url("../css/tablesorter/images/black-unsorted.gif") right center no-repeat;
+}
+
+/* line 4, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .dropdowns-div .btn-group .btn {
+  width: 100%;
+  margin-left: 0;
+}
+/* line 8, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .dropdowns-div .btn-group .dropdown-menu.open {
+  margin-left: 0;
+}
+/* line 12, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .dropdowns-div .searchbar {
+  margin-left: 0;
+}
+/* line 17, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .recordsTableHeader .detail-header {
+  line-height: 48px;
+  padding: 0;
+  padding-left: 15px;
+}
+/* line 22, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .recordsTableHeader .taskname {
+  width: 150px;
+  padding-left: 0;
+}
+/* line 26, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .recordsTableHeader .statusheader {
+  padding-left: 0;
+}
+/* line 32, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .recordsTable .btn-group .dropdown-warning,
+#scheduled-page .recordsTable .btn-group .dropdown-success {
+  padding: 5px 30px 5px 10px;
+}
+/* line 39, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .recordsTable .detail-item.taskname {
+  width: 165px;
+  margin-left: 15px;
+}
+/* line 44, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .recordsTable .successfail {
+  width: 165px;
+  line-height: 24px;
+}
+/* line 49, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .timedate {
+  width: 100px;
+  margin-left: 8px;
+}
+/* line 52, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .timedate.lastsent {
+  width: 115px;
+}
+/* line 55, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .timedate.createtime {
+  padding-left: 0;
+}
+/* line 59, ../sass/m800/_scheduled-page.scss */
+#scheduled-page .statusdrop {
+  padding-left: 0;
+}
+
+/* line 65, ../sass/m800/_scheduled-page.scss */
+#scheduled-detail .back-search-div .searchbar {
+  margin-left: 0;
+}
+/* line 70, ../sass/m800/_scheduled-page.scss */
+#scheduled-detail .recordsTable .recordsTableHeader {
+  margin-left: 15px;
+}
+/* line 72, ../sass/m800/_scheduled-page.scss */
+#scheduled-detail .recordsTable .recordsTableHeader .createtime {
+  margin-left: -5px;
+}
+/* line 76, ../sass/m800/_scheduled-page.scss */
+#scheduled-detail .recordsTable .destination {
+  width: 110px;
+  margin-left: 15px;
+}
+/* line 80, ../sass/m800/_scheduled-page.scss */
+#scheduled-detail .recordsTable .recipient {
+  margin-left: 25px;
+}
+/* line 84, ../sass/m800/_scheduled-page.scss */
+#scheduled-detail .recordsTable .detail-item.noSMS {
+  margin-left: 30px;
+}
+/* line 88, ../sass/m800/_scheduled-page.scss */
+#scheduled-detail .recordsTable .noSMS {
+  margin-left: 20px;
+  width: 105px;
+}

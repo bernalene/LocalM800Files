@@ -1,0 +1,24 @@
+$pale-red: #e13b4c;
+$error-red-bg: #ffd9de;
+$pale-blue: #6c8ca4;
+$green: #36b100;
+$yellow: #ffa229;
+$strong-blue: #00539a;
+$white: #fff;
+$div-borders: #ddd;
+body {
+	font-size: 100%;
+}
+.container {
+	width: $screen-lg;
+}
+.popover {
+	.popover-content {
+		font-size: 140%;
+		padding: 10px 15px;
+		span,
+		p {
+			margin: 0;
+		}
+	}
+}

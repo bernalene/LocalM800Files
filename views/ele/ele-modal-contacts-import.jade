@@ -1,0 +1,110 @@
+//modal for websms Contacts assign to group
+.modal.fade.contact-modal#modal-import(tabindex="-1", role="dialog", aria-labelledby="contactsTemplate", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button(type="button", class="close", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title= 'Import Excel'
+			.modal-body 
+				.content-wrapper.container.width-100-percent
+					.row
+						.col-xs-12.padding-left-30.padding-right-30
+							include ele-form-upload-excel.jade
+								
+							ul.padding-left-15.notice
+								li: = 'Each Import should be less than or equal to 5000 recipients'
+								li: = 'Excel Format Example:' 
+									a(href="#", title="Example Format")= 'Download Template'
+					.row
+						.col-xs-12.padding-left-30.padding-right-30
+							h5= 'Import To Group'
+					.row.form-horizontal
+						.col-xs-12.padding-left-30.padding-right-30
+							.multiple-options-wrapper.custom-scrollbar-y
+								.row.reset-margin
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+								.row.reset-margin
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+								.row.reset-margin
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'		
+								.row.reset-margin
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'		
+								.row.reset-margin
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+									.col-xs-4
+										label.cotrol-label.check-group
+											.custom-checkbox
+											input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+											span.pull-left= 'Long Group Name'	
+			.modal-footer
+				.btns-div
+					a(href="#", class="btn btn-default", id=t('modals.cancel'), data-dismiss="modal")= t('modals.cancel')
+					a(href="#", class="btn btn-default", id=t('modals.import'))= t('modals.import')
+					
+					

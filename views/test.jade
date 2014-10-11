@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	.container
+		h1= title
+		br
+		a(href='/login/logout') /logout
+		br
+		span click to logout
+		.row
+			.col-xs-12
+				ul
+					each val in data
+						li= val
+

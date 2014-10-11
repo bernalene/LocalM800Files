@@ -1,0 +1,36 @@
+//start of Excel content page
+#sms-excel.pull-left
+	.dropdowns-div.pull-left.padding-left-30.padding-right-30
+		.textLeft.pull-left
+			h4= t('excel.upload')
+		.upload-div.container.width-100-percent.reset-padding
+			.row
+				.col-xs-7
+					include ele-form-upload-excel.jade
+				.col-xs-5
+					a.pull-right#downloadTempLink(href="#", title="Sample Template")=t('newSMS.downloadTemplate')
+						//span.uploadFileContainer
+							//label#uploadExcel(for="uploadexcelFile")
+								//a(href="#", class="btn btn-default", id="uploadFile")= t('modals.uploadexcelfile')
+									//span.glyphicon.glyphicon-open.margin-right-15
+							//input.form-control#uploadexcelFile(type="file", name="uploadexcelFile")
+							//a(href="#", class="pull-right", id="downloadTempLink")=t('newSMS.downloadTemplate')
+							//#reupload-div.hidden.margin-left-15
+								//.row
+									//input.form-control.col-xs-8#disabledInput(disabled="disabled")
+									//span.glyphicon.glyphicon-remove-sign(onclick="showRedUpload();")
+									//label.hidden.col-xs-4(for="disabledInput")
+										//a(href="#", class="btn btn-default", id="reuploadBtn", onclick="")= t('modals.reupload')
+											//span.glyphicon.glyphicon-open.margin-right-15.pull-left
+			span#rowsCount= t("excel.maxno")
+		.schedule-div
+			include ele-schedule-dropdown.jade
+			include ele-date-time-combi.jade
+	include ele-newSMS-excel-wout-schedule-content.jade
+	include ele-newSMS-excel-with-schedule-content.jade
+	.pagination-div
+		include ele-pagination-LO.jade
+	.buttons-div.margin-top-30
+		each val in [['simpleSMS.back','#'], ['simpleSMS.reset', '#']]		
+			a(href=val[1], class="btn btn-default", id=t(val[0]))= t(val[0])
+		button(class="btn btn-default", id="Next")= t('simpleSMS.next')

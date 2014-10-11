@@ -1,0 +1,35 @@
+//modal for import excel
+.modal.fade#import-excel(tabindex="-1", role="dialog", aria-labelledby="importExcel", aria-hidden="true")
+	.form-group.errormsg-up
+		#messages
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button(type="button", class="close", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title#importExcel= t('dropdowns.importExcel')
+			.modal-body
+				.body-content-wrapper
+					form.form-horizontal#uploadForm(enctype="multipart/form-data")
+						.form-group
+							span.uploadFileContainer
+								label#uploadExcel(for="uploadexcelFile")
+									a(href="#", class="btn btn-default", id="uploadFile")= t('modals.uploadexcelfile')
+										span.glyphicon.glyphicon-open.margin-right-15
+								input.form-control#uploadexcelFile(type="file", name="uploadexcelFile")
+								#reupload-div.hidden.margin-left-15
+									.row
+										input.form-control.col-xs-8#disabledInput(disabled="disabled")
+										span.glyphicon.glyphicon-remove-sign(onclick="showRedUpload();")
+										label.hidden.col-xs-4(for="disabledInput")
+											a(href="#", class="btn btn-default", id="reuploadBtn", onclick="")= t('modals.reupload')
+												span.glyphicon.glyphicon-open.margin-right-15.pull-left
+									span#rowsCount.hidden= t("modals.5000")
+					ul
+						li= t('modals.less5000')
+						li= t('modals.formatexample') + " "
+							a(href="#")= t('newSMS.downloadTemplate')
+			.modal-footer
+				.btns-div
+					a(href="#", class="btn btn-default", id=t('modals.cancel'))= t('modals.cancel')
+					a(href="#", class="btn btn-default", id=t('modals.import'), data-toggle="modal", data-target="#clear-recipients")= t('modals.import')

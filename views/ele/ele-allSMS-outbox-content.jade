@@ -1,0 +1,27 @@
+// start of all SMS outbox content
+.allSMS-content.pull-left
+	.dropdowns-div.pull-left.padding-left-30.padding-right-30
+		select(class="taskPicker show-tick pull-left")
+			each val in ['allSMS.taskname', 'allSMS.recipientno']
+				option= t(val)
+		.input-group.searchbar
+			input(type="text", class="form-control")
+			span.input-group-btn
+				button(class="btn btn-default", type="button")
+					span.glyphicon.glyphicon-search
+	.recordsTable#outbox-content
+		.row.recordsTableHeader.padding-left-15.padding-right-15
+			.col-xs-3.task-name
+				= t('allSMS.taskname')
+			.col-xs-2.smstype
+				= t('allSMS.type') + "*"
+			.col-xs-1
+				= t('recordTexts.schedule')
+			.col-xs-1.recipient
+				= t('recordTexts.recipient')
+			.col-xs-1.noSMS
+				= t('recordTexts.noSMS')
+			.col-xs-2
+				= t('recordTexts.createTime')
+			.col-xs-2
+				= t('recordTexts.status')

@@ -1,0 +1,31 @@
+// start of all SMS content
+.allSMS-content.pull-left
+	.dropdowns-div.pull-left.padding-left-30.padding-right-30
+		include ele-calendar-from-to.jade
+		include ele-taskname-searchbar-combi.jade
+	.recordsTable
+		table#sentTable.tablesorter
+			thead
+				tr.recordsTableHeader
+					th.taskname
+						= t('allSMS.taskname')
+						span.arrow
+					th
+						= t('allSMS.type')
+						span.arrow
+					th
+						= t('recordTexts.schedule')
+						span.arrow
+					th
+						= t('recordTexts.recipient')
+						span.arrow
+					th.nosmssuccessfail
+						= t('allSMS.nosmssuccessfail')
+						span.arrow
+					th.lastsent
+						= t('recordTexts.lastSent')
+						span.arrow
+					th
+						= t('recordTexts.status')
+						span.arrow
+			tbody.sentMainData					

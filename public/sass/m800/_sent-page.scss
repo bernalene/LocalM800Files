@@ -1,0 +1,67 @@
+#sent-page {
+	#dateRange {
+		float: left !important;
+		margin-top: 0;
+	}
+	div.taskPicker {
+		width: 160px;
+	}
+	#sentTable {
+		width: 100%;
+		float: left;
+		padding: 0 30px;
+		.recordsTableHeader {
+			th {
+				font-size: 140%;
+				font-weight: normal;
+				&.nosmssuccessfail {
+					width: 175px;
+				}
+				&.taskname {
+					width: 185px;
+					padding-left: 30px;
+				}
+			}
+			.detail-row {
+				.sent-item {
+					font-size: 120%;
+				}
+			}
+		}
+		.sentMainData {
+			.sent-item {
+				font-size: 120%;
+				&.task-name {
+					padding-left: 30px;
+				}
+				&.last-sent {
+					width: 118px;
+				}
+			}
+			.detail-row {
+				height: 50px;
+			}
+		}
+	}
+	span.arrow {
+		width: 15px;
+		height: 10px;
+		float: right;
+		margin-right: 8px
+	} 
+	.tablesorter-headerAsc {
+		span.arrow {
+			background: url('../css/tablesorter/images/black-asc.gif') right center no-repeat;
+		}
+	}
+	.tablesorter-headerDesc {
+		span.arrow {
+			background: url('../css/tablesorter/images/black-desc.gif') right center no-repeat;
+		}
+	}
+	.tablesorter-headerUnSorted {
+		span.arrow {
+			background: url('../css/tablesorter/images/black-unsorted.gif') right center no-repeat;	
+		}	
+	}
+}

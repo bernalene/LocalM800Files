@@ -1,0 +1,39 @@
+.left-content.col-xs-3
+	.menu-links.pull-left
+		ul.list-unstyled
+			li
+				p= t('menuLinks.welcome')
+				p.name= user
+				a.bth(href='/new', class='btn btn-danger new-sms')= t('menuLinks.newsms')
+			li
+				a(href='/overview') 
+					span.glyphicon.glyphicon-globe
+					=t('menuLinks.overview')
+			li
+				a(href='/all')
+					img(src='/img/all-sms-icon-grey.png')
+					=t('menuLinks.allsms')
+			li
+				a(href='/draft')
+					span.glyphicon.glyphicon-pencil
+					=t('menuLinks.draft')
+			li
+				a(href='/template')
+					span.glyphicon.glyphicon-list-alt
+					=t('menuLinks.template')
+			li
+				a(href='/contact')
+					img(src='/img/contacts-icon-grey.png')
+					=t('menuLinks.contacts')
+			li
+				a(href='/profile')
+					span.glyphicon.glyphicon-user
+					=t('menuLinks.profile')
+			li
+				a(href='/help')
+					span.glyphicon.glyphicon-question-sign
+					=t('menuLinks.help')
+	.grey-top-left-border
+	.grey-top-right-border
+	.grey-bottom-left-border
+	.grey-bottom-right-border

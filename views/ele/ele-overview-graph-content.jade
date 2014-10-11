@@ -1,0 +1,14 @@
+.graph-div.pull-left.col-xs-12
+	#vol-graph-container.clearfix
+		h2= t("graphTexts.successRate")
+		p= t("graphTexts.formula")
+		p.pull-left= t("graphTexts.xaxis")
+		p.pull-left#yaxis= t("graphTexts.yaxis")
+		#vol-graph.pull-left
+script(type='text/javascript').
+	var rate =!{JSON.stringify(rate)};
+	var totalSMS =!{JSON.stringify(totalSMS)};
+	var successSMS =!{JSON.stringify(successSMS)};
+	var failSMS =!{JSON.stringify(failSMS)};
+script(src="/js/custom-m800-js/generate-overview-graph.js")
+	

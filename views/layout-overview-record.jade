@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	include ele/ele-header.jade
+	.container.mainContent-container
+		.row
+			include ele/ele-left-menu-links.jade
+			.right-content.col-xs-9
+				.overview-content
+					//- include the element which consists of the daily-monthly btn and download btn, dropdowns, calendars
+					include ele/ele-upper-right-overview.jade
+					//- include the element which consists of the main content specifically the table
+					include ele/ele-overview-record-content.jade
+				.white-top-left-border
+				.white-top-right-border
+				.white-bottom-left-border
+				.white-bottom-right-border
+	include ele/ele-footer.jade

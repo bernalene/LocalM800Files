@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	include ele/ele-header.jade
+	.container.overview-container
+		.row
+			include ele/ele-left-menu-links.jade
+			.right-content.col-md-9
+				.overview-content
+					h1= title
+					br
+					a(href='/new/confirm') /draft/confirm
+					br
+					span Draft Confirm page
+	include ele/ele-footer.jade

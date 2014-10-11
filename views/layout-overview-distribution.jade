@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	include ele/ele-header.jade
+	.container.mainContent-container#distribution
+		.row
+			include ele/ele-left-menu-links.jade
+			.right-content.col-xs-9
+				.overview-content
+					//- to include the element which includes daily-monthly btn, dropdowns, calendars
+					include ele/ele-upper-right-overview.jade
+					//- to include the element which consists of the main content (specifically the world map)
+					include ele/ele-overview-distribution-map.jade
+				.white-top-left-border
+				.white-top-right-border
+				.white-bottom-left-border
+				.white-bottom-right-border
+	include ele/ele-footer.jade

@@ -1,0 +1,27 @@
+//modal for use template
+.modal.fade#use-template(tabindex="-1", role="dialog", aria-labelledby="useTemplate", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button(type="button", class="close", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title#usetemplate= t('modals.usetemplate')
+			.modal-body
+				.body-content-wrapper
+					// include the search bar
+					include ele-searchbar.jade
+					//to display the available templates
+					.templates-div.margin-top-15
+						- var templateContent = "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+						- var n = ["1","2", "3", "4"]
+							each val in n
+								.templates-row(onclick="useTemplateClick(this);")
+									span.template-title= "Template 1"
+									p.template-item= templateContent.substr(0, 50) + '...'
+					// pagination div	
+					.pagination-div
+						include ele-pagination-LO.jade
+			.modal-footer
+				.btns-div
+					each val in [['modals.cancel','#'],['modals.use', '#']]
+						a(href=val[1], class="btn btn-default", id=t(val[0]))= t(val[0])

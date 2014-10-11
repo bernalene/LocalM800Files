@@ -1,0 +1,93 @@
+#scheduled-page {
+	.dropdowns-div {
+		.btn-group {
+			.btn {
+				width: 100%;
+				margin-left: 0;
+			}
+			.dropdown-menu.open {
+				margin-left: 0;
+			}
+		}
+		.searchbar {
+			margin-left: 0;
+		}
+	}
+	.recordsTableHeader {
+		.detail-header {
+			line-height: 48px;
+			padding: 0;
+			padding-left: 15px;
+		}
+		.taskname {
+			width: 150px;
+			padding-left: 0;
+		}
+		.statusheader {
+			padding-left: 0;
+		}
+	}
+	.recordsTable {
+		.btn-group {
+			.dropdown-warning,
+			.dropdown-success {
+				padding: 5px 30px 5px 10px;
+			}
+		}
+		.detail-item {
+			@extend .reset-padding;
+			&.taskname {
+				width: 165px;
+				margin-left: 15px;
+			}
+		}
+		.successfail {
+			width: 165px;
+			line-height: 24px;
+		}
+	}
+	.timedate {
+		width: 100px;
+		margin-left: 8px;
+		&.lastsent {
+			width: 115px;
+		}
+		&.createtime {
+			padding-left: 0;
+		}
+	}
+	.statusdrop {
+		padding-left: 0;
+	}
+}
+#scheduled-detail {
+	.back-search-div {
+		.searchbar {
+			margin-left: 0;
+		}
+	}
+	.recordsTable {
+		.recordsTableHeader {
+			margin-left: 15px;
+			.createtime {
+				margin-left: -5px;
+			}
+		}
+		.destination {
+			width: 110px;
+			margin-left: 15px;
+		}
+		.recipient {
+			margin-left: 25px;
+		}
+		.detail-item {
+			&.noSMS {
+				margin-left: 30px;
+			}
+		}
+		.noSMS {
+			margin-left: 20px;
+			width: 105px;
+		}
+	}
+}

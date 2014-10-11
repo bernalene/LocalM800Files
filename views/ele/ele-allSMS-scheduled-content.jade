@@ -1,0 +1,18 @@
+.dropdowns-div.pull-left.padding-left-30.padding-right-30
+	include ele-taskname-searchbar-combi.jade
+.recordsTable
+	.row.recordsTableHeader.reset-margin.padding-left-30
+		.col-xs-2.detail-header.taskname
+			= t('allSMS.taskname')
+		.col-xs-1.detail-header.smstype
+			= t('allSMS.type')
+		.col-xs-1.detail-header
+			= t('recordTexts.recipient')
+		.col-xs-2.detail-header.successfail
+			= t('allSMS.nosmssuccessfail')
+		.col-xs-2.timedate.lastsent.detail-header
+			= t('recordTexts.lastSent')
+		.col-xs-2.timedate.detail-header.createtime
+			= t('recordTexts.createTime')
+		.col-xs-2.detail-header.statusheader
+			= t('recordTexts.status')

@@ -1,0 +1,18 @@
+// modal for save as template
+.modal.fade#save-template(tabindex="-1", role="dialog", aria-labelledby="saveTemplate", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button(type="button", class="close", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title#savetemplate= t('simpleSMS.saveTemplate')
+			.modal-body
+				.body-content-wrapper.margin-right-30.margin-left-30
+					form.form-horizontal#templateForm(enctype="multipart/form-data")
+						.form-group
+							input.form-control(type="text", placeholder=t('modals.templatename'))
+							span.placeholderText= t("modals.placeholdertext")
+			.modal-footer
+				.btns-div
+					each val in [['modals.cancel','#'],['modals.save', '#']]
+						a(href=val[1], class="btn btn-default", id=t(val[0]))= t(val[0])

@@ -1,0 +1,125 @@
+.allSMS-page{
+	width: 100%;
+	overflow: visible;
+	.page-title-div {
+		padding-bottom: 15px;
+	}
+	.dropdowns-div {
+		padding-top: 30px;
+		div.taskPicker {
+			margin-top: 0;
+			width: 185px;
+			button.selectpicker {
+				margin-left: 0;
+				width: 100%;
+			}
+			.dropdown-menu.open{
+				margin-left: 0;
+			}
+		}
+		.searchbar {
+			margin-left: 0;
+			width: 240px;
+		}
+	}
+	.allSMS-content {
+		width: 100%;
+	}
+	.recordsTable {
+		.row {
+			margin: 0;
+			&.recordsTableHeader {
+				float: left;
+				width: 100%;
+				font-size: 140%;
+				line-height: 40px;
+			}
+			&.detail-row {
+				float: left;
+				width: 100%;
+				.detail-item {
+					font-size: 120%;
+					&.glyphicon-ok-sign,
+					&.glyphicon-remove-sign {
+						font-size: 240%;
+					}
+					&.glyphicon-save {
+						font-size: 140%;
+					}
+				}
+				a {
+					color: #333;
+				}
+			}
+			.task-name,
+			.filepart {
+				width: 185px;
+			}
+			.smstype {
+				width: 90px;
+				padding: 0 5px;
+			}
+		}
+		.input-group {
+			.form-control{
+				width: 75%;
+			}
+			.glyphicon-save {
+				width: 25%;
+				text-align: center;
+				padding: 10px 5px;
+				background: #6c8ca4;
+				color: #fff;
+				margin-top: -1px;
+				font-size: 140%;
+			}
+		}
+		.filepart {
+			height: 25px;
+		}
+		.btn-group {
+			.btn {
+				span.glyphicon-chevron-down {
+					font-size: 120%;
+					margin: 5px 6px;
+					position: absolute;
+				}
+			}
+			.dropdown-toggle {
+				padding: 5px 25px;
+				font-size: 120%;
+				color: #fff;
+				span.glyphicon-open,
+				.glyphicon-remove {
+					font-size: 120%;
+					position: absolute;
+					left: 0;
+					margin: 5px;
+				}
+			}
+			.dropdown-menu {
+				padding: 0;
+				li {
+					padding: 5px 0;
+					border-bottom: 1px solid $div-borders;
+				}
+			}
+			.dropdown-success,
+			.partial-success{
+				background: $green;
+			}
+			.dropdown-warning {
+				background: $yellow;
+			}
+			&.open {
+				.btn {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+	.pagination-div,
+	.learn-more-div	{
+		background: #f8f8f8;
+	}
+}

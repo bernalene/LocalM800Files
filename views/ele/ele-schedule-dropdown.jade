@@ -1,0 +1,5 @@
+h4= t('simpleSMS.schedule')
+select(class="schedulePicker show-tick")
+	each val in ['dropdowns.none', 'dropdowns.oneOff', 'dropdowns.everyWeek', 'dropdowns.everyMonth']
+		option= t(val)
+span.schedText= t('simpleSMS.allDate')

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	include ele/ele-header.jade
+	.container.mainContent-container
+		.row
+			include ele/ele-left-menu-links.jade
+			.right-content.col-xs-9
+				.overview-content.allSMS-page.row.reset-margin#outbox-page
+					include ele/ele-record-detail-upper-right.jade
+					.back-search-div.pull-left
+						a(role="button", id="backBtn", class="btn btn-default", href="/all/outbox/")
+							img(src="/img/back-arrow.png", alt="Back Arrow", title="Back Arrow")
+							=t("recordTexts.back")
+						include ele/ele-searchbar.jade
+					include ele/ele-allSMS-outbox-content-detail.jade
+					.pagination-div
+						include ele/ele-pagination-LO.jade
+					include ele/ele-learn-more.jade
+				.white-top-left-border
+				.white-top-right-border
+				.white-bottom-left-border
+				.white-bottom-right-border
+		script(src="/js/custom-m800-js/allSMS-pages.js")
+	include ele/ele-footer.jade

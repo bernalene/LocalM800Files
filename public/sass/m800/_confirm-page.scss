@@ -1,0 +1,35 @@
+//=======CONFIRM PAGE==========//
+#confirm-content-page {
+	width: 100%;
+	padding: 30px 0;
+	.row {
+		margin: 0;
+		padding: 0 15px;
+		width: 100%;
+		#page-icon {
+			margin: 25px auto;
+			text-align: center;
+		}
+		#page-content {
+			font-size: 140%;
+			p {
+				margin-bottom: 5px;
+			}
+			.form-group {
+				margin-top: 20px;
+			}
+		}
+	}
+	.buttons-div {
+		float: left;
+		width: 100%;
+		border-top: 1px solid $div-borders;
+		padding: 30px 30px 0;
+		#confirmBtn {
+			width: 130px;
+			padding: 10px;
+			background: $pale-red;
+			color: #fff;
+		}
+	}
+}

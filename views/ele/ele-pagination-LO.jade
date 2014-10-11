@@ -1,0 +1,28 @@
+//- pagination layout
+- var n = 1
+	ul.pagination.pull-left
+		li
+			a(href=url+"?page="+prev)
+				&#9664;
+		while n <= pages
+			li
+				if n==page
+					a(href=url+"?page="+n, class="current-pg")= n++
+				else
+					a(href=url+"?page="+n)= n++					
+		li
+			a(href=url+"?page="+nxt)
+				&#9654;
+		
+	.go-to-div.pull-left
+		.row
+			.col-xs-6
+				span
+					=t('paginationTexts.goToPage')
+			.col-xs-6.inputGoto
+				.input-group
+					input(type="text", class="form-control", name="goToPageInput")
+					span.input-group-btn
+						button(class="btn btn-default", type="button", id="goButton")= t('paginationTexts.go')
+	.pagination-text.pull-right
+		p= '11-20 of 60 items'

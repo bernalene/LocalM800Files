@@ -1,0 +1,275 @@
+.row-item {
+	border-top: 1px solid #eee;
+	margin: 0;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.right-content {
+	.overview-content {
+		overflow: hidden;
+		.page-title-div {
+			overflow: hidden;
+			border-bottom: 1px solid $div-borders;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			.page-title-left {
+				h1 {
+					font-size: 260%;
+					margin-bottom: 0;
+					margin-top: 0;
+				}
+			}
+			.usage-view-right {
+				margin: 15px 0;
+				padding-right: 15px;
+				text-align: right;
+				font-size: 140%;
+				span {
+					margin: 0px 10px;
+					color: $pale-blue;
+					font-size: 140%;
+				}
+				.btn-group {
+					height: 30px;
+					.btn {
+						width: 75px;
+						color: $pale-red;
+						&.active {
+							background: $pale-red;
+							color: #fff;
+						}
+					}
+				}
+				#downloadbtn {
+					padding: 1px 10px;
+					margin-left: 15px;
+					line-height: 30px;
+					background: $pale-red;
+					color: #fff;
+						span {
+							margin: 4px 15px 0 5px;
+							font-size: 100%;
+							color: #fff;
+						}
+				}
+			}
+		}
+		.dropdowns-div, 
+		.graph-div {
+			background: #f8f8f8;
+			width: 100%;
+		}
+		.vol-dist-rec-div {
+			padding-top: 30px;
+			padding-bottom: 30px;
+			ul {
+				padding-left: 0;
+				margin-bottom: 0;
+				li {
+					display: inline;
+					margin-right: 20px;
+					a{
+						&.active {
+							color: #000;
+							border-bottom: 1px solid $pale-red;
+							padding-bottom: 8px;
+						}
+						font-size: 140%;
+						text-decoration: none;
+						color: $pale-red;
+						&.pipe {
+							color: #e5e5e5;
+						}
+					}
+				}
+			}
+		}
+		.graph-div {
+			height: auto;
+			h2 {
+				margin-top: 0;
+				font-size: 260%;
+				color: #333;
+			}
+			#vol-graph-container {
+				margin: 0 15px 30px;
+				padding: 30px;
+				border: 1px solid $div-borders;
+				background: #fff;
+				#vol-graph {
+					height: 300px;
+					width: 100%;
+					margin-top: 40px;
+					font-size: 140%;
+					.legend > div, 
+					table {
+						top: -100px !important;
+					}
+					table {
+						.legendColorBox > div {
+							border: 0 !important;
+							margin-right: 10px;
+						}
+					}
+				}
+				p {
+					margin-bottom: 0;
+					color: #999;
+					font-size: 140%;
+				}
+				#yaxis {
+					margin-left: 30px;
+				}
+			}
+			
+			//for usage overview - record page
+			&#records-div{
+				.record-row {
+					@extend .row-item;
+					.record-item {
+						width: 100%;
+						font-size: 120%;
+						color: #333;
+						line-height: 38px;
+					}
+					.record-header {
+						font-size: 140%;
+						line-height: 38px;
+					}
+					&:first-child{
+						&:hover {
+							box-shadow: none;
+						}
+					}
+					&:hover{
+						box-shadow: 0px 2px 10px #bfbfbf;
+					}
+				}
+			}
+			
+			//for the distribution-map
+			#distribution-map {
+				height: 480px;
+				width: 93%;
+				margin: 30px;
+				
+				.jvectormap-zoomin,
+				.jvectormap-zoomout {
+					width: 30px;
+					height: 30px;
+					font-size: 180%;
+					padding: 10px;
+					right: 10px;
+					left: initial;
+				}
+				.jvectormap-zoomin {
+					background: $pale-blue;
+					border-bottom: 1px solid #4d708a;
+					top: 84%;
+				}
+				.jvectormap-zoomout {
+					top: 90.2%;
+					background: $pale-blue;
+				}
+			}
+		}
+		
+		//for the overview-record detail page
+		#record-header {
+			p {
+				font-size: 140%;
+				color: #999;
+				margin-bottom: 0;
+			}
+		}
+		.back-search-div {
+			width: 100%;
+			padding: 20px 30px;
+			background: #f8f8f8;
+			border-bottom: 1px solid $div-borders;
+			#backBtn {
+				float: left;
+				background: $pale-red;
+				color: #fff;
+				
+				img {
+					margin-right: 14px;
+				}
+			}
+			
+		}
+		#record-detail-div {
+			.detail-row {				
+				.detail-item {
+					font-size: 120%;
+				}
+				.col-xs-1, .col-xs-2, .col-xs-3 {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+				.senderCol {
+					margin-right: 25px;
+				}
+				.noSMScol {
+					margin-left: 30px;
+					width: 110px;
+				}
+				.createTimecol {
+					padding-left: 15px;
+					padding-right: 15px;				
+				}
+				.statusCol {
+					max-width:76px;
+					@media screen and (min-width: $screen-lg){
+						max-width: 120px;
+					}
+					img {
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+	#usage-overview {
+		.dropdowns-div {
+			.btn {
+				margin-left: 15px;
+			}
+		}
+		#dateRangePickerfrom,
+		#dateRangePickerto{
+			margin-left: 0;
+		}
+		.dropdown-menu.open {
+			margin-left: 15px;
+			min-width: 160px;
+		}
+	}
+}
+.jvectormap-label {
+	font-size: 140% !important;
+	background: #ecfaff !important;
+	color: #00539a !important;
+	width: 200px;
+	padding: 15px !important;
+	//left: 75% !important;
+	span {
+		width: 100%;
+		float: left;
+		&.regionName {
+			margin-bottom: 15px;
+		}
+		&.pull-right {
+			font-weight: bold;
+			width: auto;
+		}
+		&.glyphicon-play{
+			right: -8px;
+			top: 41%;
+			float: right;
+			position: absolute;
+			width: auto;
+			color: #ecfaff;
+		}
+	}
+}

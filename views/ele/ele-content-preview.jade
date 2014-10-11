@@ -1,0 +1,28 @@
+.smsContent.pull-left
+	.row.margin-right-15.margin-left-15
+		// content div
+		.col-xs-8
+			h4= t('simpleSMS.content')
+			each val in [['glyphicon-list-alt', 'simpleSMS.useTemplate', 'useTemplate', '#use-template'], ['glyphicon-floppy-disk','simpleSMS.saveTemplate', 'saveAsTemplate', '#save-template']]
+				button(type="button", class="btn btn-default", id=val[2], data-toggle="modal", data-target=val[3])
+					span(class="glyphicon " + val[0])
+					span= t(val[1])
+			-if (title=='Merger SMS')
+				button(type="button", class="btn btn-default dropdown-toggle", data-toggle="dropdown" id="insertVariable")
+					span= t('merger.insertvariable')
+				ul.dropdown-menu(role="menu")
+					li
+						a(href="#")= t('merger.variableA')
+					li
+						a(href="#")= t('merger.variableB')
+				span.glyphicon.glyphicon-question-sign
+			.form-group#smsMessage
+				textarea.form-control(name="smsMsg", rows="10", data-bv-stringlength-max="800", onkeyup="createBubbleMsg();", id="smsMsg")
+			<span class="validation-msg"><strong>International</strong> (160 characters / sms): Total <strong>0</strong> characters in <strong>0</strong> SMS <br/> <strong>China</strong> (80 characters / sms): Total <strong>0</strong> characters in <strong>0</strong> SMS </span>
+		// preview div
+		.col-xs-4
+			h4= t('simpleSMS.preview')
+			select(class="previewPicker show-tick")
+				each val in ['dropdowns.intl', 'dropdowns.china']
+					option= t(val)
+			.previewMsg.custom-scrollbar-y

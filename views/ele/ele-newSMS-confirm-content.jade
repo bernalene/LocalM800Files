@@ -1,0 +1,15 @@
+//start of the new sms confirm page
+#confirm-content-page.pull-left
+	.row
+		.col-xs-3#page-icon
+			img(src="/img/confirm-page-icon.png")
+		.col-xs-9#page-content
+			p= t('finishpage.maincontent1')
+			p= t('finishpage.maincontent2')
+			p= t('finishpage.maincontent3')
+			p= t('finishpage.maincontent4')
+			.form-group
+				.emailInput
+					input.form-control(name="emailAddr", required, type="email", data-bv-emailaddress-message="The input is not a valid email address", placeholder=t('finishpage.emailaddr'))
+	.buttons-div.margin-top-30
+		a(href="#", class="btn btn-default", id="confirmBtn")= t('modals.confirm')	

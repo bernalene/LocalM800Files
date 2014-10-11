@@ -1,0 +1,7 @@
+.usage-view-div.page-title-div#record-header
+	.usage-view-left.page-title-left.pull-left.margin-left-30.margin-right-30
+		h1= title
+		if (taskname)
+			p= taskname
+		else
+			p= t('recordTexts.taskName')

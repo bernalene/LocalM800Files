@@ -1,0 +1,13 @@
+.excelSMS-table#withoutSched
+	.row
+		.col-xs-2.excelTableHeader.padding-left-30
+			span= t('recordTexts.recipient')
+		.col-xs-7.excelTableHeader
+			span= t('recordTexts.content')
+	- var excelContentTable = [['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'],['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'],['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'],['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'],['85298765432','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco']]
+	each val in excelContentTable
+		.row
+			.col-xs-2.excelTableContent.padding-left-30
+				span= val[0]
+			.col-xs-7.excelTableContent
+				span= val[1].substr(0, 75) + '...'

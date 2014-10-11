@@ -1,0 +1,30 @@
+//==========New SMS Excel Page ============//
+#sms-excel {
+	width: 100%;	
+	div.schedulePicker {
+		float: left;
+	}
+	.buttons-div {
+		float: left;
+		width: 100%;
+		margin-top: 0;
+		.btn {
+			margin: 0 10px;
+		}
+	}
+	.excelSMS-table {
+		float: left;
+		width: 100%;
+		.row {
+			padding: 15px 0;
+			border-top: 1px solid $div-borders;
+			margin: 0;
+		}
+		.excelTableHeader {
+			font-size: 140%;
+		}
+		.excelTableContent {
+			font-size: 120%;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+.graph-div.pull-left#records-div
+	.row.record-row
+		.col-xs-2.record-header
+			= t("recordTexts.taskName")
+		.col-xs-5.col-xs-offset-1.record-header
+			= t("recordTexts.totSMSFailWait")
+		.col-xs-3.col-xs-offset-1.record-header
+			= t("recordTexts.lastSent")
+	script(type='text/javascript').
+		var contentData = !{JSON.stringify(record)};
+	script(src="/js/custom-m800-js/generate-record-table.js")
+	.pagination-div
+		include ele-pagination-LO.jade

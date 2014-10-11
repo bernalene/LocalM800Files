@@ -1,0 +1,296 @@
+//for the modals in new sms pages
+.modal-body,
+.modal-header,
+.modal-footer{
+	padding: 0;
+}
+.modal-header {
+	h4 {
+		padding: 15px 30px;
+	}
+	.close {
+		opacity: 1.0;
+		span {
+			border-radius: 5px;
+			background: $pale-blue;
+			color: #fff;
+			padding: 5px 10px;
+			margin: 15px 30px;
+			position: absolute;
+			right: 0;
+		}
+	}
+}
+.modal-footer {
+	border-top: none;
+}
+.btns-div {
+	text-align: center;
+	padding: 15px 30px;
+	border-top: 1px solid #e5e5e5;
+	float: left;
+	width: 100%;
+	.btn {
+		width: 140px;
+		color: #fff;
+		margin-left: 10px;
+		margin-right: 10px;
+		&#Cancel {
+			background: $pale-blue;
+		}
+		&#Confirm, &#Create {
+			background: $pale-red;
+		}
+	}
+}
+.modal-dialog {
+	margin: 10% auto;
+}
+.placeholderText {
+	font-size: 120%;
+	margin-top: 10px;
+	float: left;
+	&.templateName {
+		margin-top: 7px;
+		font-size: 150%;
+	}
+}
+.btns-div {
+	.btn {
+		&#Import,
+		&#Save,
+		&#Use,
+		&#Continue{
+			background: $pale-red;
+		}
+	}
+}
+.errormsg-up {
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	left: 0;
+	background: #ffd9de;
+	color: #986066;
+	text-align: center;
+	font-size: 140%;
+	height: auto;
+}
+//for contacts modal
+#fromContacts{
+	.selectSearch-div {
+		width: 100%;
+		float: left;
+		padding: 15px 30px;
+		border-bottom: 1px solid #e5e5e5;
+		.dropdowns-div {
+			padding-bottom: 0;
+			.groupPicker {
+				margin-top: 0;
+				width: 100%;
+				.btn {
+					margin-left: 0;
+					width: 100%;
+				}
+				.dropdown-menu {
+					margin-left: 0;
+				}
+			}
+		}
+		.modal-searchbar {
+			.searchbar {
+				margin-left: 0;
+				width: 100%;
+			}
+		}
+	}
+	.contacts-list {
+		float: left;
+		width: 100%;
+		padding: 15px;
+		padding-bottom: 5px;
+		.row {
+			font-size: 120%;
+			padding: 12px 15px;
+			height: 40px;
+			border-top: 1px solid #e5e5e5;
+			&.contactsHeader {
+				border-top: none;
+			}
+		}
+	}
+	.pagination-div {
+		padding-left: 30px;
+		padding-right: 30px;
+		.go-to-div {
+			margin: 12px 15px;
+			width: 130px;
+		}
+	}
+	.btns-div {
+		.btn {
+			&#Confirm {
+				background: $pale-red;
+			}
+		}
+	}
+}
+
+//for import excel modal
+#import-excel {
+	.body-content-wrapper {
+		padding: 15px 30px;
+		overflow: hidden;
+		
+		ul {
+			padding-left: 15px;
+			margin-bottom: 0;
+			li {
+				font-size: 120%;
+				line-height: 20px;
+				a {
+					text-decoration: none;
+					color: $pale-blue;
+				}
+			}
+		}
+		a#uploadFile {
+			top: 16px;
+		}
+	}
+}
+//for save as template modal
+#save-template {
+	.body-content-wrapper {
+		.form-group {
+			margin: 15px 0;
+		}
+	}
+}
+//for use template modal
+#use-template {
+	.addShadow {
+		box-shadow: 0px 2px 10px #bfbfbf;
+	}
+	.body-content-wrapper {
+		margin: 15px 30px;
+		overflow: hidden;
+		.searchbar {
+			margin-left: 0;
+		}
+		.templates-div {
+			float: left;
+			width: 100%;
+			.templates-row {
+				padding: 15px 15px 10px;
+				margin-bottom: 10px;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				
+				.template-title {
+					font-size: 140%;
+					.glyphicon-ok {
+						float: right;
+						top: 12px;
+						color: #36b100;
+					}
+				}
+				.template-item{
+					font-size: 120%;
+				}
+			}
+		}
+		.pagination-div {
+			border-top: 0;
+			padding: 0;
+			.go-to-div {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+//for use in the clear recipients 
+#clear-recipients {
+	.body-content-wrapper {
+		float: left;
+		margin: 10px 30px;
+	}
+}
+//for add new template modal
+#add-template, #edit-template{
+	.body-content-wrapper{
+		.validate-msg{
+			font-size: 120%;
+			.characters, .sms-count{
+				font-weight: bold;
+			}
+		}
+	}
+	.btns-div{
+		padding: 25px 30px;
+	}
+}
+
+//for manage contacts modal
+#manage-contacts {
+	%separator {
+		border-top: 1px solid #e5e5e5;
+	}
+	%btn-contact {
+		padding: 0;
+		width: 21px;
+		height: 21px;
+		color: $white;
+		background-color: $pale-blue;
+	}
+	%btn-icon {
+		top: 0;
+		font-size: 70%;
+	}
+	.list-header {
+		padding: 7px 15px;
+	}
+	//contact list
+	.contact-list {
+		.contact {
+			@extend %separator;
+			padding: 7px 15px;
+			.input-group-name {
+				float: left;
+				width: 75%;
+				height: 21px;
+				font-size: 100%;
+			}
+			.group-name {
+				display: inline-block;
+				width: 100px;
+			}
+			.btn-custom {
+				@extend %btn-contact;
+				.edit {
+					@extend %btn-icon;
+				}
+				.confirm {
+					@extend %btn-icon;
+				}
+			}
+			.total-contacts {
+				padding-top: 2px;
+				height: 21px;
+			}
+			.action {
+				img {
+					width: 21px;
+					height: 21px;
+				}
+			}
+		}
+	}
+	//pagination
+	.pagination-div {
+		.go-to-div {
+			display: none;
+		}
+	}
+}
