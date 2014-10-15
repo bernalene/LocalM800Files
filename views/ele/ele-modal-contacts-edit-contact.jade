@@ -1,0 +1,119 @@
+//modal for adding new contact
+.modal.fade.contact-modal#modal-edit-contact.padding-left-30.padding-right-30(tabindex="-1", role="dialog", aria-labelledby="addContact", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button(type="button", class="close", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title#add-contact= t('modals.editContact')
+			.modal-body
+				.body-content-wrapper
+					form#editContactForm(action="", method="post")
+						input.sr-only#editContact(type="submit", name="editContact", value="editContact")
+						//contact information
+						.row.contact-information
+							.col-xs-6
+								.row
+									.col-xs-12
+										span= t('modals.name') + "*"
+									.col-xs-12
+										input.form-control.input-name(name="name", placeholder= t('modals.requiredField'))
+							.col-xs-6
+								.row
+									.col-xs-12
+										span= t('modals.mobile')
+									.col-xs-12
+										input.form-control.input-mobile(name="mobile", placeholder= t('modals.mobileNumWPrefix'))
+							.col-xs-12.margin-top-30
+								.row
+									.col-xs-12
+										span= t('modals.company')
+									.col-xs-8
+										input.form-control.input-company(name="company", placeholder= t('modals.yourCompanyName'))
+						//available groups list
+						span= t('modals.assignToGroup')
+						.multiple-options-wrapper.custom-scrollbar-y
+							.row.reset-margin
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+										span.pull-left= t('modals.longGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+							.row.reset-margin
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+										span.pull-left= t('modals.longGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+							.row.reset-margin
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+										span.pull-left= t('modals.longGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+							.row.reset-margin
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+										span.pull-left= t('modals.longGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+							.row.reset-margin
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+										span.pull-left= t('modals.longGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+								.col-xs-4
+									label.control-label.check-group
+										.custom-checkbox
+										input.sr-only.pull-left.reset-margin(type="checkbox", name="shortGroupName", value="check") 
+										span.pull-left= t('modals.shortGroupName')
+			.modal-footer
+				.btns-div
+					a.btn.btn-default(href="#", data-dismiss="modal", id=t('modals.cancel'))= t('modals.cancel')
+					label.btn.btn-default(for="#editContact", id=t('modals.save'))= t('modals.save')

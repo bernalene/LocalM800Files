@@ -6,8 +6,49 @@ $yellow: #ffa229;
 $strong-blue: #00539a;
 $white: #fff;
 $div-borders: #ddd;
+
+@font-face {
+  font-family: 'Helvetica Neue Light';
+  src: url('../fonts/helveticaneuelight.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/helveticaneuelight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/helveticaneuelight.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/helveticaneuelight.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/helveticaneuelight.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Helvetica Neue Thin';
+  src: url('../fonts/helveticaneue-thin.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/helveticaneue-thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/helveticaneue-thin.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/helveticaneue-thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/helveticaneue-thin.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: url('../fonts/helvetica-neue-bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/helvetica-neue-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/helvetica-neue-bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/helvetica-neue-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/helvetica-neue-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helvetica-neue.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/helvetica-neue.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/helvetica-neue.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/helvetica-neue.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/helvetica-neue.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+// ===Fonts variable===
+$helv-light: 'Helvetica Neue Light';
+$helv-thin: 'Helvetica Neue Thin';
+$helv-bold: 'Helvetica Neue Bold';
+$helv-normal: 'Helvetica Neue';
+
 body {
 	font-size: 100%;
+	font-family: 'Helvetica Neue Light';
 }
 .container {
 	width: $screen-lg;

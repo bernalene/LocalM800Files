@@ -3,7 +3,6 @@ $(document).ready(function(){
 	$('#question-mark').popover({
 		html: true,
 		placement: 'right',
-		content: '<div class="question-hint"><span><strong>Where is the CSC or CSV?</strong></span><br/><p>The card security code is located on the back of MasterCard, Visa</p></div>',
 		template: '<div class="popover CSCSV" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
 		trigger: 'hover' 
 	});
@@ -163,25 +162,38 @@ $(document).ready(function(){
 		$('#import-excel').modal('hide');
 	});
 
-	$('.smsbox').click(function(){
+	$('.smsbox a').on('click', function(e){
+
 		var taskName = $('.recipientTextArea').find('input').val();
+		var smsType = $(this).find('h5').text();
+
 		if (taskName == "")
 			taskName = "No Subject_task#";
-		console.log(taskName);
+		
+		switch (smsType) {
+			case 'SIMPLE' :
+				smsType = 1;
+				break;
+			case 'EXCEL' :
+				smsType = 2;
+				break;
+			case 'MERGER' :
+				smsType = 3;
+				break;
+			default :
+				smsType = 1;
+				break;
+		}
 
 		var filter = {
-	 		taskName: taskName
+	 		taskName: taskName,
+	 		smsType: smsType
 	 	};
-
-	 	console.log(filter);
 
 		$.ajax({
 	 		type: "GET",
 	 		url: "/new/ajax",
 	 		data: filter,
-	 		// dataType: "json",
-	 		// success: function(data){
-	 		// }
 	 	})
 	});
 	

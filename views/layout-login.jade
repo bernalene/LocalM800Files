@@ -1,21 +1,26 @@
 extends layout
 
 block content
-    .container
-        h1= title
-    
-        h2 
-        .row
-            .col-xs-12
-                form(method="post", action="/login")
-                    label User Name : 
-                        input(type='text', name='user')
-                    br
-                    label Password : 
-                        input(type='password', name='password')
-                    br
-                    br
-                    input(type='submit', value='Login')
-
-        h3= alerts
-
+	include ele/ele-header.jade
+	.content-container.container
+		#login-container
+			.row.reset-margin
+				.col-xs-12.header-div
+					h1.header= 'WEBSMS LOGIN'
+				form.form-horizontal#login-form.col-xs-12(method="post", action="/login")
+					.form-group
+						label.sr-only User Name : 
+						input.form-control#username(type='text', name='user', placeholder="Username")
+					.form-group
+						label.sr-only Password : 
+						input.form-control#password(type='password', name='password', placeholder="Password")
+					label.control-label.check-group
+						.custom-checkbox
+						input.sr-only.pull-left.reset-margin(type="checkbox", name="rememberMe", value="check") 
+						span.remember-me= "Remember me"
+					input.btn.btn-default.btn-pale-red.btn-login.pull-right(type='submit', value='Login')
+				.col-xs-12.detail
+					p
+						= "For Non M800 users, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+	.background-div
+			img(src="img/login-background.png" class="background-image" alt="[]")

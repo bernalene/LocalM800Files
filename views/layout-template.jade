@@ -2,10 +2,25 @@ extends layout
 
 block content
 	include ele/ele-header.jade
-	.container.overview-container
+	.container.mainContent-container
 		.row
 			include ele/ele-left-menu-links.jade
-			.right-content.col-md-9
-				.overview-content
-					h1= title
+			.right-content.col-xs-9
+				.overview-content.row.reset-margin#template-page
+					include ele/ele-upper-right-title-only.jade
+					a.btn.btn-default.btn-pale-red#add-template-btn(href="", data-toggle="modal", data-target="#add-template")= t('modals.addNewTemplate')
+						span.glyphicon.glyphicon-plus
+					.dropdowns-div.pull-left.padding-left-30.padding-right-30
+						include ele/ele-searchbar.jade
+					include ele/ele-template-content.jade
+					.pagination-div
+						include ele/ele-pagination-LO.jade
+				.white-top-left-border
+				.white-top-right-border
+				.white-bottom-left-border
+				.white-bottom-right-border
+		script(src="/js/custom-m800-js/template-page.js")
+	include ele/ele-modal-template-add-new-template.jade
+	include ele/ele-modal-template-edit-template.jade	
+	include ele/ele-modal-template-delete-template.jade
 	include ele/ele-footer.jade

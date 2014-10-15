@@ -19,7 +19,8 @@
 					.row
 						.col-xs-12.padding-left-30.padding-right-30
 							h5= 'Import To Group'
-					.row.form-horizontal
+					form.row.form-horizontal#importContactForm(action="", method="post")
+						input.sr-only#importContact(type="submit", name="importContact", value="importContact")
 						.col-xs-12.padding-left-30.padding-right-30
 							.multiple-options-wrapper.custom-scrollbar-y
 								.row.reset-margin
@@ -104,7 +105,7 @@
 											span.pull-left= 'Long Group Name'	
 			.modal-footer
 				.btns-div
-					a(href="#", class="btn btn-default", id=t('modals.cancel'), data-dismiss="modal")= t('modals.cancel')
-					a(href="#", class="btn btn-default", id=t('modals.import'))= t('modals.import')
+					a.btn.btn-default(href="#", data-dismiss="modal", id=t('modals.cancel'))= t('modals.cancel')
+					label.btn.btn-default(for="#importContact", id=t('modals.import'))= t('modals.import')
 					
 					

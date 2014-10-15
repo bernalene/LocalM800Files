@@ -1,13 +1,16 @@
 //modal for websms draft
-.modal.fade#draft(tabindex="-1", role="dialog", aria-labelledby="draftTemplate", aria-hidden="true")
+.modal.fade#draft(tabindex="-1", role="dialog", aria-labelledby="deleteDraft", aria-hidden="true")
 	.modal-dialog
 		.modal-content
 			.modal-header
 				button(type="button", class="close", data-dismiss="modal")
 					span(aria-hidden="true") &times;
-				h4.modal-title#usetemplate= t('modals.usetemplate')
+				h4.modal-title= t('modals.deletedraft')
 			.modal-body
-				Sample sample
+				.body-content-wrapper
+					span.placeholderText= t("modals.deletedraftprompt")
+					span.taskNameDeleted
 			.modal-footer
 				.btns-div
-					
+					each val in [['modals.cancel','#', 'btn-pale-blue'],['modals.confirm', '#', 'btn-pale-red']]
+						a(href=val[1], class="btn btn-default " + val[2], id=t(val[0]))= t(val[0])

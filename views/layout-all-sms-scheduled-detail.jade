@@ -6,7 +6,7 @@ block content
 		.row
 			include ele/ele-left-menu-links.jade
 			.right-content.col-xs-9
-				.overview-content.allSMS-page.row.reset-margin#scheduled-detail
+				.overview-content.allSMS-page.row.reset-margin.sprites-holder#scheduled-detail
 					include ele/ele-record-detail-upper-right.jade
 					.back-search-div.pull-left
 						include ele/ele-searchbar.jade
@@ -14,9 +14,10 @@ block content
 					.pagination-div
 						include ele/ele-pagination-LO.jade
 					include ele/ele-learn-more.jade
-				.white-top-left-border
-				.white-top-right-border
-				.white-bottom-left-border
-				.white-bottom-right-border
+				// if lt IE 9
+					.sprites.rounded-corner.top-right-white
+					.sprites.rounded-corner.top-left-white
+					.sprites.rounded-corner.bottom-left-white
+					.sprites.rounded-corner.bottom-right-white
 		script(src="/js/custom-m800-js/allSMS-pages.js")
 	include ele/ele-footer.jade

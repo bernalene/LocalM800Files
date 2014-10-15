@@ -1,0 +1,19 @@
+.dropdowns-div.pull-left.padding-left-30.padding-right-30
+	include ele-calendar-from-to.jade
+	include ele-taskname-searchbar-combi.jade
+.graph-div.pull-left
+	.recordsTable
+		.row.recordsTableHeader.reset-margin.padding-left-30
+			.col-xs-2.detail-header.taskname
+				= t('allSMS.taskname')
+			.col-xs-1.detail-header
+				= t('recordTexts.recipient')
+			.col-xs-1.detail-header.noSMS
+				= t('recordTexts.noSMS')
+			.col-xs-2.detail-header.content
+				= t('recordTexts.content')
+			.col-xs-2.detail-header.timedate
+				= t('recordTexts.lastSent')
+			.col-xs-2.timedate.detail-header.createtime
+				= t('recordTexts.createTime')
+			.col-xs-2.trashcan

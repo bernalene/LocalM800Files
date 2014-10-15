@@ -1,0 +1,96 @@
+/* profile module */
+#profile-page,
+#profile-passowrd-page {
+	
+	.profile-information {
+		background-color: #f8f8f8;
+		padding-top: 40px;
+		
+		.account-level {
+			color: $pale-red;
+		}
+	}
+	
+	p,
+	label {
+		font: {
+			size: 140%;
+			weight: normal;
+			family: $helv-light;
+		}
+	}
+	
+	.information-div {
+		margin: 0 15px;
+	}
+	.popover {
+		border: 1px solid #f5b3ba;
+		width: 200px;
+		margin-left: 30px;
+	}
+	.current-password {
+		margin-bottom: 45px;
+		.popover {
+			background: $error-red-bg;
+			.arrow:after {
+				border-left-color: $error-red-bg;
+				border-right-color: $error-red-bg;
+			}
+			.popover-content {
+				color: #986066;
+			}
+		}
+	}
+	.new-password {
+		.popover {
+			background: #ecfaff;
+			width: 245px;
+			border: 1px solid #aecedd;
+			margin-left: 15px;
+			.arrow:after {
+				border-right-color: #ecfaff;
+			}
+			.popover-content{
+				color: $strong-blue;
+			}
+		}
+	}
+	.confirm-password {
+		.popover {
+			background: $error-red-bg;
+			.arrow:after {
+				border-left-color: $error-red-bg;
+				border-right-color: $error-red-bg;
+			}
+			.popover-content {
+				color: #986066;
+			}
+		}
+	}
+	
+	.button-div {
+		padding: 15px 30px;
+		margin: 0;
+		background-color: #fff;
+	}
+		
+	.btn-custom {
+		width: 160px;
+		font: {
+			size: 140%;
+		}
+	}
+			
+	.separator {
+		margin-bottom: 0;
+		border-color: #ddd;
+	
+		&.change-password {
+			margin-top: 225px;
+		}
+
+		&.change-information {
+			margin-top: 125px;
+		}
+	}
+}

@@ -1,5 +1,4 @@
 //modal for add new template
-<script src="/js/custom-m800-js/new-template.js"></script>
 .modal.fade#add-template(tabindex="-1", role="dialog", aria-labelledby="addTemplate", aria-hidden="true")
 	.form-group.errormsg-up
 		#messages
@@ -11,7 +10,7 @@
 				h4.modal-title#addNewTemplate= t('modals.addNewTemplate')
 			.modal-body
 				.body-content-wrapper.container(style="width:100% !important;")
-					form.form-horizontal
+					form.form-horizontal#addTemplateForm
 						.row.margin-top-30
 							.col-xs-7.padding-left-30.margin-bottom-15
 								input.form-control#template-name(name="template-name" placeholder= t('modals.templatename'))

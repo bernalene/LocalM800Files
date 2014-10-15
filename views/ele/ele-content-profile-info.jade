@@ -1,0 +1,47 @@
+form.form-horizontal#profile-information.profile-information(action="/profile/change-information", method="POST", role="form")
+
+	.form-group.information-div
+		.col-xs-9
+			.row
+				.col-xs-12.margin-bottom-15
+					p
+						= t('profilePage.accountLevel') + ": "
+						span.account-level= t('profilePage.carrierAdmin')
+				.col-xs-12.margin-bottom-15
+					.row
+						.col-xs-6
+							.form-group
+								label.col-xs-12(for="#userName")= t('profilePage.userName') + " *"
+								.col-xs-12
+									input#userName.form-control(type="text", name="userName", value=t('profilePage.userName'), disabled="true")
+						.col-xs-6
+							.form-group
+								label.col-xs-12(for="#companyName")= t('profilePage.companyName') + " *"
+								.col-xs-12
+									input#companyName.form-control(type="text", name="companyName", value=t('profilePage.companyName'), disabled="true")
+				.col-xs-12.margin-bottom-15
+					.row
+						.col-xs-6
+							.form-group
+								label.col-xs-12(for="#contactPerson")= t('profilePage.contactPerson') + " *"
+								.col-xs-12
+									input#contactPerson.form-control(type="text", name="contactPerson", value=t('profilePage.name'))
+						.col-xs-6
+							.form-group
+								label.col-xs-12(for="#mobilePhoneNumber")= t('profilePage.mobilePhoneNumber') + " *"
+								.col-xs-12
+									input#mobilePhoneNumber.form-control(type="text", name="mobilePhoneNumber", value=t('profilePage.85298765432'))
+				.col-xs-12.margin-bottom-15
+					.row
+						.col-xs-6
+							.form-group
+								label.col-xs-12(for="#email")= t('profilePage.email') + " *"
+								.col-xs-12
+									input#email.form-control(type="text", name="email", value=t('profilePage.email'), disabled="true")
+
+	hr.separator.change-information
+
+	.form-group.button-div
+		.col-xs-6.reset-padding
+			input.btn-custom.btn.btn-pale-blue.margin-right-30(type="reset", value="Discard Changes")
+			input.btn-custom.btn.btn-pale-red(type="submit", name="saveNewPassword", value="Save")

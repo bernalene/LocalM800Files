@@ -1,0 +1,155 @@
+/* Contact Page */
+
+#contact-page{
+	.add-contact-right {
+		margin-right: 30px;
+		position: absolute;
+		right: 0;
+		top: 15px;
+		.btn {
+			color: $pale-red;
+			padding-top: 3px;
+			padding-bottom: 3px;
+			&:focus,
+			&:hover{
+				background: #fff;
+			}
+		}
+		.dropdown-menu.open {
+			margin-left: 0;
+		}
+		ul.unstyled {
+			width: 100%;
+			padding: 0;
+			a {
+				line-height: 30px;
+			}
+		}
+		.glyphicon {
+			color: $pale-red;
+		}
+		.glyphicon-user {
+			font-size: 140%;
+		}
+		.glyphicon-plus {
+			font-size: 70%;
+			margin: 4px 7px 0 -1px;
+		}
+		.glyphicon-chevron-down {
+			margin-top: 5px;
+			margin-left: 5px;
+		}
+	}
+	.dropdowns-div {
+		.select-group {
+			width: 100%;
+			.btn.dropdown-toggle {
+				width: 100%;
+				padding-top: 3px;
+				padding-bottom: 3px;
+			}
+		}
+		.searchbar {
+			width: 100%;
+			margin-top: 30px;
+			margin-left: 0;
+		}
+		.glyphicon-comment {
+			font-size: 180%;
+			border-radius: 5px;
+			background: $pale-red;
+			padding: 8px;
+			margin-top: 27px;
+			color: #fff;
+		}
+		.col-xs-1 {
+			width: auto;
+			&.delete {
+				padding-left: 0;
+			}
+		}
+		img#delete {
+			margin-top: 27px;
+			width: 35px;
+			height: 35px;
+		}
+		span.dots {
+			position: absolute;
+			top: 23px;
+			right: 24px;
+			font-size: 200%;
+			color: $pale-red;
+		}
+		#actionBtn {
+			width: 80%;
+			margin-top: 30px;
+			color: $pale-red;
+			float: right;
+			.glyphicon-chevron-down {
+				float: right;
+			}
+		}
+		#actionsDropdown {
+			padding-right: 0;
+			ul.unstyled.dropdown-menu {
+				margin-left: 57px;
+				width: 75%;
+				padding: 0;
+				a {
+					line-height: 30px;
+					border-bottom: 1px solid #eee;
+				}
+			}
+			&.open {
+				#actionBtn {
+					color: #fff;
+				}
+			}
+		}
+	}
+	.recordsTable {
+		#contacts {
+			width: 100%;
+			th {
+				font-size: 160%;
+				font-weight: normal;
+				&:first-child {
+					text-align: center;
+					margin: 10px 0 10px 30px;
+					line-height: 15px;
+					.check-group {
+						margin: 10px;
+					}
+				}				
+			}
+			.glyphicon-ok {
+				font-size: 140%;
+			}
+			.contactsList {
+				.detail-item {
+					font-size: 140%;
+					&.checkbox {
+						text-align: center;
+						margin: 10px 15px;
+						line-height: 16px;
+						.check-group {
+							padding-left: 0;
+						}
+					}
+				}
+				.glyphicon-pencil {
+					font-size: 140%;
+				}
+			}
+		}
+	}
+}
+#modal-edit-contact {
+	.body-content-wrapper {
+		padding-left: 30px;
+		padding-right: 30px;
+		.contact-information {
+			margin-bottom: 15px;
+		}
+	}
+}

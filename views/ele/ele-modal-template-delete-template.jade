@@ -1,0 +1,17 @@
+//modal for template deletion confirmation
+.modal.fade#modal-delete-template(tabindex="-1", role="dialog", aria-labelledby="deleteTemplate", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button.close(type="button", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title#delete-template= t('modals.deleteTemplate')
+			.modal-body
+				.body-content-wrapper
+					span.padding-left-30.placeholderText= t("modals.deletePrompt")
+					span.margin-left-5.placeholderText.templateName
+					span.placeholderText#questionMark= "?"
+			.modal-footer
+				.btns-div
+					each val in [['modals.cancel','#'],['modals.confirm', '#']]
+						a.btn.btn-default(href=val[1], id=t(val[0]))= t(val[0])

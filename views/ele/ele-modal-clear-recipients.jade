@@ -11,5 +11,5 @@
 					span.placeholderText= t("modals.clearprompt")
 			.modal-footer
 				.btns-div
-					each val in [['modals.cancel','#'],['modals.continue', '#']]
-						a(href=val[1], class="btn btn-default", id=t(val[0]))= t(val[0])
+					each val in [['modals.cancel','#', 'btn-pale-blue'],['modals.continue', '#', 'btn-pale-red']]
+						a(href=val[1], class="btn btn-default " + val[2], id=t(val[0]))= t(val[0])

@@ -6,14 +6,14 @@ block content
 		.row
 			include ele/ele-left-menu-links.jade
 			.right-content.col-xs-9
-				.overview-content.newSMS
+				.overview-content.newSMS.sprites-holder
 					include ele/ele-newSMS-upper-right.jade
 					.dropdowns-div.pull-left.padding-left-30.padding-right-30
 						.textLeft.pull-left
 							h4= t('newSMS.enterTaskName')
 							span.optionalGrey= t('newSMS.optional')
-							span(class="glyphicon glyphicon-question-sign", id="question-mark", data-container="body", data-toggle="popover")
-						.recipientTextArea.input-group
+							.sprites.circled-question-sign.pull-left#question-mark(data-container="body", data-toggle="popover", data-content='<div class="question-hint"><span><strong>Where is the CSC or CSV?</strong></span><br/><p>The card security code is located on the back of MasterCard, Visa</p></div>')
+						.recipientTextArea
 							input(type="text", class="form-control", placeholder="Recipient Number")
 					.graph-div.pull-left
 						#newSMS-content.padding-left-30.padding-right-30
@@ -31,8 +31,9 @@ block content
 											a(href="#")= t('newSMS.downloadTemplate')
 										if smsVal[0] === '/new/merger'
 											a(href="#")= t('newSMS.downloadTemplate')
-				.white-top-left-border
-				.white-top-right-border
-				.white-bottom-left-border
-				.white-bottom-right-border
+				// if lt IE 9
+					.sprites.rounded-corner.top-right-white
+					.sprites.rounded-corner.top-left-white
+					.sprites.rounded-corner.bottom-left-white
+					.sprites.rounded-corner.bottom-right-white
 	include ele/ele-footer.jade

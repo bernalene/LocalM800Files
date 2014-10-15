@@ -15,14 +15,13 @@ var scheduledContent = [['When creating a moment from a string, we first check i
 var scheduledContentDetail = [['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm'],['Monday 18:01:02', 'Hong Kong', '50010020908', '852789456123', '1', 'When creating a moment from a string, we first check if the string matches known', 'June 6th 2014 5:53:04 pm']];
 
 $(document).ready(function(){
-	$('.taskPicker').selectpicker();
 	var flag = false; 
 	
 	if(window.location.href.indexOf("outbox") > -1) {
        generateOutboxContentTable(outboxContent);
     }
 	
-	if(window.location.href.indexOf("/outbox/detail") > -1) {
+	if(window.location.href.indexOf("/detail") > -1) {
        generateOutboxDetailContent(outboxDetail);
     }
 	
@@ -38,6 +37,10 @@ $(document).ready(function(){
        generateScheduledContent(scheduledContent);
     }
 	
+	//check to display the calendar if the URL contains with-calendar
+	if (window.location.href.indexOf("/scheduled/with-calendar") > -1 && !flag) {
+		$('#with-calendar').removeClass('hidden');
+	}
 });
 
 //generate the outbox content table

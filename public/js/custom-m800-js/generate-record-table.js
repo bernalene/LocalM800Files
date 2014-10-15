@@ -1,24 +1,49 @@
 // var contentData = [['18','10 / 0/ 0 / 0','07/10/2014'],['17','10 / 0 / 0 / 0','07/10/2014'],['1','10 / 0 / 0 / 0','07/10/2014'],['10','10 / 0 / 0 / 0','07/10/2014'],['5','10 / 0 / 0 / 0','07/10/2014'],['13','10 / 0 / 0 / 0','07/10/2014'],['7','10 / 0 / 0 / 0','07/10/2014']];
 // var contentData = record;
+var contentData;
 var recordDetail = [['glyphicon-ok-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'delivered-img.png'],  ['glyphicon-remove-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'delivered-img.png'],  ['glyphicon-remove-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'delivered-img.png'],  ['glyphicon-remove-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'delivered-img.png'],  ['glyphicon-ok-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'delivered-img.png'],  ['glyphicon-ok-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'delivered-img.png'], ['glyphicon-ok-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'delivered-img.png'], ['glyphicon-ok-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'delivered-img.png'], ['glyphicon-remove-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'failed-img.png'], ['glyphicon-ok-sign','50010000908','85298765432','1','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.', 'June 6th 2014 5:53:04 pm', 'failed-img.png']];
 
 $(document).ready(function(){
 
 	//default display mode of table - daily
-	var view = 'day';
-	var viewMode = '';
-	// generateRecordTable(contentData);
-	if (view === 'day'){
-		generateRecordTable(contentData);
-	}
+	var viewMode = '', contact, view;
+	
+	generateRecordTable(contentData);
+
 	$('.displayMode').click(function(){
 		viewMode = $(this).children().attr('value');
+		contact = $('.contactPicker').find('option:selected').val();
+		view = $('.vol-dist-rec-div').find('a.active').text(); 
+
 		switch (viewMode){
-			case 'month': 	
+			case 'month': 
 				$('.recordsItems').remove();
-				monthlyViewer();
+
+				var filter = {
+						 		contact: contact,
+						 		view: view,
+				 			};
+				 console.log(filter);
+				 $.ajax({
+			 		type: "GET",
+			 		url: "/overview/ajax/monthly",
+			 		data: filter,
+			 		dataType: "json",
+			 		success: function(data){
+			 			if (view == "Record") {
+			 				console.log(data);
+			 				// $('.recordsItems').remove();
+			 				var record = data['record'];
+							generateRecordTable(contentData); 
+						}
+			 		}
+			 	})
+
 				break;
-			case 'day': generateRecordTable(contentData); break;
+			case 'day': 
+				$('.recordsItems').remove();
+				generateRecordTable(contentData);
+				break;
 			default: generateRecordTable(contentData);
 		}
 	});
@@ -40,7 +65,7 @@ function generateRecordTable(contentData){
 		totalSuccessReply = arrContent[i][1];
 		lastSent = arrContent[i][2];
 		//console.log(taskName + " - " + totalSuccessReply + " - " + lastSent);
-		content = content + '<div class="row record-row recordsItems"><a href="/overview/record-detail"><div class="col-xs-2"><span class="record-item pull-left">' + taskName +'</span></div><div class="col-xs-5 col-xs-offset-1"><span class="record-item pull-left">'+ totalSuccessReply +'</span></div><div class="col-xs-3 col-xs-offset-1"><span class="record-item pull-left">' + lastSent + '</span></div></a></div>';
+		content = content + '	<div class="row record-row recordsItems"><a href="/overview/record-detail"><div class="col-xs-2"><span class="record-item pull-left">' + taskName +'</span></div><div class="col-xs-5 col-xs-offset-1"><span class="record-item pull-left">'+ totalSuccessReply +'</span></div><div class="col-xs-3 col-xs-offset-1"><span class="record-item pull-left">' + lastSent + '</span></div></a></div>';
 	}
 	$('.pagination-div').before(content);
 }

@@ -2,6 +2,17 @@
 	#dateRange {
 		float: left !important;
 		margin-top: 0;
+		input#dateRangePickerfrom{
+				border-right: 0;
+				border-radius: 5px 0 0 5px;
+				-moz-border-radius: 5px 0 0 5px;
+				-webkit-border-radius: 5px 0 0 5px;
+		}
+		input#dateRangePickerto{
+			border-radius: 0 5px 5px 0;
+			-moz-border-radius: 0 5px 5px 0;
+			-webkit-border-radius: 0 5px 5px 0;
+		}
 	}
 	div.taskPicker {
 		width: 160px;
@@ -21,6 +32,10 @@
 					width: 185px;
 					padding-left: 30px;
 				}
+				#noSMSarrow {
+					margin-left: 11px;
+					margin-top: -3px;
+				}
 			}
 			.detail-row {
 				.sent-item {
@@ -30,9 +45,10 @@
 		}
 		.sentMainData {
 			.sent-item {
-				font-size: 120%;
+				font-size: 140%;
 				&.task-name {
 					padding-left: 30px;
+					width: 210px;
 				}
 				&.last-sent {
 					width: 118px;
@@ -42,26 +58,5 @@
 				height: 50px;
 			}
 		}
-	}
-	span.arrow {
-		width: 15px;
-		height: 10px;
-		float: right;
-		margin-right: 8px
-	} 
-	.tablesorter-headerAsc {
-		span.arrow {
-			background: url('../css/tablesorter/images/black-asc.gif') right center no-repeat;
-		}
-	}
-	.tablesorter-headerDesc {
-		span.arrow {
-			background: url('../css/tablesorter/images/black-desc.gif') right center no-repeat;
-		}
-	}
-	.tablesorter-headerUnSorted {
-		span.arrow {
-			background: url('../css/tablesorter/images/black-unsorted.gif') right center no-repeat;	
-		}	
 	}
 }

@@ -6,15 +6,16 @@ block content
 		.row
 			include ele/ele-left-menu-links.jade
 			.right-content.col-md-9
-				.overview-content.newSMS#confirmPage
+				.overview-content.newSMS.sprites-holder#confirmPage
 					include ele/ele-newSMS-upper-right.jade
 					.graph-div.pull-left
 						include ele/ele-newSMS-confirm-content.jade
 					//- span back to index page
-				.white-top-left-border
-				.white-top-right-border
-				.white-bottom-left-border
-				.white-bottom-right-border
+				// if lt IE 9
+					.sprites.rounded-corner.top-right-white
+					.sprites.rounded-corner.top-left-white
+					.sprites.rounded-corner.bottom-left-white
+					.sprites.rounded-corner.bottom-right-white
 		script(src="/js/custom-m800-js/finish-page.js")
 	include ele/ele-footer.jade
 	

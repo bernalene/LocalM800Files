@@ -1,0 +1,109 @@
+#draft-page {
+	.dropdowns-div {
+		#dateRange {
+			float: left !important;
+			input#dateRangePickerfrom{
+				border-right: 0;
+				border-radius: 5px 0 0 5px;
+				-moz-border-radius: 5px 0 0 5px;
+				-webkit-border-radius: 5px 0 0 5px;
+			}
+			input#dateRangePickerto{
+				border-radius: 0 5px 5px 0;
+				-moz-border-radius: 0 5px 5px 0;
+				-webkit-border-radius: 0 5px 5px 0;
+			}
+
+			.group {
+				span {
+					font-family: $helv-normal;
+					font-weight: normal;
+				}
+			}
+		}
+		.searchbar {
+			width: 255px;
+			margin-left: 0;
+			margin-top: 30px;
+			input{
+				border-radius: 0;
+				-moz-border-radius: 0;
+				-webkit-border-radius: 0;
+			}
+		}
+		div.taskPicker {
+			width: auto;
+			.btn {
+				padding-top: 5px;
+				padding-bottom: 2px;
+				border-radius: 5px 0 0 5px;
+				-moz-border-radius: 5px 0 0 5px;
+				-webkit-border-radius: 5px 0 0 5px;
+				border-right: 0;
+			}
+		}
+	}
+	.recordsTable {
+		.recordsTableHeader {
+			padding-left: 15px;
+		}
+		.taskname {
+			width: 170px;
+			padding-right: 5px;
+		}
+		.noSMS {
+			width: 105px;
+		}
+		.content {
+			width: 173px;
+			padding-left: 5px;
+		}
+		.detail-item {
+			.trashcan {
+				padding: 0;
+				a {
+					float: left;
+				}
+			}
+			.editLink {
+				padding: 0;
+				text-align: right;
+				padding-right: 10px;
+				.glyphicon-pencil {
+					padding: 5px;
+					border-radius: 7px;
+					font-size: 140%;
+				}
+			}
+			&.deleteEdit {
+				padding: 0 5px;
+				width: 90px;
+			}
+		}
+		.createtime {
+			width: 105px;
+			padding-left: 0;
+			padding-right: 5px
+		}
+	}
+}
+
+#draft {
+	&.modal {
+		.body-content-wrapper {
+			float: left;
+			width: 100%;
+			padding: 30px;
+			
+			.placeholderText {
+				margin-top: 0;
+			}
+			.taskNameDeleted {
+				float: left; 
+				width: 100%;
+				font-size: 100%;
+				margin-top: 15px;
+			}
+		}
+	}
+}

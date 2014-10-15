@@ -1,0 +1,66 @@
+/* Help Page */
+
+.help-content-div{
+	background-color: #f8f8f8;
+	.form-inline{
+		.form-group{
+			.search-input{
+				width: 270px;
+			}
+			.input-group-btn{
+				.search-btn{
+					background: #e13b4c;
+					color: #FFF;
+					height: 34px;
+					border: 0;
+				}
+			}	
+		}
+	}
+	.help-thumbnails{
+		a{
+			color: inherit;
+			&:hover{
+				color: inherit;
+			}
+			.help-box{
+				margin-right: 15px;
+				border: 1px solid #DDD;
+				width: 31.111%;
+				padding: 30px 0 50px 0;
+				border-radius: 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				background-color: #FFF;
+
+				h4 {
+					font-family: $helv-normal;
+				}
+			}
+		}	
+	}	
+	.faq-div{
+		border-top: 1px solid #DDD;
+		.questions{
+			font-size: 140%;
+			a{
+				color: $pale-blue;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.support-div{
+		border-top: 1px solid #DDD;
+		font-size: 140%;
+		.email{
+			a{
+				color: $pale-red;
+				&:hover{
+					text-decoration: none;
+				}
+			}	
+		}
+	}
+}

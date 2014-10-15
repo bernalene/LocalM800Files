@@ -12,26 +12,32 @@
 						// group dropdown
 						.col-xs-6.dropdowns-div
 							select(class="groupPicker")
-								option= t('modals.allgroup')
+								- var groups = contactGroup
+								each group in groups
+									option= group
 						// search contact
 						.col-xs-6.modal-searchbar
 							include ele-searchbar.jade
 				// contacts list
 				.contacts-list
-					.row.contactsHeader
-						input.col-xs-1(type="checkbox", name="selectAll", data-bv-notempty data-bv-notempty-message="Select All", id="selectAllBox")
-						span.col-xs-3= t('modals.selectall')
-					- var contactsList = [['Aida', '852987654321'], ['Amy', '852987654321'], ['Barry', '852987654321'], ['Bonnie', '852987654321'], ['Cherry', '852987654321'], ['Doris', '852987654321'], ['Ellen', '852987654321'], ['Herry', '852987654321'], ['Ian', '852987654321'], ['Jerry', '852987654321']]
-					each contact in contactsList
-						.row.contactsItem
-							label.cotrol-label.check-group
-								.custom-checkbox
-								input.sr-only.pull-left.reset-margin.col-xs-1(type="checkbox", name="longGroupName", value="check")
-							span.col-xs-3= contact[0]
-							span.col-xs-5.col-xs-offset-3= contact[1]
+					form#addFromContactsForm
+						.row.contactsHeader
+							input.col-xs-1(type="checkbox", name="selectAll", data-bv-notempty data-bv-notempty-message="Select All", id="selectAllBox")
+							span.col-xs-3= t('modals.selectall')
+						- var contactsList = contacts
+						each contact in contactsList
+							.row.contactsItem
+								label.cotrol-label.check-group
+									.custom-checkbox
+									input.sr-only.pull-left.reset-margin.col-xs-1(type="checkbox", name="longGroupName", value="check")
+								span.col-xs-3= contact[0]
+								span.col-xs-5.col-xs-offset-3= contact[1]
 				// pagination for the contacts modal 
 				.pagination-div
-					include ele-pagination-LO.jade
+					script(type='text/javascript').
+						var totalPage = !{JSON.stringify(totalPage)};
+						var currentPage = !{JSON.stringify(currentPage)};
+					script(src="/js/custom-m800-js/generate-pagination.js")
 			.modal-footer
 				.btns-div
 					each val in [['modals.cancel','#'],['modals.confirm', '#']]

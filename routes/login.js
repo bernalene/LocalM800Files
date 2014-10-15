@@ -154,7 +154,7 @@ router.get('/', function(req, res) {
 	} else {
 		alert2 = '';
 	}
-  	res.render('layout-login', { title: 'Login Page: ' + u, alerts: alert1 + alert2});
+  	res.render('layout-login', { alerts: alert1 + alert2});
 }).post('/', function(req, res){
  	var user = req.body.user.trim();
  	var pw = req.body.password.trim();

@@ -1,0 +1,22 @@
+//modal for adding new contact
+.modal.fade.contact-modal#modal-add-new-group.padding-left-30.padding-right-30(tabindex="-1", role="dialog", aria-labelledby="addContact", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button(type="button", class="close", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title= t('modals.addnewgroup')
+			.modal-body
+				.body-content-wrapper.padding-left-15.padding-right-15
+					form#addGroupForm(action="", method="post")
+						input.sr-only#addGroup(type="submit", name="addGroup", value="addGroup")
+						//contact information
+						.row.contact-information.reset-margin
+							.col-xs-12
+								= t('modals.groupname')
+							.col-xs-8
+								input.form-control.input-name(name="name", id="name", placeholder= t('modals.requiredField'), data-content="Name is required")
+			.modal-footer
+				.btns-div
+					a.btn.btn-default(href="#", data-dismiss="modal", id=t('modals.cancel'))= t('modals.cancel')
+					label.btn.btn-default(for="addGroup", id=t('modals.save'))= t('modals.save')

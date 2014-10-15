@@ -13,11 +13,11 @@ $(document).ready(function(){
 	});
 	
 	//highlight the appropriate link when in correct page
-	$('.menu-links a').each(function(){
+	/* $('.menu-links a').each(function(){
 		if(window.location.href.indexOf($(this).attr('href')) > -1) {
 		  $(this).parent().addClass('active-link');
 		}
-	});
+	}); */ //To do remove this snippet
 	
 	var url = [], hash;
     var q = document.URL.split('?')[1];
@@ -51,7 +51,7 @@ $(document).ready(function(){
 	$('.displayMode').click(function(){
 		dispMode = $(this).children().attr('value');
 		contact = $('.contactPicker').find('option:selected').val();
-		view = $('.vol-dist-rec-div.margin-left-30.margin-right-30').find('a.active').text(); 
+		view = $('.vol-dist-rec-div').find('a.active').text(); 
 
 		if (dispMode==='month'){
 			$("div.lastXdaysPicker").children('button').attr("disabled", "disabled");
@@ -164,13 +164,19 @@ $(document).ready(function(){
 	
 	//upload excel form error message	
 	$('#uploadFileReq > span').popover();
-});
+	
+	//for the task picker
+	$('.taskPicker').selectpicker();
+	
+	//load call the function for the draft page
+	//generateDraftTable();
+}); //end of document.ready
 
 function lastXdaysFilterPicker() {
 	var dispMode = $(this).children().attr('value');
 	var lastxday = $('.lastXdaysPicker').find('option:selected').val();
  	var contact = $('.contactPicker').find('option:selected').val();
- 	var view = $('.vol-dist-rec-div.margin-left-30.margin-right-30').find('a.active').text(); 
+ 	var view = $('.vol-dist-rec-div').find('a.active').text(); 
 
 	// if (view == "Record") {
 	// 	location.href = "?displaymode=" + dispMode + "&contact=" + contact + "&lastxday=" + lastxday;
@@ -269,7 +275,7 @@ function calendarFilterPicker() {
 	var contact = $('.contactPicker').find('option:selected').val();
  	var calendarFrom = $('#dateRangePickerfrom').data('daterangepicker').container.find('input[name=daterangepicker_end]').val();
  	var calendarTo = $('#dateRangePickerto').data('daterangepicker').container.find('input[name=daterangepicker_end]').val();
- 	var view = $('.vol-dist-rec-div.margin-left-30.margin-right-30').find('a.active').text(); 
+ 	var view = $('.vol-dist-rec-div').find('a.active').text(); 
 
  	calendarFrom = moment(calendarFrom, "MM/DD/YYYY").format('DD-MMM-YY');
  	calendarTo = moment(calendarTo, "MM/DD/YYYY").format('DD-MMM-YY');

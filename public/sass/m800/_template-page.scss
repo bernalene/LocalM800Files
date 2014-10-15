@@ -1,0 +1,70 @@
+#template-page {
+	.btn.btn-pale-red {
+		position: absolute;
+		right: 30px;
+		top: 15px;
+		border: 0;
+		.glyphicon-plus {
+			float: left;
+			margin-right: 10px;
+			margin-top: 3px;
+			font-size: 90%;
+		}
+	}
+	.dropdowns-div {
+		border-bottom: none;
+		.searchbar {
+			margin-left: 0;
+			margin-top: 30px;
+		}
+	}
+	.pagination-div{
+		background: #f8f8f8;
+	}
+	#templates-content {
+		.templates-div {
+			float: left;
+			width: 100%;
+			margin-bottom: 15px;
+			.templates-row {
+				padding: 15px 15px 10px;
+				margin: 0 30px 10px;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+			}
+			.template-title {
+				width: 100%;
+				float: left;
+				font-size: 160%;
+			}
+			.template-item {
+				font-size: 140%;
+				margin-top: 10px;
+				float: left;
+			}
+			.col-xs-2 {
+				padding: 0;
+				position: relative;
+				margin-top: 12px;
+				text-align: right;
+				a.btn {
+					line-height: 25px;
+					padding: 3px 10px;
+					border: 0;
+					img {
+						float: left;
+						width: 25px;
+						height: 25px;
+					}
+					&.editTemplate {
+						margin-right: 3px;
+					}
+
+					&.deleteTemplate {
+						font-family: $helv-normal;
+					}
+				}
+			}
+		}
+	}
+}

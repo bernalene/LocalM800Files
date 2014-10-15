@@ -7,6 +7,7 @@
 .right-content {
 	.overview-content {
 		overflow: hidden;
+		border-radius: 5px;
 		.page-title-div {
 			overflow: hidden;
 			border-bottom: 1px solid $div-borders;
@@ -20,23 +21,27 @@
 				}
 			}
 			.usage-view-right {
-				margin: 15px 0;
+				//margin: 15px 0;
 				padding-right: 15px;
 				text-align: right;
 				font-size: 140%;
 				span {
 					margin: 0px 10px;
 					color: $pale-blue;
-					font-size: 140%;
+					font-size: 120%;
 				}
 				.btn-group {
 					height: 30px;
+					margin-top: -2px;
 					.btn {
 						width: 75px;
 						color: $pale-red;
 						&.active {
 							background: $pale-red;
 							color: #fff;
+							border: 0;
+							padding: 7px;
+							box-shadow: none;
 						}
 					}
 				}
@@ -58,6 +63,12 @@
 		.graph-div {
 			background: #f8f8f8;
 			width: 100%;
+			border-bottom: 0;
+		}
+		#distribution-content {
+			.dropdowns-div {
+				border-bottom: 0;
+			}
 		}
 		.vol-dist-rec-div {
 			padding-top: 30px;
@@ -236,8 +247,18 @@
 				margin-left: 15px;
 			}
 		}
-		#dateRangePickerfrom,
+		
+		#dateRangePickerfrom{
+			border-right: 0;
+			border-radius: 5px 0 0 5px;
+			-moz-border-radius: 5px 0 0 5px;
+			-webkit-border-radius: 5px 0 0 5px;
+			margin-left: 0;
+		}
 		#dateRangePickerto{
+			border-radius: 0 5px 5px 0;
+			-moz-border-radius: 0 5px 5px 0;
+			-webkit-border-radius: 0 5px 5px 0;
 			margin-left: 0;
 		}
 		.dropdown-menu.open {

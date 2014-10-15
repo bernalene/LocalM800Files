@@ -4,6 +4,11 @@
 			.btn {
 				width: 100%;
 				margin-left: 0;
+				border-radius: 5px 0 0 5px;
+				-moz-border-radius: 5px 0 0 5px;
+				-webkit-border-radius: 5px 0 0 5px;
+				border-right: 0;
+				height: 34px;
 			}
 			.dropdown-menu.open {
 				margin-left: 0;
@@ -11,6 +16,22 @@
 		}
 		.searchbar {
 			margin-left: 0;
+			input{
+				border-radius: 0;
+				-moz-border-radius: 0;
+				-webkit-border-radius: 0;
+			}
+		}
+		#with-calendar {
+			float: left;
+			#dateRange {
+				margin-top: 0;
+			}
+		}
+	}
+	#taskname-searchbar {
+		.taskPicker {
+			width: 185px;
 		}
 	}
 	.recordsTableHeader {
@@ -32,6 +53,7 @@
 			.dropdown-warning,
 			.dropdown-success {
 				padding: 5px 30px 5px 10px;
+				font-family: $helv-normal;
 			}
 		}
 		.detail-item {

@@ -5,11 +5,16 @@ block content
 	.container.overview-container
 		.row
 			include ele/ele-left-menu-links.jade
-			.right-content.col-md-9
-				.overview-content
+			.right-content.col-xs-9
+				.overview-content.sprites-holder
 					h1= title
 					br
 					a(href='/all') /all
 					br
 					span return to All SMS Validating page
+				// if lt IE 9
+					.sprites.rounded-corner.top-right-white
+					.sprites.rounded-corner.top-left-white
+					.sprites.rounded-corner.bottom-left-white
+					.sprites.rounded-corner.bottom-right-white
 	include ele/ele-footer.jade

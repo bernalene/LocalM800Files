@@ -1,0 +1,41 @@
+//modal for managing contacts
+.modal.fade#modal-manage-contact(tabindex="-1", role="dialog", aria-labelledby="manageContacts", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button.close(type="button", data-dismiss="modal")
+					span(aria-hidden="true") &times;
+				h4.modal-title#manage-contacts= t('modals.manageGroups')
+			.modal-body
+				.body-content-wrapper
+					form#manageContactForm
+						.row.reset-margin.list-header
+							.col-xs-6
+								span= t('modals.groupName')
+							.col-xs-4
+								span= t('modals.noOfContacts')
+							.col-xs-2(align='center')
+								span= t('modals.action')
+						.row.reset-margin.contact-list
+							.col-xs-12
+								each val in [['modals.group1', 'modals.25'], ['modals.group1', 'modals.25'], ['modals.group1', 'modals.25'], ['modals.group1', 'modals.25']]
+									.row.contact
+										.col-xs-6.hidden
+											input.form-control.input-group-name(name="group-name", value= t('modals.group1'))
+											a.margin-left-5.btn.btn-default.btn-custom.confirm(href='#')
+												span.glyphicon.glyphicon-ok
+										.col-xs-6.init-groupname
+											span.group-name= t(val[0])
+											a.margin-left-5.btn.btn-default.btn-custom.edit(href='#')
+												span.glyphicon.glyphicon-pencil
+										.col-xs-4.total-contacts
+											= t(val[1])
+										.col-xs-2.action(align='center')
+											a#deletegroup(href='#')
+												img(src='img/trash-can.png', alt='delete')
+					.pagination-div
+						include ele-pagination-LO.jade
+			.modal-footer
+				.btns-div
+					each val in [['modals.cancel','#'],['modals.create', '#']]
+						a.btn.btn-default(href=val[1], id=t(val[0]))= t(val[0])

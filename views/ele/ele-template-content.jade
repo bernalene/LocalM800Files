@@ -1,0 +1,13 @@
+.graph-div.pull-left#templates-content
+	.templates-div
+		- var templatesList = [['Template 1', 'Dear Customer, Your account Account has an overdue balance of Amount. Please kindly settle the outstanding by Deadline to avoid suspension. Thank you.'],['Template 2', 'Seasons Greetings! Enjoy the Holiday season!'], ['Template 3', 'Dear Customer, Your account Account has an overdue balance of Amount. Please kindly settle the outstanding by Deadline to avoid suspension. Thank you.'], ['Template 4', 'Dear Customer, Your account Account has an overdue balance of Amount. Please kindly settle the outstanding by Deadline to avoid suspension. Thank you.']]
+		each val in templatesList
+			.templates-row.row.reset-margin
+				.col-xs-10
+					span.template-title= val[0]
+					span.template-item= val[1]
+				.col-xs-2
+					a.btn.btn-default.btn-pale-blue.editTemplate(href="", data-toggle="modal", data-title=val[0], data-target="#edit-template", data-content=val[1])
+						span.glyphicon.glyphicon-pencil
+					a.btn.btn-default.btn-pale-blue.deleteTemplate(href="", data-toggle="modal", data-title=val[0], data-target="#modal-delete-template")= t('dropdowns.delete')
+						img(src="/img/trash-can.png", alt="Delete", title="Delete")

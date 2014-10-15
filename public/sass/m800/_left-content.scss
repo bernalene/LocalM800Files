@@ -1,0 +1,121 @@
+//menu sprites
+.menu-sprites {
+	width: 27px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+//menu default color
+.greeting,
+.menu-links,
+.menu-links a {
+	color: #999;
+}
+	
+//menu
+.user-dashboard {
+	border: {
+		radius: 5px;
+	}
+	background: #555;
+	
+	.greeting,
+	.menu-links a {
+		padding: 20px 25px;
+		font: {
+			size: 140%;
+		}
+	}
+	
+	.new-sms {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	
+	.name {
+		color: #fff;
+	}
+	
+	.main-menu {
+		margin-bottom: 0;
+		
+		li {
+			border-top: 1px solid #333;				
+		}
+		
+		a {
+			display: block;
+			cursor: pointer;
+			text-decoration: none;
+			&:hover {
+				@extend .active-link;
+				color: #fff;
+			}
+			 
+			.glyphicon {
+				margin-right: 15px;
+				font-size: 130%;
+			}
+		}
+	
+		.all-sms {
+			@extend .menu-sprites;
+			background-position: 0 -279px;
+		}
+		
+		.contact {
+			@extend .menu-sprites;
+			background-position: -79px -279px;
+		}
+		
+		.more {
+			background-position: -385px -279px;
+			width: 10px;
+			height: 20px; 
+		}
+			
+		.sub-menu {
+			li {
+				border: 0;
+			}
+			
+			a {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 57px;
+			}
+		}
+	}	
+	
+	//active links
+	.active-link {
+		
+		> a {
+			color: #fff;
+		}
+		
+		.bottom-left-light-gray {
+			background-position: -55px -412px;
+		}
+		
+		.bottom-right-light-gray {
+			background-position: -68px -412px;
+		}
+		
+		.all-sms {
+			background-position: -40px -279px;
+		}
+		
+		.contact {
+			background-position: -113px -279px;
+		}
+		
+		&.last {
+			@extend .last;
+		}
+	}	
+	
+	.last {
+		border-radius: 0 0 5px 5px; 
+	}
+}

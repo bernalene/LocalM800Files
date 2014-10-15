@@ -2,16 +2,16 @@
 - var n = 1
 	ul.pagination.pull-left
 		li
-			a(href=url+"?page="+prev)
+			a(href='#')
 				&#9664;
-		while n <= pages
+		while n <= 5
 			li
-				if n==page
-					a(href=url+"?page="+n, class="current-pg")= n++
+				if n==3
+					a(href='#', class="current-pg")= n++
 				else
-					a(href=url+"?page="+n)= n++					
+					a(href='#')= n++					
 		li
-			a(href=url+"?page="+nxt)
+			a(href='#')
 				&#9654;
 		
 	.go-to-div.pull-left

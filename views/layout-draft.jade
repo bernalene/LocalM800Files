@@ -5,19 +5,17 @@ block content
 	.container.overview-container
 		.row
 			include ele/ele-left-menu-links.jade
-			.right-content.col-md-9
-				.overview-content
-					h1= title
-					br
-					a(href='/draft/edit') /draft/edit
-					br
-					span goto Draft Edit page
-					a(href='', data-targer="#draft", data-toggle="modal") 
-				button(type="button", class="btn btn-default", data-toggle="modal", data-target="#delete-template") Dlt Tmplt
-				button(type="button", class="btn btn-default", data-toggle="modal", data-target="#manage-contacts") Mng Cntct
-				button(type="button", class="btn btn-primary", data-toggle="modal", data-target="#edit-template") Edit Tmp
-	include ele/ele-modal-delete-template.jade
-	include ele/ele-modal-manage-contacts.jade
-	include ele/ele-modal-template-edit-template.jade
+			.right-content.col-xs-9
+				.overview-content.row.reset-margin.sprites-holder#draft-page
+					include ele/ele-upper-right-title-only.jade
+					include ele/ele-draft-content.jade
+					.pagination-div
+						include ele/ele-pagination-LO.jade
+				// if lt IE 9
+					.sprites.rounded-corner.top-right-white
+					.sprites.rounded-corner.top-left-white
+					.sprites.rounded-corner.bottom-left-white
+					.sprites.rounded-corner.bottom-right-white
 	include ele/ele-modal-websms-draft.jade
+		script(src="/js/custom-m800-js/draft-page.js")
 	include ele/ele-footer.jade

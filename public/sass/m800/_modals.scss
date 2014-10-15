@@ -14,11 +14,18 @@
 			border-radius: 5px;
 			background: $pale-blue;
 			color: #fff;
-			padding: 5px 10px;
+			padding:0 10px 5px 10px;
+			line-height: 25px;
 			margin: 15px 30px;
 			position: absolute;
 			right: 0;
 		}
+	}
+}
+.body-content-wrapper {
+	float: left;
+	.form-control {
+		font-size: 160%;
 	}
 }
 .modal-footer {
@@ -47,12 +54,12 @@
 	margin: 10% auto;
 }
 .placeholderText {
-	font-size: 120%;
+	font-size: 140%;
 	margin-top: 10px;
 	float: left;
 	&.templateName {
 		margin-top: 7px;
-		font-size: 150%;
+		font-size: 160%;
 	}
 }
 .btns-div {
@@ -65,18 +72,15 @@
 		}
 	}
 }
-.errormsg-up {
-	position: absolute;
-	top: 0;
-	z-index: 1000;
-	width: 100%;
-	left: 0;
-	background: #ffd9de;
-	color: #986066;
-	text-align: center;
-	font-size: 140%;
-	height: auto;
+//for all modals under contact module
+.contact-modal {
+	.multiple-options-wrapper {
+		.control-label {
+			font-weight: normal;
+		}
+	}
 }
+
 //for contacts modal
 #fromContacts{
 	.selectSearch-div {
@@ -170,9 +174,6 @@
 }
 //for use template modal
 #use-template {
-	.addShadow {
-		box-shadow: 0px 2px 10px #bfbfbf;
-	}
 	.body-content-wrapper {
 		margin: 15px 30px;
 		overflow: hidden;
@@ -221,7 +222,7 @@
 #add-template, #edit-template{
 	.body-content-wrapper{
 		.validate-msg{
-			font-size: 120%;
+			font-size: 140%;
 			.characters, .sms-count{
 				font-weight: bold;
 			}
@@ -233,7 +234,10 @@
 }
 
 //for manage contacts modal
-#manage-contacts {
+#modal-manage-contact {
+	.body-content-wrapper {
+		width: 100%;
+	}
 	%separator {
 		border-top: 1px solid #e5e5e5;
 	}
@@ -250,6 +254,7 @@
 	}
 	.list-header {
 		padding: 7px 15px;
+		font-size: 160%;
 	}
 	//contact list
 	.contact-list {
@@ -260,16 +265,18 @@
 				float: left;
 				width: 75%;
 				height: 21px;
-				font-size: 100%;
+				font-size: 140%;
 			}
 			.group-name {
 				display: inline-block;
 				width: 100px;
+				font-size: 140%;
 			}
 			.btn-custom {
 				@extend %btn-contact;
 				.edit {
 					@extend %btn-icon;
+					font-size: 80%;
 				}
 				.confirm {
 					@extend %btn-icon;
@@ -278,6 +285,7 @@
 			.total-contacts {
 				padding-top: 2px;
 				height: 21px;
+				font-size: 140%;
 			}
 			.action {
 				img {
@@ -291,6 +299,47 @@
 	.pagination-div {
 		.go-to-div {
 			display: none;
+		}
+	}
+}
+
+//for adding new contact modal
+#modal-add-contact {
+	.contact-information {
+		margin: 0 0 30px;
+	}
+	.multiple-options-wrapper {
+		margin-top: 10px;
+	}
+}
+
+//for the modal delete template
+#modal-delete-template {
+	.body-content-wrapper {
+		margin: 15px 0;
+		.placeholderText {
+			width: 100%;
+			&#questionMark {
+				width: auto;
+			}
+			&.templateName {
+				width: auto;
+				padding-left: 30px;
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+//for add new group
+#modal-add-new-group {
+	.body-content-wrapper {
+		width: 100%;
+		margin-bottom: 30px;
+		.contact-information {
+			.col-xs-12 {
+				font-size: 160%;
+			}
 		}
 	}
 }

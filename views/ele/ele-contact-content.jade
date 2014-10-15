@@ -1,0 +1,45 @@
+.dropdowns-div.reset-padding
+	.row.reset-margin
+		.col-xs-3
+			select.selectpicker.select-group
+				each val in ['contactPage.allGroups', 'contactPage.groupA', 'contactPage.groupB', 'contactPage.groupC']
+					option= t(val)
+		.col-xs-4
+			include ele-searchbar.jade
+		.col-xs-3#actionsDropdown
+			button.btn.btn-default.dropdown-toggle#actionBtn(type="button", data-toggle="dropdown")= t('contactPage.action')
+				span.glyphicon.glyphicon-chevron-down
+			ul.unstyled.dropdown-menu(role="menu")
+				- var addNewContactBtn = [['contactPage.downloadSelected', '', '#'], ['contactPage.createNewGroup', '#modal-add-new-group','#'], ['contactPage.manageGroups', '#modal-manage-contact', '#'], ['contactPage.assigntogroup', '#modal-assign-to-group', '#']];
+				each val in addNewContactBtn
+					li
+						a(href=val[2],data-toggle="modal", data-target=val[1])= t(val[0])
+		.col-xs-1
+			a(href="", alt="message-icon", title="message-icon")
+				span.glyphicon.glyphicon-comment
+				span.dots='...'
+		.col-xs-1.delete
+			a(href="")
+				img#delete(src="/img/trash-can-red.png", alt="trash-can-img", title="delete")
+.recordsTable
+	table#contacts.tablesorter
+		thead
+			tr.recordsTableHeader
+				th
+					label.control-label.check-group
+						.custom-checkbox
+							input.sr-only.pull-left.reset-margin(type="checkbox", name="longGroupName", value="check") 
+				th
+					= t('contactPage.name')
+					span.arrow#name
+				th
+					= t('contactPage.group')
+					span.arrow#group
+				th
+					= t('contactPage.company')
+					span.arrow#company
+				th
+					= t('contactPage.mobile')
+					span.arrow#mobile
+				th
+		tbody.contactsList

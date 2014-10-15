@@ -10,4 +10,7 @@
 		var contentData = !{JSON.stringify(record)};
 	script(src="/js/custom-m800-js/generate-record-table.js")
 	.pagination-div
-		include ele-pagination-LO.jade
+		script(type='text/javascript').
+			var totalPage = !{JSON.stringify(totalPage)};
+			var currentPage = !{JSON.stringify(currentPage)};
+		script(src="/js/custom-m800-js/generate-pagination.js")

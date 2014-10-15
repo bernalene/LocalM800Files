@@ -11,12 +11,13 @@
 				h4.modal-title#editTemplate= t('modals.editTemplate')
 			.modal-body
 				.body-content-wrapper.container(style="width:100% !important;")
-					form.form-horizontal
+					form.form-horizontal#editTemplateForm
+						input.sr-only#editTemplate(type="submit", name="editTemplate", value="editTemplate")
 						.row.margin-top-30
 							.col-xs-7.padding-left-30.margin-bottom-15
 								input.form-control#template-name(name="template-name" placeholder= t('modals.templatename') value="Template 1")
 							.col-xs-12.padding-left-30.padding-right-30.margin-bottom-15
-								textarea.form-control#template-content(name="template-content" maxlength="800" rows="8" placeholder= t('modals.content')) Dear Customer, Your account Account has an overdue balance of Amount. Please kindly settle the outstanding by Deadline to avoid suspensio. Thank you
+								textarea.form-control#template-content(name="template-content" maxlength="800" rows="8" placeholder= t('modals.content')) Dear Customer, Your account Account has an overdue balance of Amount. Please kindly settle the outstanding by Deadline to avoid suspension. Thank you
 						.row
 							.col-xs-12.padding-left-30.validate-msg
 								strong International
@@ -37,4 +38,4 @@
 			.modal-footer
 				.btns-div
 					a(href="#", class="btn btn-default", data-dismiss="modal", id=t('modals.cancel'))= t('modals.cancel')
-					a(href="#", class="btn btn-default", id=t('modals.create'))= t('modals.save')
+					label(for="#editTemplate", class="btn btn-default", id=t('modals.create'))= t('modals.save')

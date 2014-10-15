@@ -5,11 +5,16 @@ block content
 	.container.overview-container
 		.row
 			include ele/ele-left-menu-links.jade
-			.right-content.col-md-9
-				.overview-content
-					h1= title
-					br
-					a(href='/profile/pw') /profile/pw
-					br
-					span goto change pw page					
+			.right-content.col-xs-9
+				#profile-page.overview-content.sprites-holder
+					.page-title-div
+						.page-title-left.pull-left.margin-left-30.margin-right-30
+							h1= t('profilePage.accountInfo')
+					include ele/ele-content-profile-info.jade
+				!= '<!--[if lt IE 9]>'
+					.sprites.rounded-corner.top-right-white
+					.sprites.rounded-corner.top-left-white
+					.sprites.rounded-corner.bottom-left-white
+					.sprites.rounded-corner.bottom-right-white
+				!= '<![endif]-->'
 	include ele/ele-footer.jade

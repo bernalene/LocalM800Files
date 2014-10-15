@@ -5,17 +5,34 @@ block content
 	.container.overview-container
 		.row
 			include ele/ele-left-menu-links.jade
-			.right-content.col-md-9.contact
-				.overview-content
-					h1= title
-				.modal-wrapper
-					a.btn.btn-default(href="", data-toggle="modal", data-target="#modal-assign-to-group") Assign to group
-					a.btn.btn-default(href="", data-toggle="modal", data-target="#modal-import") Import Excel
+			.right-content.col-xs-9
+				.overview-content.sprites-holder#contact-page
+					include ele/ele-upper-right-title-only.jade
+						.add-contact-right.pull-right.reset-padding.reset-margin.btn-group
+							button.btn.btn-default.dropdown-toggle(type="button", data-toggle="dropdown")= t('contactPage.addcontacts')
+								span.glyphicon.glyphicon-user.pull-left
+								span.glyphicon.glyphicon-plus.pull-left
+								span.glyphicon.glyphicon-chevron-down
+							ul.unstyled.dropdown-menu(role="menu")
+								- var addNewContactBtn = [['contactPage.dropListAddContact1', '#modal-add-contact'], ['contactPage.dropListAddContact2', '#modal-import']];
+								each val in addNewContactBtn
+									li
+										a(href="",data-toggle="modal", data-target=val[1])= t(val[0])
+					include ele/ele-contact-content.jade 
+					.pagination-div
+						include ele/ele-pagination-LO.jade
+				// if lt IE 9
+					.sprites.rounded-corner.top-right-white
+					.sprites.rounded-corner.top-left-white
+					.sprites.rounded-corner.bottom-left-white
+					.sprites.rounded-corner.bottom-right-white
+		script(src="/js/custom-m800-js/contact-page.js")
 	.form-group.errormsg-up
 		#messages
 	include ele/ele-modal-contacts-assign-to-group.jade
 	include ele/ele-modal-contacts-import.jade
+	include ele/ele-modal-contacts-add-new-contact.jade
+	include ele/ele-modal-contacts-edit-contact.jade
+	include ele/ele-modal-contacts-manage-contact.jade
+	include ele/ele-modal-contacts-add-new-group.jade
 	include ele/ele-footer.jade
-	
-	
-	

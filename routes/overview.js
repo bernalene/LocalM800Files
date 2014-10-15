@@ -238,7 +238,8 @@ graphData.prototype = {
 				totalSMS: this.array_total, 
 				successSMS: this.array_success, 
 				failSMS: this.array_fail,
-				view: 'volumne'
+				view: 'volumne',
+				menu: {main: 'overview', sub: 'overview'}
 			});
 		}
 	},
@@ -260,7 +261,8 @@ graphData.prototype = {
 					rateMonth: this.array_rate, 
 					totalSMSMonth: this.array_total, 
 					successSMSMonth: this.array_success, 
-					failSMSMonth: this.array_fail
+					failSMSMonth: this.array_fail,
+					menu: {main: 'overview', sub: 'overview'}
 				});
 			} else {
 				
@@ -269,14 +271,17 @@ graphData.prototype = {
 					rate: this.array_rate, 
 					totalSMS: this.array_total, 
 					successSMS: this.array_success, 
-					failSMS: this.array_fail
+					failSMS: this.array_fail,
+					menu: {main: 'overview', sub: 'overview'}
 				});
 			}
 		}
 	}
 };
 
-function recordData(err, conn, res, sql_record, sql_record_count, username, displayMode, page, url) {
+function recordData(err, conn, res, sql_record, sql_record_count, username, displayMode, page, url, type) {
+	this.type = type;
+
 	this.displayMode = displayMode;
 
 	this.token = Math.random();
@@ -404,7 +409,8 @@ recordData.prototype = {
 			console.log(this.prev);
 			console.log(this.nxt);
 
-			this.rendering();
+			if(this.type == 'normal') this.rendering();
+			else this.rendering_ajax();
 		}
 
 	},
@@ -418,13 +424,45 @@ recordData.prototype = {
 			user: username, 
 			record: this.record_data,
 			url: this.url,
-			pages: this.recordPages, 
-			page: this.recordPage,
+			totalPage: this.recordPages, 
+			currentPage: this.recordPage,
 			prev: this.prev,
-			nxt: this.nxt
+			nxt: this.nxt,
+			menu: {main: 'overview', sub: 'record'}
 		});
 
 	},
+	rendering_ajax: function () {
+		console.log('=========================');
+		console.log('recordData - layout rendering ajax');
+		console.log('=========================');
+
+
+		if (this.dispMode === 'month') {
+			console.log(this.array_total);
+			console.log(this.array_rate);
+			this.res.send({
+				user: this.username, 
+				rateMonth: this.array_rate, 
+				totalSMSMonth: this.array_total, 
+				successSMSMonth: this.array_success, 
+				failSMSMonth: this.array_fail,
+				menu: {main: 'overview', sub: 'record'}
+			});
+		} else {
+			
+			this.res.send({
+				user: username, 
+				record: this.record_data,
+				url: this.url,
+				totalPage: this.recordPages, 
+				currentPage: this.recordPage,
+				prev: this.prev,
+				nxt: this.nxt,
+				menu: {main: 'overview', sub: 'record'}
+			});
+		}
+	}
 };
 
 router.use(auth);
@@ -447,7 +485,7 @@ router.get('/', function(req, res) {
 	var sql_volume_fail = 'select to_char(senddate, \'yyyy/mm/dd\') senddate, count(*) fail from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 3 group by senddate order by senddate desc';
 
 	persist.connect(function(err, conn){
-		if (err) {next(err); res.render('layout-overview-volume', {user: username}); return; }
+		if (err) {next(err); res.render('layout-overview-volume', {user: username, menu: {main: 'overview', sub: 'overview'}}); return; }
 
 		var graphdata = new graphData(err, conn, res, sql_volume_total, sql_volume_fail, sql_volume_success, username, 'normal', array_dateFormat);
 		graphdata.init();
@@ -458,7 +496,7 @@ router.get('/', function(req, res) {
 
 router.get('/distribution', function(req, res){
 	console.log(markers);
-  	res.render('layout-overview-distribution', { user: username, marker: markers });
+  	res.render('layout-overview-distribution', { user: username, marker: markers,  menu: {main: 'overview', sub: 'distribution'} });
 });
 
 router.get('/record', function(req, res){
@@ -468,105 +506,99 @@ router.get('/record', function(req, res){
 	console.log(query);
 	console.log('========== debug only ==========');
 
-	displayMode = query.displaymode;
+	// displayMode = query.displaymode;
 
 	if (typeof query.page === 'undefined')
 		page = 1;
 	else 
 		page = query.page;
 
-	if (displayMode == 'month') {
+	// if (displayMode == 'month') {
 
-		duration = 90;
-		url = url + "?displaymode=" + displayMode;
+	// 	duration = 90;
+	// 	url = url + "?displaymode=" + displayMode;
 
-		var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
-							'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
-							'select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID) total_t ' +
-							'left join(' +
-							'select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) fail from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 3 group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
-							'left join (' +
-							'select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) success from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 2 group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
-							'left join(' +
-							'select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) waiting from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 1 group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
-							' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
-		var sql_record_count = 'select count(*) count from (select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID)';
+	// 	var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
+	// 						'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
+	// 						'select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID) total_t ' +
+	// 						'left join(' +
+	// 						'select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) fail from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 3 group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
+	// 						'left join (' +
+	// 						'select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) success from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 2 group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
+	// 						'left join(' +
+	// 						'select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) waiting from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 1 group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
+	// 						' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
+	// 	var sql_record_count = 'select count(*) count from (select destaddrctyid, to_char(senddate, \'mm/yyyy\') senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by to_char(senddate, \'mm/yyyy\'), DESTADDRCTYID)';
 
-	} else {
-		if (typeof query.lastxday === 'undefined') {
-			duration = 7;
-			url = url + "?displaymode=" + displayMode;
-		}	
-		else {
-			url = url + "?displaymode=" + displayMode + "&lastxday=" + query.lastxday;
-			switch(query.lastxday) {
-				case 'Last 7 days':
-					duration = 7;
-					break;
-				case 'Last 14 days':
-					duration = 14;
-					break;
-				case 'Last 30 days':
-					duration = 30;
-					break;
-				default:
-					duration = 7;
-					break;
-			}
-		}
+	// } else {
+	// if (typeof query.lastxday === 'undefined') {
+	duration = 7;
+	// url = url + "?displaymode=" + displayMode;
+	// }	
+	// else {
+	// 	url = url + "?displaymode=" + displayMode + "&lastxday=" + query.lastxday;
+	// 	switch(query.lastxday) {
+	// 		case 'Last 7 days':
+	// 			duration = 7;
+	// 			break;
+	// 		case 'Last 14 days':
+	// 			duration = 14;
+	// 			break;
+	// 		case 'Last 30 days':
+	// 			duration = 30;
+	// 			break;
+	// 		default:
+	// 			duration = 7;
+	// 			break;
+	// 	}
+	// }
 
 
-		if (typeof query.calendarFrom === 'undefined' || typeof query.calendarTo === 'undefined') {
+	// if (typeof query.calendarFrom === 'undefined' || typeof query.calendarTo === 'undefined') {
 
-			var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
-								'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
-								'select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID) total_t ' +
-								'left join(' +
-								'select destaddrctyid, senddate senddate_r, sum(msglength) fail from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 3 group by senddate, DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
-								'left join (' +
-								'select destaddrctyid, senddate senddate_r, sum(msglength) success from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 2 group by senddate, DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
-								'left join(' +
-								'select destaddrctyid, senddate senddate_r, sum(msglength) waiting from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 1 group by senddate, DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
-								' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
-			var sql_record_count = 'select count(*) count from (select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID)';
-		} 
-		else {
+	var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
+						'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
+						'select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID) total_t ' +
+						'left join(' +
+						'select destaddrctyid, senddate senddate_r, sum(msglength) fail from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 3 group by senddate, DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
+						'left join (' +
+						'select destaddrctyid, senddate senddate_r, sum(msglength) success from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 2 group by senddate, DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
+						'left join(' +
+						'select destaddrctyid, senddate senddate_r, sum(msglength) waiting from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 1 group by senddate, DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
+						' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
+	var sql_record_count = 'select count(*) count from (select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID)';
+	// } 
+	// else {
 
-			url = url + "?displaymode=" + displayMode + "&calendarFrom=" + query.calendarFrom + "&calendarTo=" + query.calendarTo;
+	// 	url = url + "?displaymode=" + displayMode + "&calendarFrom=" + query.calendarFrom + "&calendarTo=" + query.calendarTo;
 
-			var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
-								'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
-								'select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' group by senddate, DESTADDRCTYID) total_t ' +
-								'left join(' +
-								'select destaddrctyid, senddate senddate_r, sum(msglength) fail from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 3 group by senddate, DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
-								'left join (' +
-								'select destaddrctyid, senddate senddate_r, sum(msglength) success from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 2 group by senddate, DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
-								'left join(' +
-								'select destaddrctyid, senddate senddate_r, sum(msglength) waiting from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 1 group by senddate, DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
-								' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
+	// 	var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
+	// 						'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
+	// 						'select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' group by senddate, DESTADDRCTYID) total_t ' +
+	// 						'left join(' +
+	// 						'select destaddrctyid, senddate senddate_r, sum(msglength) fail from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 3 group by senddate, DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
+	// 						'left join (' +
+	// 						'select destaddrctyid, senddate senddate_r, sum(msglength) success from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 2 group by senddate, DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
+	// 						'left join(' +
+	// 						'select destaddrctyid, senddate senddate_r, sum(msglength) waiting from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 1 group by senddate, DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
+	// 						' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
 
-			var sql_record_count = 'select count(*) count from (select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' group by senddate, DESTADDRCTYID)';
-			
-			// var sql_record_count = 'select count(*) count from (select ROWNUM rn, t.* from (select destaddrctyid from tb_wsms ' + 
-			// 						'where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' group by senddate, DESTADDRCTYID order by senddate desc) t)';
-			// var sql_record_total = 'select * from (' +
-			// 						'select ROWNUM rn, t.* from (' + 
-			// 						'select destaddrctyid, senddate, sum(msglength) total from tb_wsms ' +
-			// 						'where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' group by senddate, DESTADDRCTYID order by senddate desc) t' +
-			// 						') where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
-		}
-	}
+	// 	var sql_record_count = 'select count(*) count from (select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' group by senddate, DESTADDRCTYID)';
+
+	// }
+	// }
 	
 	persist.connect(function(err, conn) {
-		if (err) {next(err); res.render('layout-overview-record', { user: username }); return; }
+		if (err) {next(err); res.render('layout-overview-record', { user: username,  menu: {main: 'overview', sub: 'record'} }); return; }
 
-		var recorddata = new recordData(err, conn, res, sql_record, sql_record_count, username, displayMode, page, url);
+		var recorddata = new recordData(err, conn, res, sql_record, sql_record_count, username, displayMode, page, url, 'normal');
 		recorddata.init();
 	});
 });
 
 router.get('/record-detail', function(req, res){
-  	res.render('layout-overview-record-detail', { user: username });
+  	// res.render('layout-overview-record-detail', { title: 'Record Detail', user: username, taskname: 'Task Name' });
+  	res.render('layout-overview-record-detail', { user: username,  menu: {main: 'overview', sub: 'record'} });
 });
 
 router.get('/ajax/lastxdaysfilter', function(req, res){
@@ -610,7 +642,7 @@ router.get('/ajax/lastxdaysfilter', function(req, res){
 		console.log("============================================================");
 
 		persist.connect(function(err, conn){
-			if (err) {next(err); res.render({user: username}); return; }
+			if (err) {next(err); res.send({user: username}); return; }
 
 			var graphdata = new graphData(err, conn, res, sql_volume_total, sql_volume_fail, sql_volume_success, username, 'ajax', array_dateFormat);
 			graphdata.init();
@@ -618,12 +650,8 @@ router.get('/ajax/lastxdaysfilter', function(req, res){
 	}
 
 	if (query.view == "Distribution") {
-		res.send({ 
-			user: username, 
-			marker: [
-				{latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines', submitted: 280, success: 185}
-			]
-		});
+		console.log(markers);
+  		res.send({ user: username, marker: markers });
 	}
 
 	if (query.view == "Record") {
@@ -633,18 +661,44 @@ router.get('/ajax/lastxdaysfilter', function(req, res){
 		else 
 			var page = query.page;
 
-		var sql_record_count = 'select count(*) count from (select ROWNUM rn, t.* from (select destaddrctyid from tb_wsms ' + 
-								'where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID order by senddate desc) t)';
-		var sql_record_total = 'select * from (' +
-								'select ROWNUM rn, t.* from (' + 
-								'select destaddrctyid, senddate, sum(msglength) total from tb_wsms ' +
-								'where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID order by senddate desc) t' +
-								') where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
+		if (typeof query.lastxday === 'undefined') {
+			duration = 7;
+			// url = url + "?displaymode=" + displayMode;
+		}	
+		else {
+			// url = url + "?displaymode=" + displayMode + "&lastxday=" + query.lastxday;
+			switch(query.lastxday) {
+				case 'Last 7 days':
+					duration = 7;
+					break;
+				case 'Last 14 days':
+					duration = 14;
+					break;
+				case 'Last 30 days':
+					duration = 30;
+					break;
+				default:
+					duration = 7;
+					break;
+			}
+		}
 
+		var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
+							'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID) total_t ' +
+							'left join(' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) fail from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 3 group by senddate, DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
+							'left join (' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) success from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 2 group by senddate, DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
+							'left join(' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) waiting from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 1 group by senddate, DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
+							' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
+		var sql_record_count = 'select count(*) count from (select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID)';
+	
 		persist.connect(function(err, conn) {
-			if (err) {next(err); res.render('layout-overview-record', { user: username }); return; }
+			if (err) {next(err); res.send({ user: username }); return; }
 
-			var recorddata = new recordData(err, conn, res, sql_record_total, sql_record_count, username, 'ajax', page);
+			var recorddata = new recordData(err, conn, res, sql_record, sql_record_count, username, 'Day', page, '', 'ajax');
 			recorddata.init();
 		});
 	}
@@ -694,7 +748,7 @@ router.get('/ajax/calendarfilter', function(req, res){
 			console.log("============================================================");
 
 			persist.connect(function(err, conn){
-				if (err) {next(err); res.render({user: username}); return; }
+				if (err) {next(err); res.send({user: username}); return; }
 
 				var graphdata = new graphData(err, conn, res, sql_volume_total, sql_volume_fail, sql_volume_success, username, 'ajax', array_dateFormat);
 				graphdata.init();
@@ -705,11 +759,39 @@ router.get('/ajax/calendarfilter', function(req, res){
 
 	if (query.view == "Distribution") {
 
-		res.send({ 
-			user: username, 
-			marker: [
-				{latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines', submitted: 280, success: 185}
-			]
+		console.log(markers);
+  		res.render('layout-overview-distribution', { user: username, marker: markers,  menu: {main: 'overview', sub: 'distribution'} });
+	}
+
+	if (query.view == "Record") {
+
+		if (typeof query.page === 'undefined')
+			var page = 1;
+		else 
+			var page = query.page;
+
+		var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
+							'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' group by senddate, DESTADDRCTYID) total_t ' +
+							'left join(' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) fail from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 3 group by senddate, DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
+							'left join (' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) success from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 2 group by senddate, DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
+							'left join(' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) waiting from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' and status = 2 and msgstatus = 1 group by senddate, DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
+							' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
+
+		var sql_record_count = 'select count(*) count from (select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate >= \'' + query.calendarFrom + '\' and senddate <= \'' + query.calendarTo + '\' group by senddate, DESTADDRCTYID)';
+		
+		console.log(query.view);
+		console.log(sql_record);
+		console.log(sql_record_count);
+
+		persist.connect(function(err, conn) {
+			if (err) {next(err); res.send({ user: username }); return; }
+
+			var recorddata = new recordData(err, conn, res, sql_record, sql_record_count, username, 'Day', page, '', 'ajax');
+			recorddata.init();
 		});
 	}
 });
@@ -744,6 +826,37 @@ router.get('/ajax/monthly', function(req, res){
 
 			var graphdata = new graphData(err, conn, res, sql_volume_total, sql_volume_fail, sql_volume_success, username, 'ajax', array_dateFormat, query.dispMode);
 			graphdata.init();
+		});
+	}
+
+	if (query.view == "Record") {
+
+		console.log(query.view);
+
+		if (typeof query.page === 'undefined')
+			var page = 1;
+		else 
+			var page = query.page;
+
+		var sql_record = 'select * from (select ROWNUM rn, t.* from (' +
+							'select total_t.*, NVL(fail_t.fail, 0) fail, NVL(success_t.success, 0) success, NVL(waiting_t.waiting, 0) waiting from (' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID) total_t ' +
+							'left join(' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) fail from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 3 group by senddate, DESTADDRCTYID) fail_t on fail_t.destaddrctyid = total_t.destaddrctyid and fail_t.senddate_r = total_t.senddate_r ' +
+							'left join (' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) success from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 2 group by senddate, DESTADDRCTYID) success_t on success_t.destaddrctyid = total_t.destaddrctyid and success_t.senddate_r = total_t.senddate_r ' +
+							'left join(' +
+							'select destaddrctyid, senddate senddate_r, sum(msglength) waiting from tb_wsms where senddate > (sysdate - ' + duration + ') and status = 2 and msgstatus = 1 group by senddate, DESTADDRCTYID) waiting_t on waiting_t.destaddrctyid = total_t.destaddrctyid and waiting_t.senddate_r = total_t.senddate_r ORDER BY total_t.senddate_r desc)' +
+							' t) where rn >= 1 + (10 * (' + page + ' - 1)) and rn <= 10 * ' + page;
+		var sql_record_count = 'select count(*) count from (select destaddrctyid, senddate senddate_r, sum(msglength) total from tb_wsms where senddate > (sysdate - ' + duration + ') group by senddate, DESTADDRCTYID)';
+		
+		console.log(sql_record_count);
+
+		persist.connect(function(err, conn) {
+			if (err) {next(err); res.send({ user: username }); return; }
+
+			var recorddata = new recordData(err, conn, res, sql_record, sql_record_count, username, 'Month', page, '', 'ajax');
+			recorddata.init();
 		});
 	}
 

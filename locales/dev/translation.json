@@ -39,7 +39,9 @@
         "china": "dropdowns.china",
         "confirmtosend": "dropdowns.confirmtosend",
         "successresult": "dropdowns.successresult",
-        "delete": "dropdowns.delete"
+        "delete": "dropdowns.delete",
+        "contacts": "dropdowns.contacts",
+        "importExcel": "dropdowns.importExcel"
     },
     "footerTexts": {
         "copyright": "footerTexts.copyright",
@@ -132,6 +134,7 @@
     "#": "#",
     "/new/confirm": "/new/confirm",
     "modals": {
+        "25": "modals.25",
         "5000": "modals.5000",
         "addfromcontacts": "modals.addfromcontacts",
         "allGroup": "modals.allGroup",
@@ -148,7 +151,32 @@
         "deleteTemplate": "modals.deleteTemplate",
         "deletePrompt": "modals.deletePrompt",
         "template1": "modals.template1",
-        "editTemplate": "modals.editTemplate"
+        "editTemplate": "modals.editTemplate",
+        "deletedraftprompt": "modals.deletedraftprompt",
+        "allgroup": "modals.allgroup",
+        "selectall": "modals.selectall",
+        "cancel": "modals.cancel",
+        "confirm": "modals.confirm",
+        "use": "modals.use",
+        "clearrecipients": "modals.clearrecipients",
+        "clearprompt": "modals.clearprompt",
+        "continue": "modals.continue",
+        "addNewContact": "modals.addNewContact",
+        "name": "modals.name",
+        "requiredField": "modals.requiredField",
+        "mobile": "modals.mobile",
+        "mobileNumWPrefix": "modals.mobileNumWPrefix",
+        "company": "modals.company",
+        "yourCompanyName": "modals.yourCompanyName",
+        "assignToGroup": "modals.assignToGroup",
+        "longGroupName": "modals.longGroupName",
+        "shortGroupName": "modals.shortGroupName",
+        "manageGroups": "modals.manageGroups",
+        "groupName": "modals.groupName",
+        "noOfContacts": "modals.noOfContacts",
+        "action": "modals.action",
+        "group1": "modals.group1",
+        "create": "modals.create"
     },
     "merger": {
         "mergerPreview": "merger.mergerPreview",
@@ -163,5 +191,47 @@
     },
     "allSMS": {
         "destination": "allSMS.destination"
+    },
+    "profilePage": {
+        "accountInfo": "profilePage.accountInfo",
+        "accountLevel": "profilePage.accountLevel",
+        "carrierAdmin": "profilePage.carrierAdmin",
+        "userName": "profilePage.userName",
+        "companyName": "profilePage.companyName",
+        "contactPerson": "profilePage.contactPerson",
+        "name": "profilePage.name",
+        "mobilePhoneNumber": "profilePage.mobilePhoneNumber",
+        "85298765432": "profilePage.85298765432",
+        "email": "profilePage.email",
+        "dummyEmail": "profilePage.dummyEmail"
+    },
+    "helpPage": {
+        "searchHelp": "helpPage.searchHelp"
+    },
+    "Template 1": "Template 1",
+    "Dear Customer, Your account Account has an overdue balance of Amount": {
+        " Please kindly settle the outstanding by Deadline to avoid suspension": {
+            " Thank you": {}
+        }
+    },
+    "Template 2": "Template 2",
+    "Template 3": "Template 3",
+    "Template 4": "Template 4",
+    " + val[0] + ": " + val[0] + ",
+    "contactPage": {
+        "allGroups": "contactPage.allGroups",
+        "groupA": "contactPage.groupA",
+        "groupB": "contactPage.groupB",
+        "groupC": "contactPage.groupC",
+        "name": "contactPage.name",
+        "group": "contactPage.group",
+        "company": "contactPage.company",
+        "mobile": "contactPage.mobile",
+        "contactPage": {
+            "moveSelected": "contactPage.contactPage.moveSelected"
+        }
+    },
+    "progilePage": {
+        "userName": "progilePage.userName"
     }
 }

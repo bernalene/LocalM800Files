@@ -1,39 +1,71 @@
 .left-content.col-xs-3
-	.menu-links.pull-left
-		ul.list-unstyled
-			li
-				p= t('menuLinks.welcome')
-				p.name= user
-				a.bth(href='/new', class='btn btn-danger new-sms')= t('menuLinks.newsms')
-			li
-				a(href='/overview') 
-					span.glyphicon.glyphicon-globe
-					=t('menuLinks.overview')
-			li
-				a(href='/all')
-					img(src='/img/all-sms-icon-grey.png')
-					=t('menuLinks.allsms')
-			li
-				a(href='/draft')
-					span.glyphicon.glyphicon-pencil
-					=t('menuLinks.draft')
-			li
-				a(href='/template')
-					span.glyphicon.glyphicon-list-alt
-					=t('menuLinks.template')
-			li
-				a(href='/contact')
-					img(src='/img/contacts-icon-grey.png')
-					=t('menuLinks.contacts')
-			li
-				a(href='/profile')
-					span.glyphicon.glyphicon-user
-					=t('menuLinks.profile')
-			li
-				a(href='/help')
-					span.glyphicon.glyphicon-question-sign
-					=t('menuLinks.help')
-	.grey-top-left-border
-	.grey-top-right-border
-	.grey-bottom-left-border
-	.grey-bottom-right-border
+	.row.margin-right-15
+		.col-xs-12.user-dashboard
+			.row.sprites-holder
+				!= '<!--[if lt IE 9]>'
+					.sprites.rounded-corner.top-left-light-gray 
+					.sprites.rounded-corner.top-right-light-gray
+				!= '<![endif]-->'
+				.col-xs-6.reset-padding.greeting
+					p.reset-margin= t('menuLinks.welcome')
+					p.reset-margin.name= user 
+				.col-xs-6.new-sms.reset-padding
+					a.btn.btn-danger(href='/new')= t('menuLinks.newsms')
+			.row
+				.col-xs-12.menu-links.reset-padding
+					ul.list-unstyled.main-menu
+						li(class= menu.main == 'overview' ? "active-link" : "")
+							a(href='/overview', title="Overview") 
+								span.glyphicon.glyphicon-globe
+								=t('menuLinks.overview')
+						li(class= menu.main == 'all-sms' ? "active-link" : "")
+							a(href=".submenu-sms", data-toggle="collapse", title="All SMS")
+								.sprites.all-sms.pull-left
+								.sprites.more.pull-right(title="More menus")
+								=t('menuLinks.allsms')
+							ul.list-unstyled.sub-menu.submenu-sms.collapse(class= menu.main == 'all-sms' ? "in" : "")
+								li(class= menu.sub == 'validating' ? "active-link" : "")
+									a(href='/all', title="Validating")
+										= 'Validating'
+								li(class= menu.sub == 'outbox' ? "active-link" : "")
+									a(href='/all/outbox', title="Outbox")
+										= 'Outbox'
+								li(class= menu.sub == 'sent' ? "active-link" : "")
+									a(href='/all/sent', title="Sent")
+										= 'Sent'
+								li(class= menu.sub == 'scheduled' ? "active-link" : "")
+									a(href='/all/scheduled', title="Scheduled")
+										= 'Scheduled'
+						li(class= menu.main == 'draft' ? "active-link" : "")
+							a(href='/draft', title="Draft")
+								span.glyphicon.glyphicon-pencil
+								=t('menuLinks.draft')
+						li(class= menu.main == 'template' ? "active-link" : "")
+							a(href='/template', title="Template")
+								span.glyphicon.glyphicon-list-alt
+								=t('menuLinks.template')
+						li(class= menu.main == 'contact' ? "active-link" : "")
+							a(href='/contact', title="Contact")
+								.sprites.contact.pull-left
+								=t('menuLinks.contacts')
+						li(class= menu.main == 'profile' ? "active-link" : "")
+							a(href='.sub-menu-profile', data-toggle="collapse", title="Profile")
+								span.glyphicon.glyphicon-user
+								.sprites.more.pull-right(title="More menus")
+								=t('menuLinks.profile')
+							ul.list-unstyled.sub-menu.sub-menu-profile.collapse(class= menu.main == 'profile' ? "in" : "")
+								li(class= menu.sub == 'account-info' ? "active-link" : "")
+									a(href='/profile', title="Account Info")
+										= 'Account Info'
+								li(class= menu.sub == 'password' ? "active-link" : "")
+									a(href='/profile/change-password' , title="Password")
+										= 'Password'			
+						li.sprites-holder.last(class= menu.main == 'help' ? "active-link" : "")
+							a.last(href='/help', title="Help")
+								!= '<!--[if lt IE 9]>'
+									.sprites.rounded-corner.bottom-left-light-gray
+									.sprites.rounded-corner.bottom-right-light-gray
+								!= '<![endif]-->'
+								span.glyphicon.glyphicon-question-sign
+								=t('menuLinks.help')
+							

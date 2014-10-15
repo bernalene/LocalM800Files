@@ -12,6 +12,12 @@
 			button.selectpicker {
 				margin-left: 0;
 				width: 100%;
+				padding: 3px 25px;
+				border-radius: 5px 0 0 5px;
+				-moz-border-radius: 5px 0 0 5px;
+				-webkit-border-radius: 5px 0 0 5px;
+				border-right: 0;
+				height: 34px;
 			}
 			.dropdown-menu.open{
 				margin-left: 0;
@@ -20,49 +26,21 @@
 		.searchbar {
 			margin-left: 0;
 			width: 240px;
+			input{
+				border-radius: 0;
+				-moz-border-radius: 0;
+				-webkit-border-radius: 0;
+			}
 		}
 	}
 	.allSMS-content {
 		width: 100%;
 	}
 	.recordsTable {
-		.row {
-			margin: 0;
-			&.recordsTableHeader {
-				float: left;
-				width: 100%;
-				font-size: 140%;
-				line-height: 40px;
-			}
-			&.detail-row {
-				float: left;
-				width: 100%;
-				.detail-item {
-					font-size: 120%;
-					&.glyphicon-ok-sign,
-					&.glyphicon-remove-sign {
-						font-size: 240%;
-					}
-					&.glyphicon-save {
-						font-size: 140%;
-					}
-				}
-				a {
-					color: #333;
-				}
-			}
-			.task-name,
-			.filepart {
-				width: 185px;
-			}
-			.smstype {
-				width: 90px;
-				padding: 0 5px;
-			}
-		}
 		.input-group {
 			.form-control{
 				width: 75%;
+				background: #fff;
 			}
 			.glyphicon-save {
 				width: 25%;
@@ -107,9 +85,11 @@
 			.dropdown-success,
 			.partial-success{
 				background: $green;
+				border: 0;
 			}
 			.dropdown-warning {
 				background: $yellow;
+				border: 0;
 			}
 			&.open {
 				.btn {
